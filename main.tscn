@@ -3,9 +3,10 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 151.0
-offset_top = 58.0
-offset_right = 191.0
-offset_bottom = 81.0
+offset_left = 152.0
+offset_top = 59.0
+offset_right = 305.0
+offset_bottom = 108.0
 text = "Wuhuu Github läuft
-Anton war hier"
+Anton war hier
+Miguel war hier"
