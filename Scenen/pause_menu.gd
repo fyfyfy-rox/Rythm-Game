@@ -1,9 +1,9 @@
 extends Control
 
-@onready var overworld = $"../../"
+@onready var overworld = $"../.."
 
 func _on_resume_pressed() -> void:
-	overworld.pause(not overworld.paused)
+	overworld.toggle_pause()
 
 
 func _on_save_and_exit_pressed() -> void:

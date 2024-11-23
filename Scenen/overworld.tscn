@@ -4704,6 +4704,12 @@ radius = 17.0
 [node name="Overworld" type="Node2D"]
 script = ExtResource("1_r4m10")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("4_0f24w")]
+process_mode = 2
+visible = false
+
 [node name="DefaultPlayer" parent="." instance=ExtResource("1_3k40g")]
 z_index = 1
 position = Vector2(219, 456)
@@ -4732,20 +4738,6 @@ tile_set = SubResource("TileSet_nikip")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(219, 456)
-
-[node name="Pause Menu" parent="Camera2D" instance=ExtResource("4_0f24w")]
-process_mode = 2
-visible = false
-custom_minimum_size = Vector2(400, 300)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -150.0
-offset_right = 200.0
-offset_bottom = 150.0
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("4_vfiyi")
