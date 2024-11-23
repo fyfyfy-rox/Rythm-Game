@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://cy1y1cfqxm05e"]
+[gd_scene load_steps=15 format=4 uid="uid://cy1y1cfqxm05e"]
 
 [ext_resource type="PackedScene" uid="uid://chnkhsfc1sy7v" path="res://Characters/default_player.tscn" id="1_3k40g"]
+[ext_resource type="Script" path="res://Scenen/overworld.gd" id="1_r4m10"]
 [ext_resource type="Texture2D" uid="uid://cycs1nv0guh7" path="res://Resources/GuttyKreum_JapaneseCity_Freev1/Free_Version/Tilemap/Tilemap.png" id="2_yfupj"]
-[ext_resource type="Texture2D" path="res://Pixel Art Top Down - Basic v1.1.2/Texture/TX Tileset Wall.png" id="4_ftmyc"]
+[ext_resource type="PackedScene" uid="uid://bhqnkqxhbkuyy" path="res://Scenen/pause_menu.tscn" id="4_0f24w"]
 [ext_resource type="Script" path="res://Scenen/area_2d.gd" id="4_vfiyi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n5r1s"]
@@ -4501,7 +4502,6 @@ texture = ExtResource("2_yfupj")
 sources/0 = SubResource("TileSetAtlasSource_hni8v")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxeg0"]
-texture = ExtResource("4_ftmyc")
 2:2/0 = 0
 3:2/0 = 0
 4:2/0 = 0
@@ -4702,6 +4702,7 @@ sources/0 = SubResource("TileSetAtlasSource_mxeg0")
 radius = 17.0
 
 [node name="Overworld" type="Node2D"]
+script = ExtResource("1_r4m10")
 
 [node name="DefaultPlayer" parent="." instance=ExtResource("1_3k40g")]
 z_index = 1
@@ -4731,6 +4732,20 @@ tile_set = SubResource("TileSet_nikip")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(219, 456)
+
+[node name="Pause Menu" parent="Camera2D" instance=ExtResource("4_0f24w")]
+process_mode = 2
+visible = false
+custom_minimum_size = Vector2(400, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("4_vfiyi")
