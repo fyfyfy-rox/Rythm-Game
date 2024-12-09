@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1ge5ctwbbmeo"]
+
+[ext_resource type="Texture2D" uid="uid://clvw7b40tshfc" path="res://Resources/road.PNG" id="1_0maqs"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m1hwc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8u60"]
+size = Vector2(1920, 218)
+
+[node name="Road" type="Node2D"]
+
+[node name="Road" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_m1hwc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Road"]
+position = Vector2(-2, 1)
+scale = Vector2(1, 1.05)
+texture = ExtResource("1_0maqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_q8u60")
