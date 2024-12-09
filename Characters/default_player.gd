@@ -14,12 +14,18 @@ func _ready():
 func _physics_process(_delta: float) -> void:
 	var input_direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		Input.get_action_strength("down") - Input.get_action_strength("up")
+		0
 	)
+	player_falling()
+	move_and_slide()
 	update_animation_parameter(input_direction)
 	velocity = input_direction * move_speed
 	move_and_slide()
 	pick_new_state()
+
+func player_falling():
+	if !is_on_floor():
+		velocity.y += 2 * move_speed
 
 #Changes character dicetion of animation
 func update_animation_parameter(move_input : Vector2):
