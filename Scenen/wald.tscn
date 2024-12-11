@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://lj8kolwqcqnm"]
+[gd_scene load_steps=21 format=3 uid="uid://lj8kolwqcqnm"]
 
 [ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="1_rxa5p"]
 [ext_resource type="Texture2D" uid="uid://btl7834r2uciq" path="res://Resources/Forrest/2.png" id="2_kuu7p"]
@@ -12,6 +12,26 @@
 [ext_resource type="Texture2D" uid="uid://b3e4iplghhhbm" path="res://Resources/Forrest/10.png" id="10_bjb5g"]
 [ext_resource type="PackedScene" uid="uid://chnkhsfc1sy7v" path="res://Characters/default_player.tscn" id="11_si85j"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="12_erdw6"]
+[ext_resource type="PackedScene" uid="uid://bvbgowi0wd6bu" path="res://Scenen/Rain.tscn" id="13_v814v"]
+[ext_resource type="Shader" path="res://Scenen/Water_shader.gdshader" id="14_dosvt"]
+[ext_resource type="Texture2D" uid="uid://clvw7b40tshfc" path="res://Resources/road.PNG" id="15_34nrt"]
+[ext_resource type="Texture2D" uid="uid://dqfewu0y0tpjo" path="res://Resources/Untitled design (3).png" id="16_asypc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n67j2"]
+radius = 59.0514
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k20lg"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vpdtv"]
+seamless = true
+noise = SubResource("FastNoiseLite_k20lg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0rk41"]
+shader = ExtResource("14_dosvt")
+shader_parameter/water_colour = Color(0.0311956, 0.200187, 0.240661, 1)
+shader_parameter/wave_noise = SubResource("NoiseTexture2D_vpdtv")
+shader_parameter/mask = ExtResource("16_asypc")
 
 [node name="Node2D" type="Node2D"]
 
@@ -88,6 +108,7 @@ motion_scale = Vector2(0.9, 1)
 motion_mirroring = Vector2(3692, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
+z_index = 1
 scale = Vector2(2, 2)
 texture = ExtResource("9_v8hmj")
 
@@ -98,21 +119,50 @@ motion_mirroring = Vector2(3692, 0)
 scale = Vector2(2, 2)
 texture = ExtResource("10_bjb5g")
 
-[node name="Witch2" parent="." instance=ExtResource("11_si85j")]
+[node name="Witch" parent="." instance=ExtResource("11_si85j")]
 z_index = 1
-position = Vector2(-182, 688)
+position = Vector2(-1104, 771)
 scale = Vector2(4.7, 4.7)
+collision_layer = 3
 move_speed = 400.0
+starting_direction = Vector2(0, 0)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Witch2"]
-position = Vector2(0, -85)
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Witch"]
+position = Vector2(0, -60)
 remote_path = NodePath("../Camera2D")
 
-[node name="Camera2D" type="Camera2D" parent="Witch2"]
-position = Vector2(0, -85)
-zoom = Vector2(1.2, 1.2)
+[node name="Camera2D" type="Camera2D" parent="Witch"]
+position = Vector2(0, -60)
+zoom = Vector2(1.4, 1.4)
 
-[node name="Road" parent="." instance=ExtResource("12_erdw6")]
+[node name="Floor" parent="." instance=ExtResource("12_erdw6")]
 visible = false
-position = Vector2(-722, 1026)
+position = Vector2(-725, 957)
 scale = Vector2(10, 1)
+
+[node name="Rain" parent="." instance=ExtResource("13_v814v")]
+z_index = 2
+position = Vector2(220, -41)
+scale = Vector2(1.22, 1)
+
+[node name="Linke Boarder" parent="." instance=ExtResource("12_erdw6")]
+visible = false
+position = Vector2(-2436, 798)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+color = Color(0.353707, 0.579444, 0.720429, 1)
+
+[node name="Wasser" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wasser"]
+visible = false
+position = Vector2(1833, 815)
+scale = Vector2(0.304854, 1.10016)
+shape = SubResource("CircleShape2D_n67j2")
+
+[node name="Water" type="Sprite2D" parent="Wasser"]
+material = SubResource("ShaderMaterial_0rk41")
+position = Vector2(2154, 894)
+scale = Vector2(0.571005, 1.69219)
+texture = ExtResource("15_34nrt")

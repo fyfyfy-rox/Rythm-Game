@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=3 uid="uid://bvbgowi0wd6bu"]
+
+[sub_resource type="Curve" id="Curve_eo5oa"]
+_data = [Vector2(0.0182292, 0.0165331), 0.0, 0.0, 0, 0, Vector2(0.424479, 0.303106), 1.64128, 1.64128, 0, 0, Vector2(0.867188, 0.394289), -2.39226, -2.39226, 0, 0, Vector2(0.997396, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_8ov2r"]
+curve = SubResource("Curve_eo5oa")
+
+[sub_resource type="Gradient" id="Gradient_8jbit"]
+offsets = PackedFloat32Array(0.00493421, 1)
+colors = PackedColorArray(1, 1, 1, 0.0784314, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2b7n2"]
+gradient = SubResource("Gradient_8jbit")
+
+[sub_resource type="Curve" id="Curve_p4231"]
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_3bxga"]
+max_value = 30.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.355346, 30), 0.0, 0.0, 0, 0, Vector2(0.512579, 30), 0.0, 0.0, 0, 0, Vector2(0.754717, 30), 0.0, 0.0, 0, 0, Vector2(0.99999, 30), 0.0, 0.0, 0, 0, Vector2(1, 30), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_6ohqy"]
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_ds6wd"]
+curve_x = SubResource("Curve_p4231")
+curve_y = SubResource("Curve_3bxga")
+curve_z = SubResource("Curve_6ohqy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2gt17"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(2000, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(10, 3000, 0)
+scale_min = 0.2
+scale_over_velocity_curve = SubResource("CurveXYZTexture_ds6wd")
+color = Color(0.796078, 1, 1, 1)
+color_initial_ramp = SubResource("GradientTexture1D_2b7n2")
+alpha_curve = SubResource("CurveTexture_8ov2r")
+collision_mode = 2
+sub_emitter_mode = 3
+sub_emitter_amount_at_collision = 1
+
+[sub_resource type="Curve" id="Curve_g7mxk"]
+_data = [Vector2(0, 0.0100201), 0.0, 0.0, 0, 0, Vector2(0.505208, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_xx84d"]
+curve = SubResource("Curve_g7mxk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w3hqn"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = -10.0
+initial_velocity_max = -10.0
+gravity = Vector3(0, 500, 0)
+color = Color(0.419954, 0.887595, 0.998787, 1)
+alpha_curve = SubResource("CurveTexture_xx84d")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0xp0c"]
+polygon = PackedVector2Array(-2031, 681, 1953, 693, 1953, 797, -2026, 793)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Rain" type="GPUParticles2D" parent="."]
+amount = 8000
+sub_emitter = NodePath("../Splash")
+process_material = SubResource("ParticleProcessMaterial_2gt17")
+lifetime = 0.9
+preprocess = 0.5
+collision_base_size = 128.0
+visibility_rect = Rect2(-1500, 0, 3000, 1000)
+
+[node name="Splash" type="GPUParticles2D" parent="."]
+position = Vector2(-1, 643)
+scale = Vector2(1, 1.00252)
+amount = 3000
+process_material = SubResource("ParticleProcessMaterial_w3hqn")
+lifetime = 0.2
+visibility_rect = Rect2(-1500, -100, 3000, 1000)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(42, 211)
+occluder = SubResource("OccluderPolygon2D_0xp0c")
