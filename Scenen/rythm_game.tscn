@@ -75,15 +75,12 @@ position = Vector2(-37.1429, -15.7143)
 
 [node name="Position1" type="Marker2D" parent="Positions"]
 position = Vector2(380, -40)
-scale = Vector2(1, 1)
 
 [node name="Position2" type="Marker2D" parent="Positions"]
 position = Vector2(380, 20)
-scale = Vector2(1, 1)
 
 [node name="Position3" type="Marker2D" parent="Positions"]
 position = Vector2(380, 90)
-scale = Vector2(1, 1)
 
 [node name="Position4" type="Marker2D" parent="Positions"]
 position = Vector2(380, 160)

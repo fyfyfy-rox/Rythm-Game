@@ -1540,6 +1540,7 @@ position = Vector2(0, -70)
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("4_d1jnb")]
 process_mode = 2
 visible = false
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-960, 815)

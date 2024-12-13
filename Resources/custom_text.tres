@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=5 format=3 uid="uid://d86ybwkr3fsq"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_2v1hp"]
+[ext_resource type="PackedScene" path="res://Resources/DefaultLayoutBase/custom_default_layout_base.tscn" id="1_drptd"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_fgbns"]
+
+[sub_resource type="Resource" id="Resource_rvyr5"]
+script = ExtResource("1_2v1hp")
+scene = ExtResource("1_drptd")
+overrides = {}
+
+[resource]
+script = ExtResource("2_fgbns")
+name = "custom_text"
+layer_list = Array[String]([])
+layer_info = {
+"": SubResource("Resource_rvyr5")
+}
+base_overrides = {}
+layers = Array[ExtResource("1_2v1hp")]([])
+metadata/_latest_layer = ""

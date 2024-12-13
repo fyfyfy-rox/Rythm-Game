@@ -6,6 +6,7 @@ var paused = false  # Variable to track if the game is paused or not
 # _ready function, executed when the node is initialized
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # Set mouse mode to "captured", so the mouse is hidden initially
+	Dialogic.start("Forrest_Speech_1")
 
 # This function is called every frame to check for input
 func _process(_delta):
