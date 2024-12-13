@@ -9,7 +9,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # Set mouse mode to "captured", so the mouse is hidden initially
 
 # This function is called every frame to check for input
-func _process(delta):
+func _process(_delta):
 	# If the player presses the Pause button (ESC)
 	if Input.is_action_just_pressed("pause"):  
 		toggle_pause()  # Toggle the pause state and menu visibility

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://lj8kolwqcqnm"]
+[gd_scene load_steps=25 format=3 uid="uid://lj8kolwqcqnm"]
 
 [ext_resource type="Script" path="res://Scenen/wald.gd" id="1_37nqg"]
 [ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="1_rxa5p"]
@@ -17,7 +17,9 @@
 [ext_resource type="Shader" path="res://Scenen/Water_shader.gdshader" id="14_dosvt"]
 [ext_resource type="Texture2D" uid="uid://clvw7b40tshfc" path="res://Resources/road.PNG" id="15_34nrt"]
 [ext_resource type="PackedScene" uid="uid://bhqnkqxhbkuyy" path="res://Scenen/pause_menu.tscn" id="16_8ciq1"]
+[ext_resource type="Texture2D" uid="uid://dqfewu0y0tpjo" path="res://Resources/Untitled design (3).png" id="16_afbcr"]
 [ext_resource type="Script" path="res://Scenen/pause_menu_wald.gd" id="17_4vhj6"]
+[ext_resource type="PackedScene" uid="uid://cvrru27s3x1yt" path="res://Scenen/Baumstamm.tscn" id="17_xkbsn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n67j2"]
 radius = 59.0514
@@ -33,6 +35,7 @@ noise = SubResource("FastNoiseLite_k20lg")
 shader = ExtResource("14_dosvt")
 shader_parameter/water_colour = Color(0.0311956, 0.200187, 0.240661, 1)
 shader_parameter/wave_noise = SubResource("NoiseTexture2D_vpdtv")
+shader_parameter/mask = ExtResource("16_afbcr")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_37nqg")
@@ -124,7 +127,7 @@ texture = ExtResource("10_bjb5g")
 [node name="Witch" parent="." instance=ExtResource("11_si85j")]
 z_index = 1
 position = Vector2(-1104, 771)
-scale = Vector2(4.7, 4.7)
+scale = Vector2(5, 5)
 collision_layer = 3
 move_speed = 400.0
 starting_direction = Vector2(0, 0)
@@ -135,6 +138,7 @@ remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="Witch"]
 position = Vector2(0, -60)
+scale = Vector2(1, 1)
 zoom = Vector2(1.4, 1.4)
 
 [node name="Floor" parent="." instance=ExtResource("12_erdw6")]
@@ -158,7 +162,6 @@ color = Color(0.353707, 0.579444, 0.720429, 1)
 [node name="Wasser" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wasser"]
-visible = false
 position = Vector2(1833, 815)
 scale = Vector2(0.304854, 1.10016)
 shape = SubResource("CircleShape2D_n67j2")
@@ -175,3 +178,7 @@ texture = ExtResource("15_34nrt")
 process_mode = 2
 visible = false
 script = ExtResource("17_4vhj6")
+
+[node name="Node2D" parent="." instance=ExtResource("17_xkbsn")]
+position = Vector2(1300, 750)
+scale = Vector2(0.65, 0.77)

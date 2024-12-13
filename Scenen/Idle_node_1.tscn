@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://dh1ihc81uofnc"]
+
+[ext_resource type="Script" path="res://Scenen/idle_node_1.gd" id="1_0xyew"]
+[ext_resource type="Texture2D" uid="uid://c4jh8y3hn41wr" path="res://Resources/Nodes2.png" id="1_ayp1f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kidfa"]
+size = Vector2(39.5, 44)
+
+[sub_resource type="Animation" id="Animation_7b7li"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
+[sub_resource type="Animation" id="Animation_s3b7g"]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 12]
+}
+
+[sub_resource type="Animation" id="Animation_cwurn"]
+resource_name = "miss"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.133333, 0.233333, 0.333333, 0.433333, 0.6, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11, 12]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ups1f"]
+_data = {
+"RESET": SubResource("Animation_7b7li"),
+"hit": SubResource("Animation_s3b7g"),
+"miss": SubResource("Animation_cwurn")
+}
+
+[node name="IdleNode" type="Area2D"]
+script = ExtResource("1_0xyew")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ayp1f")
+hframes = 13
+frame = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-3.75, -1)
+shape = SubResource("RectangleShape2D_kidfa")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_ups1f")
+}
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]
