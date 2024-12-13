@@ -1,10 +1,56 @@
-[gd_scene load_steps=6 format=3 uid="uid://1fl4npejegn2"]
+[gd_scene load_steps=15 format=3 uid="uid://bhccdsud1n5f"]
 
 [ext_resource type="Script" path="res://Scenen/rythm_game.gd" id="1_buiov"]
 [ext_resource type="Texture2D" uid="uid://djbqlhevrgdvd" path="res://Resources/Sprite-Signwithflute.png" id="1_imhwk"]
 [ext_resource type="PackedScene" uid="uid://dh1ihc81uofnc" path="res://Scenen/Idle_node_1.tscn" id="2_gjpf1"]
 [ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="5_jd3uc"]
 [ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_e1a46"]
+[ext_resource type="Texture2D" uid="uid://ddfkgri45q2id" path="res://Resources/Free Pixel Art Forest/Preview/Background.png" id="6_yafr4"]
+[ext_resource type="Texture2D" uid="uid://dhy4tqjd1lnwg" path="res://Resources/Witch/B_witch_charge.png" id="7_wyr7e"]
+[ext_resource type="PackedScene" uid="uid://bvbgowi0wd6bu" path="res://Scenen/Rain.tscn" id="8_o8buy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwyv5"]
+atlas = ExtResource("7_wyr7e")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw0bo"]
+atlas = ExtResource("7_wyr7e")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do1u5"]
+atlas = ExtResource("7_wyr7e")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwjcp"]
+atlas = ExtResource("7_wyr7e")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbfwm"]
+atlas = ExtResource("7_wyr7e")
+region = Rect2(0, 192, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ah67q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwyv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw0bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do1u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwjcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbfwm")
+}],
+"loop": true,
+"name": &"charge",
+"speed": 8.0
+}]
 
 [node name="Rythm-Game" type="Node2D"]
 position = Vector2(1500, 600)
@@ -15,7 +61,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("1_imhwk")
 
 [node name="IdleNode" parent="." instance=ExtResource("2_gjpf1")]
-position = Vector2(-381, -40)
+position = Vector2(-380, -40)
 
 [node name="MidiPlayer" parent="." instance=ExtResource("5_jd3uc")]
 file = "res://Resources/Tetris_delay.mid"
@@ -25,13 +71,45 @@ soundfont = "res://Resources/UprightPianoKW-small-bright-20190703.sf2"
 [node name="ADSR" parent="." instance=ExtResource("6_e1a46")]
 
 [node name="Positions" type="Node2D" parent="."]
+position = Vector2(-37.1429, -15.7143)
 
 [node name="Position1" type="Marker2D" parent="Positions"]
+position = Vector2(380, -40)
+scale = Vector2(1, 1)
 
 [node name="Position2" type="Marker2D" parent="Positions"]
+position = Vector2(380, 20)
+scale = Vector2(1, 1)
 
 [node name="Position3" type="Marker2D" parent="Positions"]
+position = Vector2(380, 90)
+scale = Vector2(1, 1)
 
 [node name="Position4" type="Marker2D" parent="Positions"]
+position = Vector2(380, 160)
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-178, -512)
+scale = Vector2(3, 3)
+texture = ExtResource("6_yafr4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="Witch" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1012, 313)
+scale = Vector2(8.22917, 9.22917)
+sprite_frames = SubResource("SpriteFrames_ah67q")
+animation = &"charge"
+frame_progress = 0.234403
+
+[node name="Node2D" parent="." instance=ExtResource("8_o8buy")]
+z_index = -1
+position = Vector2(-643, -517)
+scale = Vector2(1, 1.122)
 
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

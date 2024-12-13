@@ -146,7 +146,7 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_5v7mt")
 states/Walk/position = Vector2(575, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_4wsmc"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_5oln2"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_x40b5")]
 
-[node name="Witch" type="CharacterBody2D"]
+[node name="Witch" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_flep3")
 

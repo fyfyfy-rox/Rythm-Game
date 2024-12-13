@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://lj8kolwqcqnm"]
+[gd_scene load_steps=26 format=3 uid="uid://lj8kolwqcqnm"]
 
 [ext_resource type="Script" path="res://Scenen/wald.gd" id="1_37nqg"]
 [ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="1_rxa5p"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://deq30bpt7ilw2" path="res://Resources/Forrest/9.png" id="9_v8hmj"]
 [ext_resource type="Texture2D" uid="uid://b3e4iplghhhbm" path="res://Resources/Forrest/10.png" id="10_bjb5g"]
 [ext_resource type="PackedScene" uid="uid://chnkhsfc1sy7v" path="res://Characters/default_player.tscn" id="11_si85j"]
+[ext_resource type="Texture2D" uid="uid://dr8csj3yte2pc" path="res://Resources/Forrest/11.png" id="12_24fis"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="12_erdw6"]
 [ext_resource type="PackedScene" uid="uid://bvbgowi0wd6bu" path="res://Scenen/Rain.tscn" id="13_v814v"]
 [ext_resource type="Shader" path="res://Scenen/Water_shader.gdshader" id="14_dosvt"]
@@ -124,11 +125,19 @@ motion_mirroring = Vector2(3692, 0)
 scale = Vector2(2, 2)
 texture = ExtResource("10_bjb5g")
 
+[node name="ParallaxLayer11" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(2, 14)
+motion_scale = Vector2(1.1, 1)
+motion_mirroring = Vector2(3692, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer11"]
+scale = Vector2(2, 2)
+texture = ExtResource("12_24fis")
+
 [node name="Witch" parent="." instance=ExtResource("11_si85j")]
 z_index = 1
 position = Vector2(-1104, 771)
 scale = Vector2(5, 5)
-collision_layer = 3
 move_speed = 400.0
 starting_direction = Vector2(0, 0)
 
@@ -179,6 +188,6 @@ process_mode = 2
 visible = false
 script = ExtResource("17_4vhj6")
 
-[node name="Node2D" parent="." instance=ExtResource("17_xkbsn")]
+[node name="Tree" parent="." instance=ExtResource("17_xkbsn")]
 position = Vector2(1300, 750)
 scale = Vector2(0.65, 0.77)

@@ -1,13 +1,12 @@
 extends Area2D
 @onready var animp = $AnimationPlayer
-var speed = 150
+var speed = 185
 var sensor = 0
 
 
 func _process(delta):
 	
 	position.x -= speed * delta
-	position.y += speed * 0.2 * delta
 	
 	animp.play("play")
 	if position.x < -400:
@@ -36,3 +35,4 @@ func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, 
 
 func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	sensor = 0
+	queue_free()
