@@ -8,3 +8,4 @@ var sensor_node_2 = 0;
 var sensor_node_3 = 0;
 var sensor_node_4 = 0;
 var tree_interacted = 0;
+var mana = 0;

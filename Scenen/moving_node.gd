@@ -3,7 +3,6 @@ extends Area2D
 var speed = 185
 var sensor = 0
 
-
 func _process(delta):
 	
 	position.x -= speed * delta
@@ -15,19 +14,19 @@ func _process(delta):
 	if sensor == 1: 
 		# Add "Global" > new
 		if Global.sensor_node_1 == 1:
-			if  Input.is_action_just_pressed("ui_up"):
+			if  Input.is_action_just_pressed("1"):
 				queue_free()
 
 		if Global.sensor_node_2 == 1:
-			if  Input.is_action_just_pressed("ui_down"):
+			if  Input.is_action_just_pressed("2"):
 				queue_free()
 
 		if Global.sensor_node_3 == 1:
-			if  Input.is_action_just_pressed("ui_left"):
+			if  Input.is_action_just_pressed("3"):
 				queue_free()
 
 		if Global.sensor_node_4 == 1:
-			if  Input.is_action_just_pressed("ui_right"):
+			if  Input.is_action_just_pressed("4"):
 				queue_free()
 
 func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:

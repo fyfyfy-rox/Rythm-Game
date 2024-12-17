@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bia16gx3rct0r"]
+
+[ext_resource type="Texture2D" uid="uid://n1h5mw23q0u" path="res://Resources/mana_empty.png" id="1_o4iqy"]
+[ext_resource type="Texture2D" uid="uid://s8twck3e73ra" path="res://Resources/mana_frame.png" id="2_oudt1"]
+[ext_resource type="Texture2D" uid="uid://dxm2swga6d87c" path="res://Resources/mana.png" id="3_4hhht"]
+[ext_resource type="Script" path="res://Scenen/mana_bar.gd" id="4_q2jfv"]
+
+[node name="mana" type="TextureProgressBar"]
+offset_right = 170.0
+offset_bottom = 12.0
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 4
+texture_under = ExtResource("1_o4iqy")
+texture_over = ExtResource("2_oudt1")
+texture_progress = ExtResource("3_4hhht")
+tint_progress = Color(0.192157, 0.592157, 0.972549, 1)
+script = ExtResource("4_q2jfv")

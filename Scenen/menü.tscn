@@ -1,6 +1,52 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuj35lvaw2f5n"]
+[gd_scene load_steps=11 format=3 uid="uid://cuj35lvaw2f5n"]
 
 [ext_resource type="Script" path="res://Scenen/menü.gd" id="1_sgwsr"]
+[ext_resource type="Texture2D" uid="uid://ddfkgri45q2id" path="res://Resources/Free Pixel Art Forest/Preview/Background.png" id="2_iivee"]
+[ext_resource type="PackedScene" uid="uid://bvbgowi0wd6bu" path="res://Scenen/Rain.tscn" id="3_ug428"]
+[ext_resource type="Texture2D" uid="uid://dhy4tqjd1lnwg" path="res://Resources/Witch/B_witch_charge.png" id="4_t0rn4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwyv5"]
+atlas = ExtResource("4_t0rn4")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw0bo"]
+atlas = ExtResource("4_t0rn4")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do1u5"]
+atlas = ExtResource("4_t0rn4")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwjcp"]
+atlas = ExtResource("4_t0rn4")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbfwm"]
+atlas = ExtResource("4_t0rn4")
+region = Rect2(0, 192, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_njo1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwyv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw0bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do1u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwjcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbfwm")
+}],
+"loop": true,
+"name": &"charge",
+"speed": 8.0
+}]
 
 [node name="Menü" type="Control"]
 layout_mode = 3
@@ -13,6 +59,14 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.00317)
 script = ExtResource("1_sgwsr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(18, -156.504)
+scale = Vector2(2, 2)
+texture = ExtResource("2_iivee")
+
+[node name="Node2D" parent="Sprite2D" instance=ExtResource("3_ug428")]
+position = Vector2(-44, -260.175)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -46,6 +100,12 @@ text = "Credits"
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="Witch" type="AnimatedSprite2D" parent="."]
+position = Vector2(-476, 303.039)
+scale = Vector2(8.22917, 9.22917)
+sprite_frames = SubResource("SpriteFrames_njo1j")
+animation = &"charge"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

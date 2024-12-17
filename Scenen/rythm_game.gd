@@ -2,27 +2,57 @@ extends Node2D
 
 const NODE = preload("res://Scenen/moving_Node.tscn")
 @onready var Witch_animation = $Witch
+@onready var Mana = $Mana
+@onready var one = $"Tasten/1_on"
+@onready var two = $"Tasten/2_on"
+@onready var three = $"Tasten/3_on"
+@onready var four = $"Tasten/4_on"
+@onready var timer1 = $"Tasten/Timer1"
+@onready var timer2 = $"Tasten/Timer2"
+@onready var timer3 = $"Tasten/Timer3"
+@onready var timer4 = $"Tasten/Timer4"
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) 
 	Witch_animation.play("charge")
-	Global.tree_interacted == 0;
+	Mana.value = Global.mana
+	
+func _process(delta: float) -> void:
+	Mana.value = Global.mana
+	if Input.is_action_just_pressed("1"):
+		one.visible = false
+		timer1.start()
+	if Input.is_action_just_pressed("2"):
+		two.visible = false
+		timer2.start()
+	if Input.is_action_just_pressed("3"):
+		three.visible = false
+		timer3.start()
+	if Input.is_action_just_pressed("4"):
+		four.visible = false
+		timer4.start()
 
 func _on_midi_player_midi_event(channel: Variant, event: Variant) -> void:
+	#print(event.type)
+	#print(channel.number)
 	if event.type == 144:
-		if channel.number == 2:
+		if channel.number == 1:
+			print("1")
 			var node = NODE.instantiate()
 			node.position = $Positions/Position1.global_position
 			get_parent().add_child(node)
-		if channel.number == 3:
+		if channel.number == 2:
+			print("2")
 			var node = NODE.instantiate()
 			node.position = $Positions/Position2.global_position
 			get_parent().add_child(node)
-		if channel.number == 4:
+		if channel.number == 3:
+			print("3")
 			var node = NODE.instantiate()
 			node.position = $Positions/Position3.global_position
 			get_parent().add_child(node)
-		if channel.number == 5:
+		if channel.number == 4:
+			print("4")
 			var node = NODE.instantiate()
 			node.position = $Positions/Position4.global_position
 			get_parent().add_child(node)
@@ -30,3 +60,19 @@ func _on_midi_player_midi_event(channel: Variant, event: Variant) -> void:
 
 #func _on_timer_timeout() -> void:
 	#get_tree().change_scene_to_file("res://Scenen/wald.tscn")
+
+
+func _on_timer_1_timeout() -> void:
+	one.visible = true
+
+
+func _on_timer_2_timeout() -> void:
+	two.visible = true
+
+
+func _on_timer_3_timeout() -> void:
+	three.visible = true
+
+
+func _on_timer_4_timeout() -> void:
+	four.visible = true

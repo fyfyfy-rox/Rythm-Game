@@ -1,5 +1,9 @@
 extends Control
 
+@onready var Witch_animation = $Witch
+
+func _ready() -> void:
+	Witch_animation.play("charge")
 
 
 func _on_play_pressed() -> void:

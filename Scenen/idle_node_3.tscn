@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dh1ihc81uofnc"]
+[gd_scene load_steps=8 format=3 uid="uid://ch0000o4lyy60"]
 
-[ext_resource type="Texture2D" uid="uid://c4jh8y3hn41wr" path="res://Resources/Nodes2.png" id="1_ayp1f"]
-[ext_resource type="Script" path="res://Scenen/idle_node_2.gd" id="1_y7gtp"]
+[ext_resource type="Script" path="res://Scenen/idle_node_3.gd" id="1_1bfud"]
+[ext_resource type="Texture2D" uid="uid://c4jh8y3hn41wr" path="res://Resources/Nodes2.png" id="2_u25vd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kidfa"]
 size = Vector2(26, 34)
@@ -61,10 +61,10 @@ _data = {
 }
 
 [node name="IdleNode" type="Area2D"]
-script = ExtResource("1_y7gtp")
+script = ExtResource("1_1bfud")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ayp1f")
+texture = ExtResource("2_u25vd")
 hframes = 13
 frame = 12
 

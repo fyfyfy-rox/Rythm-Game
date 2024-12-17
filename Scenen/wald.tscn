@@ -102,7 +102,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("7_04kdl")
 
 [node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(0.7, 0)
+position = Vector2(-1.2219e-05, 0)
 motion_mirroring = Vector2(3692, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
@@ -126,7 +126,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("10_bjb5g")
 
 [node name="ParallaxLayer11" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(2, 14)
 motion_scale = Vector2(1.1, 1)
 motion_mirroring = Vector2(3692, 0)
 
@@ -177,7 +176,7 @@ shape = SubResource("CircleShape2D_n67j2")
 
 [node name="Water" type="Sprite2D" parent="Wasser"]
 material = SubResource("ShaderMaterial_0rk41")
-position = Vector2(2154, 894)
+position = Vector2(2150, 888)
 scale = Vector2(0.571005, 1.69219)
 texture = ExtResource("15_34nrt")
 
