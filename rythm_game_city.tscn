@@ -1,0 +1,245 @@
+[gd_scene load_steps=28 format=3 uid="uid://cpdda2hq76cj6"]
+
+[ext_resource type="Script" path="res://rythm_game_city.gd" id="1_dfe0d"]
+[ext_resource type="Texture2D" uid="uid://buet2gs40tcse" path="res://Resources/1_extended.png" id="2_00egr"]
+[ext_resource type="Texture2D" uid="uid://66mvbtbnr16c" path="res://Resources/2_extended.png" id="3_1dcsd"]
+[ext_resource type="Texture2D" uid="uid://c5g3k3t3nu11m" path="res://Resources/3_extended.png" id="4_hpbj2"]
+[ext_resource type="Texture2D" uid="uid://q2hidcmst3mm" path="res://Resources/4_extended.png" id="5_83f68"]
+[ext_resource type="Texture2D" uid="uid://drmw48hsb2lqh" path="res://Resources/Sprite-Bass.png" id="6_xjf48"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_2t80d"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="8_8rxgp"]
+[ext_resource type="Texture2D" uid="uid://dhy4tqjd1lnwg" path="res://Resources/Witch/B_witch_charge.png" id="9_dlxw6"]
+[ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="10_snyfx"]
+[ext_resource type="PackedScene" uid="uid://cwdom1ecvrap2" path="res://Scenen/idle_node_2.tscn" id="11_nwqlb"]
+[ext_resource type="PackedScene" uid="uid://dh1ihc81uofnc" path="res://Scenen/Idle_node_1.tscn" id="12_xuqc2"]
+[ext_resource type="PackedScene" uid="uid://ch0000o4lyy60" path="res://Scenen/idle_node_3.tscn" id="13_iwqf6"]
+[ext_resource type="PackedScene" uid="uid://u74e458gexs5" path="res://Scenen/idle_node_4.tscn" id="14_06dnd"]
+[ext_resource type="Texture2D" uid="uid://bkk7px45we6ts" path="res://Resources/String 1.png" id="15_xasub"]
+[ext_resource type="Texture2D" uid="uid://b6r3dkm55e8gh" path="res://Resources/String 2.png" id="16_0bopm"]
+[ext_resource type="Texture2D" uid="uid://b8s32ugivki03" path="res://Resources/String 3.png" id="17_gftjn"]
+[ext_resource type="Texture2D" uid="uid://se2xuvl06lah" path="res://Resources/String 4.png" id="18_elyyy"]
+[ext_resource type="Texture2D" uid="uid://cte7s3jyqmstm" path="res://Resources/sidewalk.PNG" id="19_adu8g"]
+[ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="20_88h2w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwyv5"]
+atlas = ExtResource("9_dlxw6")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw0bo"]
+atlas = ExtResource("9_dlxw6")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do1u5"]
+atlas = ExtResource("9_dlxw6")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwjcp"]
+atlas = ExtResource("9_dlxw6")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbfwm"]
+atlas = ExtResource("9_dlxw6")
+region = Rect2(0, 192, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ah67q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwyv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw0bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do1u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwjcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbfwm")
+}],
+"loop": true,
+"name": &"charge",
+"speed": 8.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_k7slo"]
+script/source = "extends TextureProgressBar
+
+@export var value_delta = 0;
+
+func _process(delta: float) -> void:
+	value += value_delta;
+	value_delta = 0;
+"
+
+[node name="Rythm-Game" type="Node2D"]
+position = Vector2(1500, 600)
+script = ExtResource("1_dfe0d")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(880, 301)
+transform = Transform2D(1, 0, 0, 1, 880, 301)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-147, 182)
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1728, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(5, 9)
+scale = Vector2(3, 3)
+texture = ExtResource("2_00egr")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-149, 182)
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(1728, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2(3, 3)
+texture = ExtResource("3_1dcsd")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-149, 182)
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1728, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_hpbj2")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-149, 182)
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(1728, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+scale = Vector2(3, 3)
+texture = ExtResource("5_83f68")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -49)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("6_xjf48")
+
+[node name="MidiPlayer" parent="." instance=ExtResource("7_2t80d")]
+file = "res://Resources/alt_midi (2).mid"
+playing = true
+
+[node name="ADSR" parent="." instance=ExtResource("8_8rxgp")]
+
+[node name="Positions" type="Node2D" parent="."]
+position = Vector2(155, -272)
+
+[node name="Position1" type="Marker2D" parent="Positions"]
+
+[node name="Position2" type="Marker2D" parent="Positions"]
+position = Vector2(22, 22)
+
+[node name="Position3" type="Marker2D" parent="Positions"]
+position = Vector2(45, 44)
+
+[node name="Position4" type="Marker2D" parent="Positions"]
+position = Vector2(67, 67)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="Witch" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1008, 285)
+scale = Vector2(8.22917, 9.22917)
+sprite_frames = SubResource("SpriteFrames_ah67q")
+animation = &"charge"
+frame_progress = 0.234403
+
+[node name="Mana" parent="." instance=ExtResource("10_snyfx")]
+offset_left = -593.0
+offset_top = 483.0
+offset_right = -423.0
+offset_bottom = 495.0
+scale = Vector2(6.73606, 6.95963)
+value = 24.0
+script = SubResource("GDScript_k7slo")
+value_delta = 0
+
+[node name="IdleNodes" type="Node2D" parent="."]
+position = Vector2(-360, 285)
+scale = Vector2(0.9, 0.9)
+
+[node name="IdleNode1" parent="IdleNodes" instance=ExtResource("11_nwqlb")]
+position = Vector2(-33.3333, -21.1111)
+
+[node name="IdleNode2" parent="IdleNodes" instance=ExtResource("12_xuqc2")]
+position = Vector2(-6.66671, 3.33331)
+
+[node name="IdleNode3" parent="IdleNodes" instance=ExtResource("13_iwqf6")]
+position = Vector2(22.2222, 24.4445)
+
+[node name="IdleNode4" parent="IdleNodes" instance=ExtResource("14_06dnd")]
+position = Vector2(48.8889, 50)
+
+[node name="Tasten" type="Node2D" parent="."]
+position = Vector2(0, -49)
+scale = Vector2(4.5, 4.5)
+
+[node name="1_on" type="Sprite2D" parent="Tasten"]
+visible = false
+z_index = 1
+texture = ExtResource("15_xasub")
+
+[node name="Timer1" type="Timer" parent="Tasten"]
+wait_time = 0.3
+one_shot = true
+
+[node name="2_on" type="Sprite2D" parent="Tasten"]
+visible = false
+z_index = 1
+texture = ExtResource("16_0bopm")
+
+[node name="Timer2" type="Timer" parent="Tasten"]
+wait_time = 0.3
+one_shot = true
+
+[node name="3_on" type="Sprite2D" parent="Tasten"]
+visible = false
+z_index = 1
+texture = ExtResource("17_gftjn")
+
+[node name="Timer3" type="Timer" parent="Tasten"]
+wait_time = 0.3
+one_shot = true
+
+[node name="4_on" type="Sprite2D" parent="Tasten"]
+visible = false
+z_index = 1
+texture = ExtResource("18_elyyy")
+
+[node name="Timer4" type="Timer" parent="Tasten"]
+wait_time = 0.3
+one_shot = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-380, 439)
+scale = Vector2(1.20625, 0.358852)
+texture = ExtResource("19_adu8g")
+
+[node name="Road" parent="." instance=ExtResource("20_88h2w")]
+z_index = -1
+position = Vector2(-586, 610)
+
+[node name="Road2" parent="." instance=ExtResource("20_88h2w")]
+z_index = -1
+position = Vector2(1332, 610)
+
+[connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Tasten/Timer1" to="." method="_on_timer_1_timeout"]
+[connection signal="timeout" from="Tasten/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Tasten/Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]
