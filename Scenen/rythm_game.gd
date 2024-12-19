@@ -11,11 +11,18 @@ const NODE = preload("res://Scenen/moving_Node.tscn")
 @onready var timer2 = $"Tasten/Timer2"
 @onready var timer3 = $"Tasten/Timer3"
 @onready var timer4 = $"Tasten/Timer4"
-
+@export var midi_player: MidiPlayer
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) 
 	Witch_animation.play("charge")
 	Mana.value = Global.mana
+	# finish Signal
+	midi_player.finished.connect(_on_finished)
+
+func _on_finished() -> void:
+	print("MIDI-Datei fertig abgespielt. Wechsle Szene...")
+	get_tree().change_scene_to_file("res://Scenen/wald_cutscene.tscn")
+	
 	
 func _process(delta: float) -> void:
 	Mana.value = Global.mana

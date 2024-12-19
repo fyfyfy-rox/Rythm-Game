@@ -4,3 +4,6 @@
 
 [node name="MidiPlayer" type="Node"]
 script = ExtResource("1")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
+[connection signal="midi_event" from="." to="." method="_on_midi_event"]

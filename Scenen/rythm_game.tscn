@@ -74,9 +74,10 @@ func _process(delta: float) -> void:
 	value_delta = 0;
 "
 
-[node name="Rythm-Game" type="Node2D"]
+[node name="Rythm-Game" type="Node2D" node_paths=PackedStringArray("midi_player")]
 position = Vector2(1500, 600)
 script = ExtResource("1_buiov")
+midi_player = NodePath("MidiPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)

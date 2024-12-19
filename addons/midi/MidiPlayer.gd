@@ -1082,3 +1082,11 @@ func get_now_playing_polyphony( ) -> int:
 		if audio_stream_player.playing:
 			polyphony += 1
 	return polyphony
+
+
+func _on_finished() -> void:
+	pass # Replace with function body.
+
+
+func _on_midi_event(channel: Variant, event: Variant) -> void:
+	pass # Replace with function body.
