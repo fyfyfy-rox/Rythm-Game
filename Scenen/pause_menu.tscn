@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhqnkqxhbkuyy"]
 
-[ext_resource type="Script" path="res://Skript/pause_menu.gd" id="1_sq8bm"]
+[ext_resource type="Theme" uid="uid://w6euexcee8t2" path="res://Resources/Buttons/button_theme.tres" id="1_hvjjy"]
 
 [node name="Pause Menu" type="Control"]
 layout_mode = 3
@@ -9,7 +9,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sq8bm")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -19,9 +18,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -55.5
-offset_top = -50.5
-offset_right = 55.5
-offset_bottom = 50.5
+offset_top = -104.5
+offset_right = 244.5
+offset_bottom = 203.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -30,15 +29,47 @@ layout_mode = 2
 alignment = 1
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("1_hvjjy")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
 text = "Resume"
 
 [node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+theme = ExtResource("1_hvjjy")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
 text = "Settings"
 
 [node name="Save and Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+theme = ExtResource("1_hvjjy")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
 text = "Save and Exit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

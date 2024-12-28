@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cuj35lvaw2f5n"]
+[gd_scene load_steps=12 format=3 uid="uid://cuj35lvaw2f5n"]
 
 [ext_resource type="Script" path="res://Scenen/menü.gd" id="1_sgwsr"]
 [ext_resource type="Texture2D" uid="uid://ddfkgri45q2id" path="res://Resources/Free Pixel Art Forest/Preview/Background.png" id="2_iivee"]
 [ext_resource type="PackedScene" uid="uid://bvbgowi0wd6bu" path="res://Scenen/Rain.tscn" id="3_ug428"]
 [ext_resource type="Texture2D" uid="uid://dhy4tqjd1lnwg" path="res://Resources/Witch/B_witch_charge.png" id="4_t0rn4"]
+[ext_resource type="Theme" uid="uid://w6euexcee8t2" path="res://Resources/Buttons/button_theme.tres" id="5_oee1l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwyv5"]
 atlas = ExtResource("4_t0rn4")
@@ -75,31 +76,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -68.0
+offset_left = -210.0
+offset_top = -325.0
 offset_right = 35.0
-offset_bottom = 68.0
+offset_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Play"
-
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Options"
-
-[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Credits"
-
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
 
 [node name="Witch" type="AnimatedSprite2D" parent="."]
 position = Vector2(-476, 303.039)
@@ -107,7 +89,72 @@ scale = Vector2(8.22917, 9.22917)
 sprite_frames = SubResource("SpriteFrames_njo1j")
 animation = &"charge"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="Play" type="Button" parent="."]
+layout_mode = 2
+offset_left = -818.0
+offset_top = -480.0
+offset_right = -518.0
+offset_bottom = -380.0
+theme = ExtResource("5_oee1l")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+text = "Play"
+
+[node name="Options" type="Button" parent="."]
+layout_mode = 2
+offset_left = -818.0
+offset_top = -365.84
+offset_right = -518.0
+offset_bottom = -265.84
+theme = ExtResource("5_oee1l")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+text = "Options"
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 2
+offset_left = -817.0
+offset_top = -251.204
+offset_right = -517.0
+offset_bottom = -151.204
+theme = ExtResource("5_oee1l")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+text = "Credits"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 2
+offset_left = -815.0
+offset_top = -134.573
+offset_right = -515.0
+offset_bottom = -34.5734
+theme = ExtResource("5_oee1l")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+text = "Quit"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
