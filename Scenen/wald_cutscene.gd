@@ -8,8 +8,9 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # Set mouse mode to "captured", so the mouse is hidden initially
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(_delta):
+	if Input.is_action_just_pressed("pause"):  
+		toggle_pause()  # Toggle the pause state and menu visibility
 
 # Function to toggle the pause state and menu visibility
 func toggle_pause():

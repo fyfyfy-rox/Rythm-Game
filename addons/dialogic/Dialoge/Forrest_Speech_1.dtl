@@ -1,5 +1,9 @@
-Witch: q
+[signal arg="timeline_started"]
+join Witch center
+Witch: Anton du Hund
 Witch: Ein schwaches Glimmen lockt mich weiter.
 Witch: Der Regen wird stärker, aber ich ignoriere ihn.
 Witch: Der Wald scheint sich immer dichter und denker zu machen.
 Witch: Irgendwo vorne sehe ich etwas glänzen.
+[signal arg="timeline_ended"]
+[end_timeline]

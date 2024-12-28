@@ -3,29 +3,45 @@ extends Node2D
 @onready var pause_menu = $"CanvasLayer/Pause Menu"  # Reference to the Pause Menu in the CanvasLayer
 
 var paused = false  # Variable to track if the game is paused or not
-# _ready function, executed when the node is initialized
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # Set mouse mode to "captured", so the mouse is hidden initially
-	Dialogic.start("Forrest_Speech_1")
+	Dialogic.signal_event.connect(_on_dialogic_signal)  # Connect Dialogic signals
+	Dialogic.start("Forrest_Speech_1")  # Start the Dialogic timeline
 
-# This function is called every frame to check for input
 func _process(_delta):
 	# If the player presses the Pause button (ESC)
 	if Input.is_action_just_pressed("pause"):  
 		toggle_pause()  # Toggle the pause state and menu visibility
 	
-	if(Global.tree_interacted == 1):
+	if Global.tree_interacted == 1:
 		$Rain.visible = false
 		$Wasser/CollisionShape2D.disabled = true
 		$Wasser.visible = false
-		Global.tree_interacted == 0;
+		Global.tree_interacted = 0
 		get_tree().change_scene_to_file("res://Scenen/rythm_game.tscn")
-		
-# Function to toggle the pause state and menu visibility
+
+func _on_dialogic_signal(signal_name):
+	if signal_name == "timeline_started":
+		_disable_inputs()
+	elif signal_name == "timeline_ended":
+		_enable_inputs()
+
+func _disable_inputs():
+	
+	Global.inputs_disabled = true
+	print("Inputs deaktiviert.")
+
+func _enable_inputs():
+	Global.inputs_disabled = false
+	print("Inputs aktiviert.")
+	
+
+
 func toggle_pause():
 	paused = !paused  # Invert the pause state (if the game is paused, resume it; otherwise, pause it)
 	
-	if paused:
+	if paused and !Global.inputs_disabled:
 		# If the game is paused
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)  # Make the mouse visible
 		pause_menu.show()  # Show the pause menu

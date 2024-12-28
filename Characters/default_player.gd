@@ -12,16 +12,17 @@ func _ready():
 	update_animation_parameter(starting_direction)
 
 func _physics_process(_delta: float) -> void:
-	var input_direction = Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		0
-	)
-	player_falling()
-	move_and_slide()
-	update_animation_parameter(input_direction)
-	velocity = input_direction * move_speed
-	move_and_slide()
-	pick_new_state()
+	if !Global.inputs_disabled:
+		var input_direction = Vector2(
+			Input.get_action_strength("right") - Input.get_action_strength("left"),
+			0
+		)
+		player_falling()
+		move_and_slide()
+		update_animation_parameter(input_direction)
+		velocity = input_direction * move_speed
+		move_and_slide()
+		pick_new_state()
 
 func player_falling():
 	if !is_on_floor():

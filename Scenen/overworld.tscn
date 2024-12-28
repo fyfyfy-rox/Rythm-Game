@@ -13,6 +13,7 @@ script = ExtResource("1_r4m10")
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("4_0f24w")]
 process_mode = 2
 visible = false
+script = null
 
 [node name="DefaultPlayer" parent="." instance=ExtResource("1_3k40g")]
 z_index = 1
