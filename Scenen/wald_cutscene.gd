@@ -25,7 +25,11 @@ func _on_dialogic_signal(signal_name):
 		_teleport()
 
 func _white_screen():
-	print("White")
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	_enable_inputs()
+	get_tree().change_scene_to_file("res://Scenen/overworld_2.tscn")
+	
 	
 func _teleport():
 	print("play teleportanimation")

@@ -1,9 +1,10 @@
 [signal arg="timeline_started"]
-join Witch center
-Witch: Anton du Hund
-Witch: Ein schwaches Glimmen lockt mich weiter.
-Witch: Der Regen wird stärker, aber ich ignoriere ihn.
-Witch: Der Wald scheint sich immer dichter und denker zu machen.
-Witch: Irgendwo vorne sehe ich etwas glänzen.
+join  center
+...Seltsam
+Es hat schon lange nicht mehr so stark geregnet.
+Ich spüre ein monströses Mana aus den Tiefen des Waldes
+[wait time="1.0" skippable="true"]
+...
+ich sollte nachschauen gehen...
 [signal arg="timeline_ended"]
 [end_timeline]
