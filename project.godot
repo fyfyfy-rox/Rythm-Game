@@ -25,14 +25,15 @@ TransitionScreen="*res://Scenen/transition_screen.tscn"
 
 directories/dch_directory={
 "Witch": "res://Characters/Witch.dch",
-"character_witch_test": "res://Characters/character_witch_test.dch"
+"character_witch_test": "res://Characters/character_witch_test.dch",
+"test": "res://addons/dialogic/Example Assets/test.dch"
 }
 directories/dtl_directory={
 "Forrest_Speech_1": "res://addons/dialogic/Dialoge/Forrest_Speech_1.dtl",
 "forest_cutscene": "res://addons/dialogic/Dialoge/forest_cutscene.dtl"
 }
-layout/style_list=["res://Resources/Text_box_style.tres"]
-layout/default_style="res://Resources/Text_box_style.tres"
+layout/style_list=["res://addons/dialogic/Example Assets/Visual_novel_style.tres"]
+layout/default_style=""
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
