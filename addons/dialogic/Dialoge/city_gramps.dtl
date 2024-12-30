@@ -1,0 +1,13 @@
+[signal arg="timeline_started"]
+join Witch center
+Witch: Uhm... Entschuldigung!
+Spielst du mit?
+[signal arg="choice_start"]
+- Ja klar!
+	Klasse!
+	[signal arg="timeline_ended"]
+	[signal arg="start_rythm_game"]
+- Nein gerade nicht
+	Oh schade, kein Bass für dich!
+	[signal arg="timeline_ended"]
+[signal arg="choice_end"]

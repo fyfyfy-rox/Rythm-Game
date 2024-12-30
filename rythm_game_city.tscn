@@ -172,16 +172,16 @@ position = Vector2(-360, 285)
 scale = Vector2(0.9, 0.9)
 
 [node name="IdleNode1" parent="IdleNodes" instance=ExtResource("11_nwqlb")]
-position = Vector2(-33.3333, -21.1111)
+position = Vector2(-28.8889, -18.8889)
 
 [node name="IdleNode2" parent="IdleNodes" instance=ExtResource("12_xuqc2")]
-position = Vector2(-6.66671, 3.33331)
+position = Vector2(-4.29153e-05, 4.44442)
 
 [node name="IdleNode3" parent="IdleNodes" instance=ExtResource("13_iwqf6")]
-position = Vector2(22.2222, 24.4445)
+position = Vector2(26.6666, 31.1111)
 
 [node name="IdleNode4" parent="IdleNodes" instance=ExtResource("14_06dnd")]
-position = Vector2(48.8889, 50)
+position = Vector2(52.2222, 53.3333)
 
 [node name="Tasten" type="Node2D" parent="."]
 position = Vector2(0, -49)

@@ -1,7 +1,7 @@
 [signal arg="timeline_started"]
-join test center
-test (irritated): Wo... bin ich? Diese Stadt... das ist keine Magiewelt. Oder?
-test (default): Okay, ganz ruhig. Tief durchatmen. Du hast das überstanden. Jetzt heißt es, die Flöte zu verstehen. Wenn sie mich hierher gebracht hat, kann sie mich vielleicht zurückbringen. Aber diese Mana-Fluktuationen... ich spüre sie überall. Das ist gefährlich. Was, wenn jemand anderes...?
-test (irritated): Nein, das geht nicht. Ich... ich muss etwas tun. Auch wenn ich keine Ahnung habe, wie. Ich schaffe das... irgendwie.
-test (default): Vielleicht sollte ich ja erstmal mein Mana wieder auffüllen... bevor ich irgendetwas Dummes tue.
+join Witch center
+Witch (irritated): Wo... bin ich? Diese Stadt... das ist keine Magiewelt. Oder?
+Witch (default): Okay, ganz ruhig. Tief durchatmen. Du hast das überstanden. Jetzt heißt es, die Flöte zu verstehen. Wenn sie mich hierher gebracht hat, kann sie mich vielleicht zurückbringen. Aber diese Mana-Fluktuationen... ich spüre sie überall. Das ist gefährlich. Was, wenn jemand anderes...?
+Witch (irritated): Nein, das geht nicht. Ich... ich muss etwas tun. Auch wenn ich keine Ahnung habe, wie. Ich schaffe das... irgendwie.
+Witch (default): Vielleicht sollte ich ja erstmal mein Mana wieder auffüllen... bevor ich irgendetwas Dummes tue.
 [signal arg="timeline_ended"]

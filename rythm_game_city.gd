@@ -22,6 +22,7 @@ func _ready() -> void:
 
 func _on_finished() -> void:
 	print("MIDI-Datei fertig abgespielt. Wechsle Szene...")
+	await(3)
 	get_tree().change_scene_to_file("res://Scenen/overworld_2.tscn")
 	
 func _process(delta: float) -> void:

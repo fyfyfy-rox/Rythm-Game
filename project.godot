@@ -30,6 +30,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Forrest_Speech_1": "res://addons/dialogic/Dialoge/Forrest_Speech_1.dtl",
+"city_gramps": "res://addons/dialogic/Dialoge/city_gramps.dtl",
 "forest_cutscene": "res://addons/dialogic/Dialoge/forest_cutscene.dtl",
 "overworld_arriving": "res://addons/dialogic/Dialoge/overworld_arriving.dtl"
 }
@@ -136,11 +137,17 @@ ui_dialog_next={
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(96, 23),"global_position":Vector2(105, 69),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+Coordinates={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194334,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
 2d_physics/layer_1="Ground"
 2d_physics/layer_2="Player"
+2d_physics/layer_3="NPC's"
 
 [rendering]
 

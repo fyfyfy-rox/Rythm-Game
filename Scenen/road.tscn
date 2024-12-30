@@ -10,6 +10,7 @@ size = Vector2(1920, 218)
 [node name="Road" type="Node2D"]
 
 [node name="Road" type="StaticBody2D" parent="."]
+collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_m1hwc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Road"]

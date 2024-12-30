@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var move_speed : float = 100
-@export var starting_direction : Vector2 = Vector2(0, 1)
+@export var starting_direction : Vector2 = Vector2(1, 0)
 
 # parameters/Idle/blend_position
 
@@ -39,3 +39,6 @@ func pick_new_state():
 		state_machine.travel("Walk")
 	else:
 		state_machine.travel("Idle")
+
+func player():
+	pass
