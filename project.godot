@@ -30,7 +30,8 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Forrest_Speech_1": "res://addons/dialogic/Dialoge/Forrest_Speech_1.dtl",
-"forest_cutscene": "res://addons/dialogic/Dialoge/forest_cutscene.dtl"
+"forest_cutscene": "res://addons/dialogic/Dialoge/forest_cutscene.dtl",
+"overworld_arriving": "res://addons/dialogic/Dialoge/overworld_arriving.dtl"
 }
 layout/style_list=["res://addons/dialogic/Example Assets/Visual_novel_style.tres"]
 layout/default_style=""

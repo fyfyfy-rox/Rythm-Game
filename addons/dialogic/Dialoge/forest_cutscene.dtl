@@ -1,9 +1,9 @@
 [signal arg="timeline_started"]
 join test (happy) center
-Witch: Was... war das? Diese Flöte... diese Energie. So verlockend, so kraftvoll. Ich habe sowas noch nie gespürt
-Witch: Warum fühle ich mich plötzlich so... seltsam? Es ist, als würde mein Mana von etwas Größerem angezogen werden... Was passiert hier? Vielleicht sollte ich einfach—
-Witch: Nein, das war ein Fehler. Aber... was, wenn ich... wenn ich nur noch einmal... Nur ein kleiner Ton.
+test (irritated): Was... war das? Diese Flöte... diese Energie. So verlockend, so kraftvoll. Ich habe sowas noch nie gespürt
+test (irritated): Warum fühle ich mich plötzlich so... seltsam? Es ist, als würde mein Mana von etwas Größerem angezogen werden... Was passiert hier? Vielleicht sollte ich einfach—
+test (default): Nein, das war ein Fehler. Aber... was, wenn ich... wenn ich nur noch einmal... Nur ein kleiner Ton.
 [signal arg="teleport"]
-Witch: ???!!! Was pass... ???!!!
+test (irritated): ???!!! Was pass... ???!!!
 [signal arg="white_screen"]
 [signal arg="timeline_ended"]

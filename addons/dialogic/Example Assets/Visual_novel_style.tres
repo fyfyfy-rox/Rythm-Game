@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=20 format=3 uid="uid://d0avjroyg8fmp"]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=20 format=3 uid="uid://c5wkk0ch4mo6g"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_h1iqc"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_g2j0c"]
@@ -74,4 +74,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_h1iqc")]([])
-metadata/_latest_layer = "13"
+metadata/_latest_layer = "14"
