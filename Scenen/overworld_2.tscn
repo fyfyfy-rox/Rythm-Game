@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://xkeo5tvkaa5q"]
+[gd_scene load_steps=25 format=3 uid="uid://xkeo5tvkaa5q"]
 
 [ext_resource type="Script" path="res://Scenen/overworld_2.gd" id="1_8phev"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="1_hbu0g"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://q2hidcmst3mm" path="res://Resources/4_extended.png" id="8_saxhx"]
 [ext_resource type="Script" path="res://Scenen/character_body_2d.gd" id="12_t40ck"]
 [ext_resource type="Texture2D" uid="uid://r7oqfa5t6owl" path="res://Resources/NPCs/gramps nps-Sheet.png" id="12_w81yc"]
+[ext_resource type="PackedScene" uid="uid://dysrwqnlvywo4" path="res://Scenen/Interactbutton.tscn" id="14_rdptu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tg41k"]
 texture = ExtResource("2_coti2")
@@ -1672,6 +1673,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gramps/Area2D"]
 position = Vector2(552, 760)
 shape = SubResource("RectangleShape2D_momma")
+
+[node name="Interactbutton" parent="Gramps" instance=ExtResource("14_rdptu")]
+position = Vector2(595, 922)
 
 [connection signal="body_entered" from="Gramps/Area2D" to="Gramps" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Gramps/Area2D" to="Gramps" method="_on_area_2d_body_exited"]

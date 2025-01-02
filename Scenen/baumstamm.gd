@@ -2,13 +2,8 @@ extends Area2D
 var entered = 0; 
 var once = true;
 
-func _on_timer_timeout() -> void:
-	if (entered == 1):
-		$E.visible = not $E.visible
-		$E_off.visible = true
-	if(entered  == 0):
-		$E.visible = false
-		$E_off.visible = false
+
+	
 
 func _process(delta):
 	if entered == 1:
