@@ -17,3 +17,5 @@ var first_city_entered: bool = true
 var in_rythm_game: bool = false
 
 var manabar_visible = false
+
+var witch_position: Vector2 = Vector2.ZERO  # Globale Position der Hexe

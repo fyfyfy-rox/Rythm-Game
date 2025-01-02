@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://xkeo5tvkaa5q"]
+[gd_scene load_steps=30 format=3 uid="uid://xkeo5tvkaa5q"]
 
 [ext_resource type="Script" path="res://Scenen/overworld_2.gd" id="1_8phev"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="1_hbu0g"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://dysrwqnlvywo4" path="res://Scenen/Interactbutton.tscn" id="14_rdptu"]
 [ext_resource type="Script" path="res://Scenen/Canvas_manabar.gd" id="15_h10u6"]
 [ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="16_4ylux"]
+[ext_resource type="Script" path="res://Scenen/subway_trans.gd" id="17_bm20q"]
+[ext_resource type="Texture2D" uid="uid://dvnjembckcyjg" path="res://Resources/Subway/City_subway.png" id="17_kg6jf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tg41k"]
 texture = ExtResource("2_coti2")
@@ -1568,6 +1570,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_momma"]
 size = Vector2(142, 186)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jojyf"]
+size = Vector2(151, 64)
+
 [node name="Overworld2" type="Node2D"]
 script = ExtResource("1_8phev")
 
@@ -1697,5 +1702,25 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
+[node name="Subway_trans" type="Area2D" parent="."]
+position = Vector2(1775, 741)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("17_bm20q")
+
+[node name="Sprite2D" type="Sprite2D" parent="Subway_trans"]
+position = Vector2(-75, -4)
+scale = Vector2(1.13571, 1.19707)
+texture = ExtResource("17_kg6jf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Subway_trans"]
+position = Vector2(-105.5, 61)
+shape = SubResource("RectangleShape2D_jojyf")
+
+[node name="Interactbutton" parent="Subway_trans" instance=ExtResource("14_rdptu")]
+position = Vector2(-102, 184)
+
 [connection signal="body_entered" from="Gramps/Area2D" to="Gramps" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Gramps/Area2D" to="Gramps" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Subway_trans" to="Subway_trans" method="_on_body_entered"]
+[connection signal="body_exited" from="Subway_trans" to="Subway_trans" method="_on_body_exited"]
