@@ -15,3 +15,5 @@ var inputs_disabled: bool = false
 
 var first_city_entered: bool = true
 var in_rythm_game: bool = false
+
+var manabar_visible = false

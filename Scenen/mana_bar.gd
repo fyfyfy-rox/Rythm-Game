@@ -1,4 +1,4 @@
 extends TextureProgressBar
 
 func _process(delta: float) -> void:
-	value = value
+	value = Global.mana

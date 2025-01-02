@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://xkeo5tvkaa5q"]
+[gd_scene load_steps=27 format=3 uid="uid://xkeo5tvkaa5q"]
 
 [ext_resource type="Script" path="res://Scenen/overworld_2.gd" id="1_8phev"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="1_hbu0g"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" path="res://Scenen/character_body_2d.gd" id="12_t40ck"]
 [ext_resource type="Texture2D" uid="uid://r7oqfa5t6owl" path="res://Resources/NPCs/gramps nps-Sheet.png" id="12_w81yc"]
 [ext_resource type="PackedScene" uid="uid://dysrwqnlvywo4" path="res://Scenen/Interactbutton.tscn" id="14_rdptu"]
+[ext_resource type="Script" path="res://Scenen/Canvas_manabar.gd" id="15_h10u6"]
+[ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="16_4ylux"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tg41k"]
 texture = ExtResource("2_coti2")
@@ -1676,6 +1678,24 @@ shape = SubResource("RectangleShape2D_momma")
 
 [node name="Interactbutton" parent="Gramps" instance=ExtResource("14_rdptu")]
 position = Vector2(595, 922)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+script = ExtResource("15_h10u6")
+
+[node name="mana" parent="CanvasLayer2" instance=ExtResource("16_4ylux")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.568
+anchor_right = 0.5
+anchor_bottom = 0.568
+offset_left = -110.0
+offset_top = 78.3199
+offset_right = 104.0
+offset_bottom = 125.32
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 
 [connection signal="body_entered" from="Gramps/Area2D" to="Gramps" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Gramps/Area2D" to="Gramps" method="_on_area_2d_body_exited"]
