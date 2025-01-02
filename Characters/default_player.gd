@@ -7,7 +7,8 @@ extends CharacterBody2D
 @onready var state_machine = animation_tree.get("parameters/playback")
 
 func _ready():
-	update_animation_parameter(starting_direction)
+	# Stelle gespeicherte Richtung wieder her
+	update_animation_parameter(Global.witch_direction)
 
 func _physics_process(_delta: float) -> void:
 	if !Global.inputs_disabled:
@@ -22,8 +23,10 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 		pick_new_state()
 	
-		# Speichere die Position der Hexe in Global.gd
-		Global.witch_position = global_position
+	# Speichere die Position und Richtung der Hexe in Global.gd
+	Global.witch_position = global_position
+	if velocity != Vector2.ZERO:
+		Global.witch_direction = velocity.normalized()  # Richtung basierend auf der Bewegung speichern
 
 func player_falling():
 	if !is_on_floor():
