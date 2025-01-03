@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://lj8kolwqcqnm"]
+[gd_scene load_steps=27 format=3 uid="uid://lj8kolwqcqnm"]
 
 [ext_resource type="Script" path="res://Scenen/wald.gd" id="1_37nqg"]
 [ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="1_rxa5p"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dqfewu0y0tpjo" path="res://Resources/Untitled design (3).png" id="16_afbcr"]
 [ext_resource type="Script" path="res://Scenen/pause_menu_wald.gd" id="17_4vhj6"]
 [ext_resource type="PackedScene" uid="uid://cvrru27s3x1yt" path="res://Scenen/Baumstamm.tscn" id="17_xkbsn"]
+[ext_resource type="PackedScene" uid="uid://dysrwqnlvywo4" path="res://Scenen/Interactbutton.tscn" id="22_2jedr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n67j2"]
 radius = 59.0514
@@ -190,3 +191,5 @@ script = ExtResource("17_4vhj6")
 [node name="Tree" parent="." instance=ExtResource("17_xkbsn")]
 position = Vector2(1300, 750)
 scale = Vector2(0.65, 0.77)
+
+[node name="Interactbutton" parent="Tree" instance=ExtResource("22_2jedr")]
