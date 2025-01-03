@@ -83,8 +83,10 @@ midi_player = NodePath("MidiPlayer")
 scale = Vector2(4, 4)
 texture = ExtResource("1_imhwk")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [node name="MidiPlayer" parent="." instance=ExtResource("5_jd3uc")]
-file = "res://Resources/alt_midi (2).mid"
+file = "res://Resources/Tutorial_beta_v0.2.mid"
 playing = true
 
 [node name="ADSR" parent="." instance=ExtResource("6_e1a46")]

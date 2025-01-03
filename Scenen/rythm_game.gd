@@ -41,25 +41,25 @@ func _process(delta: float) -> void:
 		timer4.start()
 
 func _on_midi_player_midi_event(channel: Variant, event: Variant) -> void:
-	#print(event.type)
-	#print(channel.number)
+	print("Event:", event.type)
+	print("Channel:  ", channel.number)
 	if event.type == 144:
-		if channel.number == 1:
+		if channel.number == 0:
 			print("1")
 			var node = NODE.instantiate()
 			node.position = $Positions/Position1.global_position
 			get_parent().add_child(node)
-		if channel.number == 2:
+		if channel.number == 1:
 			print("2")
 			var node = NODE.instantiate()
 			node.position = $Positions/Position2.global_position
 			get_parent().add_child(node)
-		if channel.number == 3:
+		if channel.number == 2:
 			print("3")
 			var node = NODE.instantiate()
 			node.position = $Positions/Position3.global_position
 			get_parent().add_child(node)
-		if channel.number == 4:
+		if channel.number == 3:
 			print("4")
 			var node = NODE.instantiate()
 			node.position = $Positions/Position4.global_position
