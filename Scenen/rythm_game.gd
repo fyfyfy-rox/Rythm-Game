@@ -11,17 +11,20 @@ const NODE = preload("res://Scenen/moving_Node.tscn")
 @onready var timer2 = $"Tasten/Timer2"
 @onready var timer3 = $"Tasten/Timer3"
 @onready var timer4 = $"Tasten/Timer4"
+@onready var rythm_map_music = $AudioStreamPlayer_rythm_music
 @export var midi_player: MidiPlayer
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) 
 	Witch_animation.play("charge")
 	Mana.value = Global.mana
+	await (0.5)
+	rythm_map_music.play()
 	# finish Signal
 	midi_player.finished.connect(_on_finished)
 
 func _on_finished() -> void:
 	print("MIDI-Datei fertig abgespielt. Wechsle Szene...")
-	await(2)
+	await(5)
 	get_tree().change_scene_to_file("res://Scenen/wald_cutscene.tscn")
 	
 	

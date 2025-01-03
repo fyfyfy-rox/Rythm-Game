@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://bhccdsud1n5f"]
+[gd_scene load_steps=29 format=3 uid="uid://bhccdsud1n5f"]
 
 [ext_resource type="Script" path="res://Scenen/rythm_game.gd" id="1_buiov"]
 [ext_resource type="Texture2D" uid="uid://djbqlhevrgdvd" path="res://Resources/Sprite-Signwithflute.png" id="1_imhwk"]
 [ext_resource type="PackedScene" uid="uid://dh1ihc81uofnc" path="res://Scenen/Idle_node_1.tscn" id="2_gjpf1"]
+[ext_resource type="AudioStream" uid="uid://cgwr2ekexmysf" path="res://Resources/Music/Tutorial_Forrest/Tutorial_Musik_68 (1).mp3" id="3_46b4d"]
 [ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="5_jd3uc"]
 [ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_e1a46"]
 [ext_resource type="Texture2D" uid="uid://ddfkgri45q2id" path="res://Resources/Free Pixel Art Forest/Preview/Background.png" id="6_yafr4"]
@@ -83,8 +84,11 @@ midi_player = NodePath("MidiPlayer")
 scale = Vector2(4, 4)
 texture = ExtResource("1_imhwk")
 
+[node name="AudioStreamPlayer_rythm_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_46b4d")
+
 [node name="MidiPlayer" parent="." instance=ExtResource("5_jd3uc")]
-file = "res://Resources/Music/Tutorial_Forrest/Tutorial_beta_v0.2.mid"
+file = "res://Resources/Music/Tutorial_Forrest/Tutorial_beta_0.9.1.mid"
 playing = true
 
 [node name="ADSR" parent="." instance=ExtResource("6_e1a46")]
