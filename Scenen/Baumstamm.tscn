@@ -1,11 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvrru27s3x1yt"]
+[gd_scene load_steps=6 format=3 uid="uid://cvrru27s3x1yt"]
 
 [ext_resource type="Texture2D" uid="uid://8f45mk5onxh3" path="res://Resources/Baum.png" id="1_2e8mg"]
 [ext_resource type="Script" path="res://Scenen/baumstamm.gd" id="1_lpxpo"]
 [ext_resource type="Texture2D" uid="uid://b7r56ngohgury" path="res://Resources/Sprite-Flute.png" id="2_b8xqg"]
 [ext_resource type="Script" path="res://Flöte_moving.gd" id="3_dc5ml"]
-[ext_resource type="Texture2D" uid="uid://ooovafo8e538" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_116.png" id="5_cdy8w"]
-[ext_resource type="Texture2D" uid="uid://3vbqmc1hx02j" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_15.png" id="6_g0m33"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5chny"]
 radius = 228.178
@@ -27,16 +25,6 @@ script = ExtResource("3_dc5ml")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CircleShape2D_5chny")
-
-[node name="E_off" type="Sprite2D" parent="."]
-position = Vector2(1, -325)
-scale = Vector2(1.625, 1.46875)
-texture = ExtResource("5_cdy8w")
-
-[node name="E" type="Sprite2D" parent="."]
-position = Vector2(1, -325)
-scale = Vector2(1.625, 1.46875)
-texture = ExtResource("6_g0m33")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
