@@ -15,12 +15,15 @@ run/main_scene="res://Scenen/menü.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://custom_bus_layout.tres"
+
 [autoload]
 
 Global="*res://global.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 TransitionScreen="*res://Scenen/transition_screen.tscn"
-AudioPlayer_Menu="*res://Scenen/audio_player_menü.tscn"
 
 [dialogic]
 

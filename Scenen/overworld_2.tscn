@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://xkeo5tvkaa5q"]
+[gd_scene load_steps=41 format=3 uid="uid://xkeo5tvkaa5q"]
 
 [ext_resource type="Script" path="res://Scenen/overworld_2.gd" id="1_8phev"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="1_hbu0g"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="16_4ylux"]
 [ext_resource type="Script" path="res://Scenen/subway_trans.gd" id="17_bm20q"]
 [ext_resource type="Texture2D" uid="uid://dvnjembckcyjg" path="res://Resources/Subway/City_subway.png" id="17_kg6jf"]
+[ext_resource type="Texture2D" path="res://Resources/NPCs/Street_drummer.png" id="19_k7dfc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tg41k"]
 texture = ExtResource("2_coti2")
@@ -1568,10 +1569,77 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_momma"]
-size = Vector2(142, 186)
+size = Vector2(67, 186)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jojyf"]
 size = Vector2(151, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gde24"]
+atlas = ExtResource("19_k7dfc")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3axom"]
+atlas = ExtResource("19_k7dfc")
+region = Rect2(32, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evggf"]
+atlas = ExtResource("19_k7dfc")
+region = Rect2(32, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neqjc"]
+atlas = ExtResource("19_k7dfc")
+region = Rect2(32, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xht5i"]
+atlas = ExtResource("19_k7dfc")
+region = Rect2(32, 192, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4j56"]
+atlas = ExtResource("19_k7dfc")
+region = Rect2(32, 240, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esrbs"]
+atlas = ExtResource("19_k7dfc")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8tmm"]
+atlas = ExtResource("19_k7dfc")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qm710"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gde24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3axom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evggf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neqjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xht5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4j56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esrbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8tmm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0p6k"]
+size = Vector2(109, 200)
 
 [node name="Overworld2" type="Node2D"]
 script = ExtResource("1_8phev")
@@ -1678,11 +1746,11 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gramps/Area2D"]
-position = Vector2(552, 760)
+position = Vector2(589.5, 760)
 shape = SubResource("RectangleShape2D_momma")
 
 [node name="Interactbutton" parent="Gramps" instance=ExtResource("14_rdptu")]
-position = Vector2(595, 922)
+position = Vector2(583, 905)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 script = ExtResource("15_h10u6")
@@ -1719,6 +1787,26 @@ shape = SubResource("RectangleShape2D_jojyf")
 
 [node name="Interactbutton" parent="Subway_trans" instance=ExtResource("14_rdptu")]
 position = Vector2(-102, 184)
+
+[node name="Drummer" type="Node2D" parent="."]
+position = Vector2(796, 805)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Drummer"]
+position = Vector2(9.87499, -70.875)
+scale = Vector2(4.80469, 4.46354)
+sprite_frames = SubResource("SpriteFrames_qm710")
+frame = 1
+frame_progress = 0.642698
+
+[node name="Area2D" type="Area2D" parent="Drummer"]
+position = Vector2(21, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drummer/Area2D"]
+position = Vector2(-11, -50)
+shape = SubResource("RectangleShape2D_w0p6k")
+
+[node name="Interactbutton" parent="Drummer" instance=ExtResource("14_rdptu")]
+position = Vector2(5, 92)
 
 [connection signal="body_entered" from="Gramps/Area2D" to="Gramps" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Gramps/Area2D" to="Gramps" method="_on_area_2d_body_exited"]
