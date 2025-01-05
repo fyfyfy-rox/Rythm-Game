@@ -86,6 +86,7 @@ texture = ExtResource("1_imhwk")
 
 [node name="AudioStreamPlayer_rythm_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_46b4d")
+bus = &"Music"
 
 [node name="MidiPlayer" parent="." instance=ExtResource("5_jd3uc")]
 file = "res://Resources/Music/Tutorial_Forrest/Tutorial_beta_0.9.1.mid"

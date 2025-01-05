@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://xkeo5tvkaa5q"]
+[gd_scene load_steps=40 format=3 uid="uid://xkeo5tvkaa5q"]
 
 [ext_resource type="Script" path="res://Scenen/overworld_2.gd" id="1_8phev"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="1_hbu0g"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="16_4ylux"]
 [ext_resource type="Script" path="res://Scenen/subway_trans.gd" id="17_bm20q"]
 [ext_resource type="Texture2D" uid="uid://dvnjembckcyjg" path="res://Resources/Subway/City_subway.png" id="17_kg6jf"]
-[ext_resource type="Texture2D" path="res://Resources/NPCs/Street_drummer.png" id="19_k7dfc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tg41k"]
 texture = ExtResource("2_coti2")
@@ -1575,35 +1574,27 @@ size = Vector2(67, 186)
 size = Vector2(151, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gde24"]
-atlas = ExtResource("19_k7dfc")
 region = Rect2(32, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3axom"]
-atlas = ExtResource("19_k7dfc")
 region = Rect2(32, 48, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_evggf"]
-atlas = ExtResource("19_k7dfc")
 region = Rect2(32, 96, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_neqjc"]
-atlas = ExtResource("19_k7dfc")
 region = Rect2(32, 144, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xht5i"]
-atlas = ExtResource("19_k7dfc")
 region = Rect2(32, 192, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q4j56"]
-atlas = ExtResource("19_k7dfc")
 region = Rect2(32, 240, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_esrbs"]
-atlas = ExtResource("19_k7dfc")
 region = Rect2(0, 48, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8tmm"]
-atlas = ExtResource("19_k7dfc")
 region = Rect2(0, 0, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qm710"]
