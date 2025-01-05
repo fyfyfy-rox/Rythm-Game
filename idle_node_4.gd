@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var animp = $AnimationPlayer
+@onready var miss_sound = $"../../AudioStreamPlayer_failsound"
 var sensor = 0
 
 func _process(delta):
@@ -9,12 +10,17 @@ func _process(delta):
 		if Input.is_action_just_pressed("4"):
 			Global.mana += 1
 			animp.play("hit")
+			Global.update_node_miss(false)
+			
 			
 	if sensor == 0:
 		if Input.is_action_just_pressed("4"):
 			if(Global.mana > 0):
 				Global.mana -= 1
 			animp.play("miss")
+			miss_sound.play()
+			Global.update_node_miss(true)
+			
 
 func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	sensor = 1

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccgkxt2gxdwje"
+path="res://.godot/imported/Tutorial_Musik_68 Backingtrack.wav-dc1ac9422634f429954134c0effb8014.sample"
+
+[deps]
+
+source_file="res://Resources/Music/Tutorial_Forrest/Tutorial_Musik_68 Backingtrack.wav"
+dest_files=["res://.godot/imported/Tutorial_Musik_68 Backingtrack.wav-dc1ac9422634f429954134c0effb8014.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

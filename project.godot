@@ -64,6 +64,7 @@ glossary/default_case_sensitive=true
 
 window/size/viewport_width=2240
 window/size/viewport_height=1260
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]

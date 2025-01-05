@@ -12,13 +12,16 @@ const NODE = preload("res://Scenen/moving_Node.tscn")
 @onready var timer3 = $"Tasten/Timer3"
 @onready var timer4 = $"Tasten/Timer4"
 @onready var rythm_map_music = $AudioStreamPlayer_rythm_music
+@onready var rythm_map_music_melod = $AudioStreamPlayer_melod
 @export var midi_player: MidiPlayer
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) 
 	Witch_animation.play("charge")
 	Mana.value = Global.mana
 	await (0.5)
 	rythm_map_music.play()
+	rythm_map_music_melod.play()
 	# finish Signal
 	midi_player.finished.connect(_on_finished)
 

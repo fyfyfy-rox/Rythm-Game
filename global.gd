@@ -4,9 +4,19 @@ extends Node
 
 #Musicvolume
 var music_volume: float = 0.05 # Lautstärke (0.0 bis 1.0)
-var sfx_volume: float = 1.0    # Lautstärke für Soundeffekte
+var sfx_volume: float = 0.5    # Lautstärke für Soundeffekte
 var master_volume: float = 0.5 # Lautstärke für Master
 var current_music_scene: AudioStreamPlayer = null  # Aktueller AudioPlayer
+
+#Hit or miss
+var node_miss: bool = false
+
+signal node_miss_changed
+
+func update_node_miss(value: bool):
+	if node_miss != value:  # Nur wenn der Wert sich tatsächlich ändert
+		node_miss = value   # Ändere die Variable
+		emit_signal("node_miss_changed", node_miss)  # Signal auslösen
 
 
 # sensor 
