@@ -62,8 +62,8 @@ scale = Vector2(1, 1.00317)
 script = ExtResource("1_sgwsr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(18, -156.504)
-scale = Vector2(2, 2)
+position = Vector2(-3.33786e-05, -156.504)
+scale = Vector2(2.43319, 2)
 texture = ExtResource("2_iivee")
 
 [node name="Node2D" parent="Sprite2D" instance=ExtResource("3_ug428")]
@@ -91,10 +91,10 @@ animation = &"charge"
 
 [node name="Play" type="Button" parent="."]
 layout_mode = 2
-offset_left = -818.0
-offset_top = -480.0
-offset_right = -518.0
-offset_bottom = -380.0
+offset_left = -157.0
+offset_top = -225.286
+offset_right = 143.0
+offset_bottom = -125.286
 theme = ExtResource("5_oee1l")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -107,10 +107,10 @@ text = "Play"
 
 [node name="Options" type="Button" parent="."]
 layout_mode = 2
-offset_left = -818.0
-offset_top = -365.84
-offset_right = -518.0
-offset_bottom = -265.84
+offset_left = -159.0
+offset_top = -97.6903
+offset_right = 141.0
+offset_bottom = 2.30969
 theme = ExtResource("5_oee1l")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -124,10 +124,10 @@ text = "Options"
 
 [node name="Credits" type="Button" parent="."]
 layout_mode = 2
-offset_left = -817.0
-offset_top = -251.204
-offset_right = -517.0
-offset_bottom = -151.204
+offset_left = -162.0
+offset_top = 32.8957
+offset_right = 138.0
+offset_bottom = 132.896
 theme = ExtResource("5_oee1l")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -140,10 +140,10 @@ text = "Credits"
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 2
-offset_left = -815.0
-offset_top = -134.573
-offset_right = -515.0
-offset_bottom = -34.5734
+offset_left = -161.0
+offset_top = 158.498
+offset_right = 139.0
+offset_bottom = 258.497
 theme = ExtResource("5_oee1l")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
