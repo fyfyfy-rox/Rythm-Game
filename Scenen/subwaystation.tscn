@@ -18,7 +18,7 @@ position = Vector2(282, 796)
 position = Vector2(2196, 796)
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(283, 402)
+position = Vector2(-50, 613)
 scale = Vector2(2.48711, 2.53167)
 texture = ExtResource("2_x412s")
 
@@ -29,6 +29,7 @@ scale = Vector2(2.45522, 2.52093)
 texture = ExtResource("2_x412s")
 
 [node name="Witch" parent="." instance=ExtResource("3_1d3ua")]
+z_index = 1
 position = Vector2(-487, 723)
 scale = Vector2(5, 5)
 move_speed = 300.0
@@ -47,8 +48,8 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(1643, 650)
-scale = Vector2(1.46957, 1.29592)
+position = Vector2(1643, 644)
+scale = Vector2(1.46957, 1.35714)
 texture = ExtResource("4_agbgk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
