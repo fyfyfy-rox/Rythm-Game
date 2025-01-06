@@ -18,7 +18,7 @@ position = Vector2(282, 796)
 position = Vector2(2196, 796)
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(-50, 613)
+position = Vector2(282, 401)
 scale = Vector2(2.48711, 2.53167)
 texture = ExtResource("2_x412s")
 
