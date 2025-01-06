@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cleust68utvpe"]
+
+[ext_resource type="Texture2D" uid="uid://djcup6a3b5i0h" path="res://Resources/Subway/Subway_floor.png" id="1_o7xiu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oilr7"]
+size = Vector2(1919.5, 113)
+
+[node name="Subway_floor" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-3, -4)
+scale = Vector2(2.47661, 2.87179)
+texture = ExtResource("1_o7xiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-3, 48.5)
+shape = SubResource("RectangleShape2D_oilr7")
