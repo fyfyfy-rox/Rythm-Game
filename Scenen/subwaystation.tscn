@@ -18,7 +18,7 @@ position = Vector2(282, 796)
 position = Vector2(2196, 796)
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(282, 401)
+position = Vector2(289, 400)
 scale = Vector2(2.48711, 2.53167)
 texture = ExtResource("2_x412s")
 
@@ -30,16 +30,16 @@ texture = ExtResource("2_x412s")
 
 [node name="Witch" parent="." instance=ExtResource("3_1d3ua")]
 z_index = 1
-position = Vector2(-487, 723)
+position = Vector2(-302, 721)
 scale = Vector2(5, 5)
 move_speed = 300.0
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Witch"]
-position = Vector2(109.6, -50)
+position = Vector2(74.6, -51.6)
 remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="Witch"]
-position = Vector2(109.6, -50)
+position = Vector2(74, -48.2)
 scale = Vector2(1, 1)
 zoom = Vector2(1.5, 1.5)
 
