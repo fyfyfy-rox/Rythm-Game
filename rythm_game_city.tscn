@@ -79,6 +79,12 @@ position = Vector2(1500, 600)
 script = ExtResource("1_dfe0d")
 midi_player = NodePath("MidiPlayer")
 
+[node name="SFX_fail" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AudioStreamPlayer_melody" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AudioStreamPlayer_rhytm" type="AudioStreamPlayer2D" parent="."]
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(880, 301)
 transform = Transform2D(1, 0, 0, 1, 880, 301)
@@ -242,5 +248,5 @@ position = Vector2(1332, 610)
 [connection signal="timeout" from="Tasten/Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Tasten/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Tasten/Timer3" to="." method="_on_timer_3_timeout"]
-[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]
+[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_3_timeout"]
