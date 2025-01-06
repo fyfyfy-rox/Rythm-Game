@@ -32,6 +32,11 @@ var first_game: bool = false
 var mana = 0;
 var inputs_disabled: bool = false
 
+var in_pause_wald: bool = false
+var in_pause_overworld: bool = false
+var in_pause_subway: bool = false
+var in_pause_rythm_wald: bool = false
+
 var first_city_entered: bool = true
 var in_rythm_game: bool = false
 

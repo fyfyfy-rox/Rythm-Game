@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var pause_menu = $"CanvasLayer/Pause Menu"  # Reference to the Pause Menu in the CanvasLayer
 
+@onready var bg_wald = $AudioStreamPlayer2D
+
 var paused = false  # Variable to track if the game is paused or not
 
 func _ready():
@@ -50,6 +52,8 @@ func _enable_inputs():
 	Global.inputs_disabled = false
 	print("Inputs aktiviert.")
 	
+func _exit_tree():
+	bg_wald.stop()  # Musik stoppen
 
 
 func toggle_pause():

@@ -1,6 +1,10 @@
 extends AudioStreamPlayer
 
-const level_music = preload("res://Resources/Music/BG_musik/BG_Musik_Wald_58.mp3")
+const level_music = preload("res://Resources/Music/BG_musik/demo4 (1).mp3")
+
+func _ready():
+	self.stream.loop = true  # Aktiviert das Looping für den Stream
+	play()  # Startet die Wiedergabe
 
 func _play_music(music: AudioStream, volume = 0.0):
 	if stream == music:

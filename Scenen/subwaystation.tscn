@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cv3t3sjo2epjm"]
+[gd_scene load_steps=11 format=3 uid="uid://cv3t3sjo2epjm"]
 
 [ext_resource type="PackedScene" uid="uid://cleust68utvpe" path="res://Scenen/subway_floor.tscn" id="1_smegi"]
 [ext_resource type="Texture2D" uid="uid://c4fkuubhkx2wv" path="res://Resources/Subway/Subway_background.png" id="2_x412s"]
 [ext_resource type="PackedScene" uid="uid://chnkhsfc1sy7v" path="res://Characters/default_player.tscn" id="3_1d3ua"]
 [ext_resource type="Texture2D" uid="uid://bn88wbn5lc18d" path="res://Resources/Subway/Drumset.png" id="4_agbgk"]
 [ext_resource type="PackedScene" uid="uid://dysrwqnlvywo4" path="res://Scenen/Interactbutton.tscn" id="5_xy0ye"]
+[ext_resource type="Script" path="res://Scenen/Canvas_manabar.gd" id="6_3gfmj"]
+[ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="7_fdqbb"]
+[ext_resource type="PackedScene" uid="uid://bhqnkqxhbkuyy" path="res://Scenen/pause_menu.tscn" id="8_sc1f1"]
+[ext_resource type="Script" path="res://Scenen/pause_menu_subway.gd" id="9_d3ure"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyf07"]
 size = Vector2(262, 268)
@@ -43,6 +47,24 @@ position = Vector2(109.6, -50)
 scale = Vector2(1, 1)
 zoom = Vector2(1.5, 1.5)
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="Witch/Camera2D"]
+script = ExtResource("6_3gfmj")
+
+[node name="mana" parent="Witch/Camera2D/CanvasLayer2" instance=ExtResource("7_fdqbb")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.568
+anchor_right = 0.5
+anchor_bottom = 0.568
+offset_left = -938.0
+offset_top = 43.3199
+offset_right = -724.0
+offset_bottom = 90.3201
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
@@ -58,3 +80,10 @@ shape = SubResource("RectangleShape2D_xyf07")
 
 [node name="Interactbutton" parent="Area2D" instance=ExtResource("5_xy0ye")]
 position = Vector2(1614, 736)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("8_sc1f1")]
+process_mode = 2
+visible = false
+script = ExtResource("9_d3ure")

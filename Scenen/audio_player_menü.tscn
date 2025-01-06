@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://3gld57lndd2y"]
+[gd_scene load_steps=3 format=3 uid="uid://3gld57lndd2y"]
 
+[ext_resource type="AudioStream" uid="uid://sa8g3fmm52dk" path="res://Resources/Music/BG_musik/demo4 (1).mp3" id="1_6kxrb"]
 [ext_resource type="Script" path="res://Scenen/audio_player_menü.gd" id="1_15yfb"]
 
 [node name="AudioPlayerMenü" type="AudioStreamPlayer"]
+stream = ExtResource("1_6kxrb")
 bus = &"Music"
 script = ExtResource("1_15yfb")

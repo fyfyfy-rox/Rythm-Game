@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://xkeo5tvkaa5q"]
+[gd_scene load_steps=42 format=3 uid="uid://xkeo5tvkaa5q"]
 
 [ext_resource type="Script" path="res://Scenen/overworld_2.gd" id="1_8phev"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="1_hbu0g"]
@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="16_4ylux"]
 [ext_resource type="Script" path="res://Scenen/subway_trans.gd" id="17_bm20q"]
 [ext_resource type="Texture2D" uid="uid://dvnjembckcyjg" path="res://Resources/Subway/City_subway.png" id="17_kg6jf"]
+[ext_resource type="AudioStream" uid="uid://fhwoo62riunk" path="res://Resources/Music/BG_musik/BG_Musik_City_67.mp3" id="19_juvxo"]
+[ext_resource type="Script" path="res://Scenen/audio_stream_player_ow_bg.gd" id="20_sudot"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tg41k"]
 texture = ExtResource("2_coti2")
@@ -1666,6 +1668,8 @@ position = Vector2(0, -70)
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("4_d1jnb")]
 process_mode = 2
 visible = false
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("5_4uljd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -1799,7 +1803,13 @@ shape = SubResource("RectangleShape2D_w0p6k")
 [node name="Interactbutton" parent="Drummer" instance=ExtResource("14_rdptu")]
 position = Vector2(5, 92)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_juvxo")
+bus = &"Music"
+script = ExtResource("20_sudot")
+
 [connection signal="body_entered" from="Gramps/Area2D" to="Gramps" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Gramps/Area2D" to="Gramps" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Subway_trans" to="Subway_trans" method="_on_body_entered"]
 [connection signal="body_exited" from="Subway_trans" to="Subway_trans" method="_on_body_exited"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
