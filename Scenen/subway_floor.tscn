@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cleust68utvpe"]
+[gd_scene load_steps=4 format=3 uid="uid://cleust68utvpe"]
 
 [ext_resource type="Texture2D" uid="uid://djcup6a3b5i0h" path="res://Resources/Subway/Subway_floor.png" id="1_o7xiu"]
+[ext_resource type="Texture2D" uid="uid://cte7s3jyqmstm" path="res://Resources/sidewalk.PNG" id="1_ti4ff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oilr7"]
-size = Vector2(1919.5, 113)
+size = Vector2(1919.5, 128)
 
 [node name="Subway_floor" type="Node2D"]
 
@@ -11,10 +12,16 @@ size = Vector2(1919.5, 113)
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-3, -4)
-scale = Vector2(2.47661, 2.87179)
+texture_filter = 1
+position = Vector2(-3, -55.9999)
+scale = Vector2(2.47661, 1.53846)
 texture = ExtResource("1_o7xiu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-3, 48.5)
+position = Vector2(-3, 41)
 shape = SubResource("RectangleShape2D_oilr7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(36, 14)
+scale = Vector2(1.06994, 0.165633)
+texture = ExtResource("1_ti4ff")

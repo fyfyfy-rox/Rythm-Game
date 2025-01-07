@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcf37wiew3e2w"]
+
+[ext_resource type="Script" path="res://moving_Bass.gd" id="1_6yaop"]
+[ext_resource type="Texture2D" uid="uid://bymcydbsxb0cr" path="res://Resources/Nodes.png" id="2_klw21"]
+
+[sub_resource type="Animation" id="Animation_21onc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_lh2s8"]
+resource_name = "play"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4, 0.533333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m7sq7"]
+_data = {
+"RESET": SubResource("Animation_21onc"),
+"play": SubResource("Animation_lh2s8")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1kuy"]
+size = Vector2(28, 37)
+
+[node name="moving" type="Area2D"]
+script = ExtResource("1_6yaop")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_klw21")
+hframes = 18
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m7sq7")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -4.5)
+shape = SubResource("RectangleShape2D_u1kuy")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]

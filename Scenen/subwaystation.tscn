@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cv3t3sjo2epjm"]
+[gd_scene load_steps=15 format=3 uid="uid://cv3t3sjo2epjm"]
 
 [ext_resource type="Script" path="res://Scenen/subwaystation.gd" id="1_qkuxq"]
 [ext_resource type="PackedScene" uid="uid://cleust68utvpe" path="res://Scenen/subway_floor.tscn" id="1_smegi"]
@@ -10,17 +10,31 @@
 [ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="7_fdqbb"]
 [ext_resource type="PackedScene" uid="uid://bhqnkqxhbkuyy" path="res://Scenen/pause_menu.tscn" id="8_sc1f1"]
 [ext_resource type="Script" path="res://Scenen/pause_menu_subway.gd" id="9_d3ure"]
+[ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="11_6gqgb"]
+[ext_resource type="PackedScene" uid="uid://xlqhigjagvuk" path="res://Scenen/schienen.tscn" id="12_tkof0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyf07"]
 size = Vector2(262, 268)
+
+[sub_resource type="GDScript" id="GDScript_nfi4t"]
+script/source = "extends TextureProgressBar
+
+@export var value_delta = 0;
+
+func _process(delta: float) -> void:
+	value += value_delta;
+	value_delta = 0;
+"
 
 [node name="Subwaystation" type="Node2D"]
 script = ExtResource("1_qkuxq")
 
 [node name="Subway_floor" parent="." instance=ExtResource("1_smegi")]
-position = Vector2(282, 796)
+z_index = -1
+position = Vector2(283, 795)
 
 [node name="Subway_floor2" parent="." instance=ExtResource("1_smegi")]
+z_index = -1
 position = Vector2(2196, 796)
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -36,20 +50,20 @@ texture = ExtResource("2_x412s")
 
 [node name="Witch" parent="." instance=ExtResource("3_1d3ua")]
 z_index = 1
-position = Vector2(-302, 721)
+position = Vector2(-301, 689)
 scale = Vector2(5, 5)
 move_speed = 300.0
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Witch"]
-position = Vector2(74.6, -51.6)
+position = Vector2(74.6, -28)
 remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="Witch"]
-position = Vector2(74.6, -51.6)
-scale = Vector2(1, 1)
+position = Vector2(74.6, -28)
 zoom = Vector2(1.5, 1.5)
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-700, 0)
 collision_layer = 4
 collision_mask = 2
 
@@ -63,7 +77,7 @@ position = Vector2(1670, 652)
 shape = SubResource("RectangleShape2D_xyf07")
 
 [node name="Interactbutton" parent="Area2D" instance=ExtResource("5_xy0ye")]
-position = Vector2(1614, 736)
+position = Vector2(1657, 700)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -76,16 +90,35 @@ script = ExtResource("9_d3ure")
 script = ExtResource("6_3gfmj")
 
 [node name="mana" parent="CanvasLayer2" instance=ExtResource("7_fdqbb")]
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.568
-anchor_right = 0.5
-anchor_bottom = 0.568
-offset_left = -683.0
-offset_top = 47.3199
-offset_right = -469.0
-offset_bottom = 94.3201
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+offset_left = 1283.0
+offset_top = 1137.0
+offset_right = 1453.0
+offset_bottom = 1149.0
+scale = Vector2(4.9051, 5.83572)
+value = 24.0
+script = SubResource("GDScript_nfi4t")
+value_delta = 0
+
+[node name="wand" parent="." instance=ExtResource("11_6gqgb")]
+visible = false
+position = Vector2(-344, 539)
+scale = Vector2(-0.00746915, 3.91836)
+
+[node name="wand2" parent="." instance=ExtResource("11_6gqgb")]
+visible = false
+position = Vector2(2055, 597)
+scale = Vector2(-0.00746915, 3.91836)
+
+[node name="Schienen" type="Node2D" parent="."]
+position = Vector2(2986, 879)
+
+[node name="schienen4" parent="Schienen" instance=ExtResource("12_tkof0")]
+
+[node name="schienen" parent="Schienen" instance=ExtResource("12_tkof0")]
+position = Vector2(-3564, 0)
+
+[node name="schienen2" parent="Schienen" instance=ExtResource("12_tkof0")]
+position = Vector2(-2376, 0)
+
+[node name="schienen3" parent="Schienen" instance=ExtResource("12_tkof0")]
+position = Vector2(-1188, 0)

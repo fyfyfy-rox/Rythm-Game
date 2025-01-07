@@ -1,0 +1,214 @@
+[gd_scene load_steps=29 format=3 uid="uid://bhccdsud1n5f"]
+
+[ext_resource type="Script" path="res://Scenen/rythm_game.gd" id="1_buiov"]
+[ext_resource type="Texture2D" uid="uid://djbqlhevrgdvd" path="res://Resources/Sprite-Signwithflute.png" id="1_imhwk"]
+[ext_resource type="PackedScene" uid="uid://dh1ihc81uofnc" path="res://Scenen/Idle_node_1.tscn" id="2_gjpf1"]
+[ext_resource type="AudioStream" uid="uid://cgwr2ekexmysf" path="res://Resources/Music/Tutorial_Forrest/Tutorial_Musik_68 (1).mp3" id="3_46b4d"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="5_jd3uc"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="6_e1a46"]
+[ext_resource type="Texture2D" uid="uid://ddfkgri45q2id" path="res://Resources/Free Pixel Art Forest/Preview/Background.png" id="6_yafr4"]
+[ext_resource type="Texture2D" uid="uid://dhy4tqjd1lnwg" path="res://Resources/Witch/B_witch_charge.png" id="7_wyr7e"]
+[ext_resource type="PackedScene" uid="uid://bvbgowi0wd6bu" path="res://Scenen/Rain.tscn" id="8_o8buy"]
+[ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="9_d2jq6"]
+[ext_resource type="PackedScene" uid="uid://cwdom1ecvrap2" path="res://Scenen/idle_node_2.tscn" id="9_fyxj4"]
+[ext_resource type="PackedScene" uid="uid://ch0000o4lyy60" path="res://Scenen/idle_node_3.tscn" id="11_2jf63"]
+[ext_resource type="PackedScene" uid="uid://u74e458gexs5" path="res://Scenen/idle_node_4.tscn" id="12_y7toh"]
+[ext_resource type="Texture2D" uid="uid://cvcwxfujqqa8y" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_1.png" id="13_mi1tp"]
+[ext_resource type="Texture2D" uid="uid://b064cmi8h1ruu" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_102.png" id="14_1iafh"]
+[ext_resource type="Texture2D" uid="uid://dbleabg8nti3g" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_2.png" id="14_2mdsb"]
+[ext_resource type="Texture2D" uid="uid://w776sftt81kx" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_3.png" id="15_c54fq"]
+[ext_resource type="Texture2D" uid="uid://dcergcjlav4bp" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_103.png" id="16_0mv0q"]
+[ext_resource type="Texture2D" uid="uid://bp0lreuce80e4" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_4.png" id="16_qgjlr"]
+[ext_resource type="Texture2D" uid="uid://bfihb7d1a8shb" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_104.png" id="18_spo76"]
+[ext_resource type="Texture2D" uid="uid://dteth4gtvrday" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_105.png" id="20_1x1wm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwyv5"]
+atlas = ExtResource("7_wyr7e")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw0bo"]
+atlas = ExtResource("7_wyr7e")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do1u5"]
+atlas = ExtResource("7_wyr7e")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwjcp"]
+atlas = ExtResource("7_wyr7e")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbfwm"]
+atlas = ExtResource("7_wyr7e")
+region = Rect2(0, 192, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ah67q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwyv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw0bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do1u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwjcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbfwm")
+}],
+"loop": true,
+"name": &"charge",
+"speed": 8.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_k7slo"]
+script/source = "extends TextureProgressBar
+
+@export var value_delta = 0;
+
+func _process(delta: float) -> void:
+	value += value_delta;
+	value_delta = 0;
+"
+
+[node name="Rythm-Game" type="Node2D" node_paths=PackedStringArray("midi_player")]
+position = Vector2(1500, 600)
+script = ExtResource("1_buiov")
+midi_player = NodePath("MidiPlayer")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_imhwk")
+
+[node name="AudioStreamPlayer_rythm_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_46b4d")
+
+[node name="MidiPlayer" parent="." instance=ExtResource("5_jd3uc")]
+file = "res://Resources/Music/Tutorial_Forrest/Tutorial_beta_0.9.1.mid"
+playing = true
+
+[node name="ADSR" parent="." instance=ExtResource("6_e1a46")]
+
+[node name="Positions" type="Node2D" parent="."]
+position = Vector2(420, -40)
+
+[node name="Position1" type="Marker2D" parent="Positions"]
+
+[node name="Position2" type="Marker2D" parent="Positions"]
+position = Vector2(0, 60)
+
+[node name="Position3" type="Marker2D" parent="Positions"]
+position = Vector2(0, 120)
+
+[node name="Position4" type="Marker2D" parent="Positions"]
+position = Vector2(0, 190)
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-178, -512)
+scale = Vector2(3, 3)
+texture = ExtResource("6_yafr4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="Witch" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1012, 313)
+scale = Vector2(8.22917, 9.22917)
+sprite_frames = SubResource("SpriteFrames_ah67q")
+animation = &"charge"
+frame_progress = 0.234403
+
+[node name="Node2D" parent="." instance=ExtResource("8_o8buy")]
+z_index = -1
+position = Vector2(-643, -517)
+scale = Vector2(1, 1.122)
+
+[node name="Mana" parent="." instance=ExtResource("9_d2jq6")]
+offset_left = -593.0
+offset_top = 483.0
+offset_right = -423.0
+offset_bottom = 495.0
+scale = Vector2(6.73606, 6.95963)
+value = 24.0
+script = SubResource("GDScript_k7slo")
+value_delta = 0
+
+[node name="IdleNodes" type="Node2D" parent="."]
+position = Vector2(-380, -40)
+
+[node name="IdleNode1" parent="IdleNodes" instance=ExtResource("9_fyxj4")]
+
+[node name="IdleNode2" parent="IdleNodes" instance=ExtResource("2_gjpf1")]
+position = Vector2(0, 60)
+
+[node name="IdleNode3" parent="IdleNodes" instance=ExtResource("11_2jf63")]
+position = Vector2(0, 120)
+
+[node name="IdleNode4" parent="IdleNodes" instance=ExtResource("12_y7toh")]
+position = Vector2(0, 190)
+
+[node name="Tasten" type="Node2D" parent="."]
+position = Vector2(-470, -40)
+
+[node name="1_on" type="Sprite2D" parent="Tasten"]
+z_index = 1
+texture = ExtResource("13_mi1tp")
+
+[node name="1_off" type="Sprite2D" parent="Tasten"]
+texture = ExtResource("14_1iafh")
+
+[node name="Timer1" type="Timer" parent="Tasten"]
+wait_time = 0.3
+one_shot = true
+
+[node name="2_on" type="Sprite2D" parent="Tasten"]
+z_index = 1
+position = Vector2(0, 60)
+texture = ExtResource("14_2mdsb")
+
+[node name="2_off" type="Sprite2D" parent="Tasten"]
+position = Vector2(0, 60)
+texture = ExtResource("16_0mv0q")
+
+[node name="Timer2" type="Timer" parent="Tasten"]
+wait_time = 0.3
+one_shot = true
+
+[node name="3_on" type="Sprite2D" parent="Tasten"]
+z_index = 1
+position = Vector2(0, 120)
+texture = ExtResource("15_c54fq")
+
+[node name="3_off" type="Sprite2D" parent="Tasten"]
+position = Vector2(0, 120)
+texture = ExtResource("18_spo76")
+
+[node name="Timer3" type="Timer" parent="Tasten"]
+wait_time = 0.3
+one_shot = true
+
+[node name="4_on" type="Sprite2D" parent="Tasten"]
+z_index = 1
+position = Vector2(0, 180)
+texture = ExtResource("16_qgjlr")
+
+[node name="4_off" type="Sprite2D" parent="Tasten"]
+position = Vector2(0, 180)
+texture = ExtResource("20_1x1wm")
+
+[node name="Timer4" type="Timer" parent="Tasten"]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Tasten/Timer1" to="." method="_on_timer_1_timeout"]
+[connection signal="timeout" from="Tasten/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Tasten/Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]
