@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://xlqhigjagvuk"]
+
+[ext_resource type="Texture2D" uid="uid://breuggcrm1pcx" path="res://Resources/Schienen.png" id="1_xj3oy"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.19209e-07, 1.19209e-07)
+scale = Vector2(3.96, 3.38)
+texture = ExtResource("1_xj3oy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(198, 0)
+scale = Vector2(3.96, 3.38)
+texture = ExtResource("1_xj3oy")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(396, 0)
+scale = Vector2(3.96, 3.38)
+texture = ExtResource("1_xj3oy")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(594, 0)
+scale = Vector2(3.96, 3.38)
+texture = ExtResource("1_xj3oy")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(792, 0)
+scale = Vector2(3.96, 3.38)
+texture = ExtResource("1_xj3oy")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(990, 0)
+scale = Vector2(3.96, 3.38)
+texture = ExtResource("1_xj3oy")

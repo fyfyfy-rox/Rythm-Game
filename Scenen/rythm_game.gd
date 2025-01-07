@@ -22,6 +22,7 @@ func _ready() -> void:
 	await (0.5)
 	rythm_map_music.play()
 	rythm_map_music_melod.play()
+	AudioPlayer_Menu.stop_music()
 	# finish Signal
 	midi_player.finished.connect(_on_finished)
 
