@@ -1,9 +1,12 @@
-[gd_scene load_steps=28 format=3 uid="uid://cpdda2hq76cj6"]
+[gd_scene load_steps=31 format=3 uid="uid://cpdda2hq76cj6"]
 
 [ext_resource type="Script" path="res://rythm_game_city.gd" id="1_dfe0d"]
 [ext_resource type="Texture2D" uid="uid://buet2gs40tcse" path="res://Resources/1_extended.png" id="2_00egr"]
+[ext_resource type="AudioStream" uid="uid://dm86iw5i101h7" path="res://Resources/Music/SFX/Fail SFX.wav" id="2_nl5fp"]
 [ext_resource type="Texture2D" uid="uid://66mvbtbnr16c" path="res://Resources/2_extended.png" id="3_1dcsd"]
+[ext_resource type="AudioStream" uid="uid://cchkmvvm03j83" path="res://Resources/Music/Bass_game/Bass_Musik_100_Mainmelody.wav" id="3_blghr"]
 [ext_resource type="Texture2D" uid="uid://c5g3k3t3nu11m" path="res://Resources/3_extended.png" id="4_hpbj2"]
+[ext_resource type="AudioStream" uid="uid://bqrosmbntdq74" path="res://Resources/Music/Bass_game/Bass_Musik_100_Backingtrack.wav" id="4_vmr3g"]
 [ext_resource type="Texture2D" uid="uid://q2hidcmst3mm" path="res://Resources/4_extended.png" id="5_83f68"]
 [ext_resource type="Texture2D" uid="uid://drmw48hsb2lqh" path="res://Resources/Sprite-Bass.png" id="6_xjf48"]
 [ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_2t80d"]
@@ -79,11 +82,14 @@ position = Vector2(1500, 600)
 script = ExtResource("1_dfe0d")
 midi_player = NodePath("MidiPlayer")
 
-[node name="SFX_fail" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer_failsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_nl5fp")
 
 [node name="AudioStreamPlayer_melody" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_blghr")
 
 [node name="AudioStreamPlayer_rhytm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_vmr3g")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(880, 301)
@@ -132,7 +138,7 @@ scale = Vector2(4.5, 4.5)
 texture = ExtResource("6_xjf48")
 
 [node name="MidiPlayer" parent="." instance=ExtResource("7_2t80d")]
-file = "res://Resources/alt_midi (2).mid"
+file = "res://Resources/Music/Bass_game/Bass_map_v11.mid"
 playing = true
 
 [node name="ADSR" parent="." instance=ExtResource("8_8rxgp")]
@@ -149,7 +155,7 @@ position = Vector2(22, 22)
 position = Vector2(45, 44)
 
 [node name="Position4" type="Marker2D" parent="Positions"]
-position = Vector2(67, 67)
+position = Vector2(70, 70)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 30.0
@@ -178,16 +184,16 @@ position = Vector2(-360, 285)
 scale = Vector2(0.9, 0.9)
 
 [node name="IdleNode1" parent="IdleNodes" instance=ExtResource("11_nwqlb")]
-position = Vector2(-28.8889, -18.8889)
+position = Vector2(-40, -11.1111)
 
 [node name="IdleNode2" parent="IdleNodes" instance=ExtResource("12_xuqc2")]
-position = Vector2(-4.29153e-05, 4.44442)
+position = Vector2(-13.3334, 15.5555)
 
 [node name="IdleNode3" parent="IdleNodes" instance=ExtResource("13_iwqf6")]
-position = Vector2(26.6666, 31.1111)
+position = Vector2(13.3333, 41.1111)
 
 [node name="IdleNode4" parent="IdleNodes" instance=ExtResource("14_06dnd")]
-position = Vector2(52.2222, 53.3333)
+position = Vector2(41.1111, 70)
 
 [node name="Tasten" type="Node2D" parent="."]
 position = Vector2(0, -49)
@@ -248,5 +254,5 @@ position = Vector2(1332, 610)
 [connection signal="timeout" from="Tasten/Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Tasten/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Tasten/Timer3" to="." method="_on_timer_3_timeout"]
-[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]
 [connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]

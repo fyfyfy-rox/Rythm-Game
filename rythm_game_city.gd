@@ -11,12 +11,17 @@ const NODE = preload("res://moving_node_guitar.tscn")
 @onready var timer2 = $"Tasten/Timer2"
 @onready var timer3 = $"Tasten/Timer3"
 @onready var timer4 = $"Tasten/Timer4"
+@onready var rythm_map_music = $AudioStreamPlayer_rhytm
+@onready var rythm_map_music_melod = $AudioStreamPlayer_melody
 @export var midi_player: MidiPlayer
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) 
 	Witch_animation.play("charge")
 	Mana.value = Global.mana
+	rythm_map_music.play()
+	rythm_map_music_melod.play()
+	AudioPlayer_Menu.stop_music()
 	# Signal verbinden	
 	midi_player.finished.connect(_on_finished)
 
@@ -41,28 +46,32 @@ func _process(delta: float) -> void:
 		timer4.start()
 
 func _on_midi_player_midi_event(channel: Variant, event: Variant) -> void:
-	#print(event.type)
-	#print(channel.number)
+	print("Event:", event.type)
+	print("Channel:", channel.number)
 	if event.type == 144:
-		if channel.number == 1:
+		if channel.number == 0:
 			print("1")
 			var node = NODE.instantiate()
 			node.position = $Positions/Position1.global_position
+			node.speed = 150
 			get_parent().add_child(node)
-		if channel.number == 2:
+		if channel.number == 1:
 			print("2")
 			var node = NODE.instantiate()
 			node.position = $Positions/Position2.global_position
+			node.speed = 150
 			get_parent().add_child(node)
-		if channel.number == 3:
+		if channel.number == 2:
 			print("3")
 			var node = NODE.instantiate()
 			node.position = $Positions/Position3.global_position
+			node.speed = 150
 			get_parent().add_child(node)
-		if channel.number == 4:
+		if channel.number == 3:
 			print("4")
 			var node = NODE.instantiate()
 			node.position = $Positions/Position4.global_position
+			node.speed = 150
 			get_parent().add_child(node)
 
 
