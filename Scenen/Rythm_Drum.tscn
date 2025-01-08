@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dca1sf0arhocg"]
+[gd_scene load_steps=66 format=3 uid="uid://b6y1f688id4ry"]
 
 [ext_resource type="Script" path="res://Scenen/rythm_drum.gd" id="1_1nwh4"]
 [ext_resource type="Texture2D" uid="uid://b5ti3pdflt8p7" path="res://Resources/Basedrum_sprite.png" id="1_7hnkk"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c4fkuubhkx2wv" path="res://Resources/Subway/Subway_background.png" id="6_rktbe"]
 [ext_resource type="Texture2D" uid="uid://buet2gs40tcse" path="res://Resources/1_extended.png" id="6_yxyy6"]
 [ext_resource type="PackedScene" uid="uid://cleust68utvpe" path="res://Scenen/subway_floor.tscn" id="7_s1gic"]
-[ext_resource type="PackedScene" uid="uid://xlqhigjagvuk" path="res://Scenen/schienen.tscn" id="9_btfd5"]
+[ext_resource type="PackedScene" path="res://Scenen/schienen.tscn" id="9_btfd5"]
 [ext_resource type="Texture2D" uid="uid://dhy4tqjd1lnwg" path="res://Resources/Witch/B_witch_charge.png" id="10_nxgky"]
 [ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="11_su6tt"]
 [ext_resource type="PackedScene" uid="uid://cwdom1ecvrap2" path="res://Scenen/idle_node_2.tscn" id="13_nu4yu"]
@@ -27,8 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="25_n58gw"]
 [ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="26_6wmjc"]
 [ext_resource type="AudioStream" uid="uid://dm86iw5i101h7" path="res://Resources/Music/SFX/Fail SFX.wav" id="27_05y3b"]
-[ext_resource type="AudioStream" uid="uid://ccgkxt2gxdwje" path="res://Resources/Music/Tutorial_Forrest/Tutorial_Musik_68 Backingtrack.wav" id="28_5msl6"]
-[ext_resource type="AudioStream" uid="uid://cktlbw5d8xd44" path="res://Resources/Music/Tutorial_Forrest/Tutorial_Musik_68 main melody.wav" id="29_0bhq3"]
+[ext_resource type="AudioStream" uid="uid://du0y6e0cmf2rw" path="res://Resources/Music/Drum_game/DrumGame_Backingtrack_v2.wav" id="28_v1h8i"]
+[ext_resource type="AudioStream" uid="uid://crx54ipaqhcvs" path="res://Resources/Music/Drum_game/DrumGame_MainLine.wav" id="29_cimap"]
 [ext_resource type="Script" path="res://Scenen/audio_stream_player_melod.gd" id="30_h846n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7kxwn"]
@@ -428,23 +428,24 @@ wait_time = 0.3
 one_shot = true
 
 [node name="Positions" type="Node2D" parent="."]
-position = Vector2(1750, 194)
+position = Vector2(1751, 192)
 
 [node name="Position1" type="Marker2D" parent="Positions"]
+position = Vector2(7, 45)
 
 [node name="Position2" type="Marker2D" parent="Positions"]
-position = Vector2(80, 0)
+position = Vector2(75, 45)
 
 [node name="Position3" type="Marker2D" parent="Positions"]
-position = Vector2(160, 0)
+position = Vector2(161, 45)
 
 [node name="Position4" type="Marker2D" parent="Positions"]
-position = Vector2(240, 0)
+position = Vector2(236, 45)
 
 [node name="ADSR" parent="." instance=ExtResource("26_6wmjc")]
 
 [node name="MidiPlayer" parent="." instance=ExtResource("25_n58gw")]
-file = "res://Resources/Music/Tutorial_Forrest/Tutorial_beta_0.9.1.mid"
+file = "res://Resources/Music/Drum_game/Drum_map_v7.mid"
 playing = true
 
 [node name="AudioStreamPlayer_failsound" type="AudioStreamPlayer2D" parent="."]
@@ -452,11 +453,11 @@ stream = ExtResource("27_05y3b")
 bus = &"SFX"
 
 [node name="AudioStreamPlayer_rythm_music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("28_5msl6")
+stream = ExtResource("28_v1h8i")
 bus = &"Music"
 
 [node name="AudioStreamPlayer_melod" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("29_0bhq3")
+stream = ExtResource("29_cimap")
 bus = &"Music"
 script = ExtResource("30_h846n")
 

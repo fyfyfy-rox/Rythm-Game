@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cuj35lvaw2f5n"]
+[gd_scene load_steps=11 format=3 uid="uid://cuj35lvaw2f5n"]
 
 [ext_resource type="Script" path="res://Scenen/menü.gd" id="1_sgwsr"]
 [ext_resource type="Texture2D" uid="uid://ddfkgri45q2id" path="res://Resources/Free Pixel Art Forest/Preview/Background.png" id="2_iivee"]
 [ext_resource type="PackedScene" uid="uid://bvbgowi0wd6bu" path="res://Scenen/Rain.tscn" id="3_ug428"]
 [ext_resource type="Texture2D" uid="uid://dhy4tqjd1lnwg" path="res://Resources/Witch/B_witch_charge.png" id="4_t0rn4"]
-[ext_resource type="Theme" uid="uid://w6euexcee8t2" path="res://Resources/Buttons/button_theme.tres" id="5_oee1l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwyv5"]
 atlas = ExtResource("4_t0rn4")
@@ -95,7 +94,6 @@ offset_left = -157.0
 offset_top = -225.286
 offset_right = 143.0
 offset_bottom = -125.286
-theme = ExtResource("5_oee1l")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -111,7 +109,6 @@ offset_left = -159.0
 offset_top = -97.6903
 offset_right = 141.0
 offset_bottom = 2.30969
-theme = ExtResource("5_oee1l")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -128,7 +125,6 @@ offset_left = -162.0
 offset_top = 32.8957
 offset_right = 138.0
 offset_bottom = 132.896
-theme = ExtResource("5_oee1l")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -144,7 +140,6 @@ offset_left = -161.0
 offset_top = 158.498
 offset_right = 139.0
 offset_bottom = 258.497
-theme = ExtResource("5_oee1l")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
