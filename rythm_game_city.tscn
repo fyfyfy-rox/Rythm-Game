@@ -143,6 +143,7 @@ texture = ExtResource("6_xjf48")
 [node name="MidiPlayer" parent="." instance=ExtResource("7_2t80d")]
 file = "res://Resources/Music/Bass_game/Bass_map_v11.mid"
 playing = true
+sequence_per_seconds = 98
 
 [node name="ADSR" parent="." instance=ExtResource("8_8rxgp")]
 
