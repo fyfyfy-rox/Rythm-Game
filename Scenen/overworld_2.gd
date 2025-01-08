@@ -2,12 +2,14 @@ extends Node2D
 
 @onready var pause_menu = $"CanvasLayer/Pause Menu"  # Reference to the Pause Menu in the CanvasLayer
 @onready var bg_music = $AudioStreamPlayer2D
+@onready var gramps_animation = $Gramps/AnimatedSprite2D
 
 var paused = false  # Variable to track if the game is paused or not
 # _ready function, executed when the node is initialized
 func _ready():
 	AudioPlayer_Menu.stop_music()
 	bg_music.play()
+	gramps_animation.play("default")
 	
 	var scene_path = get_tree().current_scene.scene_file_path  # Pfad zur aktuellen Szene
 	if not Global.scene_states.has(scene_path):

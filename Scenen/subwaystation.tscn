@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cv3t3sjo2epjm"]
+[gd_scene load_steps=14 format=3 uid="uid://cv3t3sjo2epjm"]
 
 [ext_resource type="Script" path="res://Scenen/subwaystation.gd" id="1_qkuxq"]
 [ext_resource type="PackedScene" uid="uid://cleust68utvpe" path="res://Scenen/subway_floor.tscn" id="1_smegi"]
@@ -11,20 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://bhqnkqxhbkuyy" path="res://Scenen/pause_menu.tscn" id="8_sc1f1"]
 [ext_resource type="Script" path="res://Scenen/pause_menu_subway.gd" id="9_d3ure"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="11_6gqgb"]
-[ext_resource type="PackedScene" path="res://Scenen/schienen.tscn" id="12_tkof0"]
+[ext_resource type="PackedScene" uid="uid://xlqhigjagvuk" path="res://Scenen/schienen.tscn" id="12_tkof0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyf07"]
 size = Vector2(262, 268)
-
-[sub_resource type="GDScript" id="GDScript_nfi4t"]
-script/source = "extends TextureProgressBar
-
-@export var value_delta = 0;
-
-func _process(delta: float) -> void:
-	value += value_delta;
-	value_delta = 0;
-"
 
 [node name="Subwaystation" type="Node2D"]
 script = ExtResource("1_qkuxq")
@@ -97,8 +87,6 @@ offset_right = 1453.0
 offset_bottom = 1149.0
 scale = Vector2(4.9051, 5.83572)
 value = 24.0
-script = SubResource("GDScript_nfi4t")
-value_delta = 0
 
 [node name="wand" parent="." instance=ExtResource("11_6gqgb")]
 visible = false

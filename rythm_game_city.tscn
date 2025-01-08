@@ -84,12 +84,15 @@ midi_player = NodePath("MidiPlayer")
 
 [node name="AudioStreamPlayer_failsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_nl5fp")
+bus = &"SFX"
 
 [node name="AudioStreamPlayer_melody" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_blghr")
+bus = &"Music"
 
 [node name="AudioStreamPlayer_rhytm" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_vmr3g")
+bus = &"Music"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(880, 301)
@@ -175,6 +178,7 @@ offset_top = 483.0
 offset_right = -423.0
 offset_bottom = 495.0
 scale = Vector2(6.73606, 6.95963)
+max_value = 1000.0
 value = 24.0
 script = SubResource("GDScript_k7slo")
 value_delta = 0
@@ -185,15 +189,19 @@ scale = Vector2(0.9, 0.9)
 
 [node name="IdleNode1" parent="IdleNodes" instance=ExtResource("11_nwqlb")]
 position = Vector2(-40, -11.1111)
+mana_inc = 5
 
 [node name="IdleNode2" parent="IdleNodes" instance=ExtResource("12_xuqc2")]
 position = Vector2(-13.3334, 15.5555)
+mana_inc = 5
 
 [node name="IdleNode3" parent="IdleNodes" instance=ExtResource("13_iwqf6")]
 position = Vector2(13.3333, 41.1111)
+mana_inc = 5
 
 [node name="IdleNode4" parent="IdleNodes" instance=ExtResource("14_06dnd")]
 position = Vector2(41.1111, 70)
+mana_inc = 5
 
 [node name="Tasten" type="Node2D" parent="."]
 position = Vector2(0, -49)
