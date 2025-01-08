@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bhqnkqxhbkuyy" path="res://Scenen/pause_menu.tscn" id="8_sc1f1"]
 [ext_resource type="Script" path="res://Scenen/pause_menu_subway.gd" id="9_d3ure"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="11_6gqgb"]
-[ext_resource type="PackedScene" uid="uid://xlqhigjagvuk" path="res://Scenen/schienen.tscn" id="12_tkof0"]
+[ext_resource type="PackedScene" path="res://Scenen/schienen.tscn" id="12_tkof0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyf07"]
 size = Vector2(262, 268)
@@ -60,6 +60,7 @@ remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="Witch"]
 position = Vector2(74.6, -28)
+scale = Vector2(1, 1)
 zoom = Vector2(1.5, 1.5)
 
 [node name="Area2D" type="Area2D" parent="."]

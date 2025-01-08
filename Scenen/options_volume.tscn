@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://caqlb14t0pb24"]
 
 [ext_resource type="Script" path="res://Scenen/options_volume.gd" id="1_gy67q"]
-[ext_resource type="Theme" uid="uid://w6euexcee8t2" path="res://Resources/Buttons/button_theme.tres" id="2_4nfll"]
+[ext_resource type="Theme" uid="uid://c4xa0yicu0rgb" path="res://Resources/Buttons/default_button.tres" id="2_4nfll"]
 
 [node name="OptionsVolume" type="Control"]
 layout_mode = 3

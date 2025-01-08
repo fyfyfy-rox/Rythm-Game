@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhqnkqxhbkuyy"]
 
 [ext_resource type="Script" path="res://Scenen/pause_menu.gd" id="1_24ptl"]
-[ext_resource type="Theme" uid="uid://w6euexcee8t2" path="res://Resources/Buttons/button_theme.tres" id="1_hvjjy"]
+[ext_resource type="Theme" uid="uid://c4xa0yicu0rgb" path="res://Resources/Buttons/default_button.tres" id="2_o76xu"]
 
 [node name="Pause Menu" type="Control"]
 layout_mode = 3
@@ -36,7 +36,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.0
-theme = ExtResource("1_hvjjy")
+theme = ExtResource("2_o76xu")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -50,7 +50,7 @@ text = "Resume"
 [node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme = ExtResource("1_hvjjy")
+theme = ExtResource("2_o76xu")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -64,7 +64,7 @@ text = "Settings"
 [node name="Save and Exit" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme = ExtResource("1_hvjjy")
+theme = ExtResource("2_o76xu")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)

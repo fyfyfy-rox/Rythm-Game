@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://fctl8q7qhnxe"]
 
 [ext_resource type="Script" path="res://Scenen/options_menü.gd" id="1_4ifgo"]
-[ext_resource type="Theme" uid="uid://w6euexcee8t2" path="res://Resources/Buttons/button_theme.tres" id="2_l3dtp"]
+[ext_resource type="Theme" uid="uid://c4xa0yicu0rgb" path="res://Resources/Buttons/default_button.tres" id="2_1enru"]
 
 [node name="Menü" type="Control"]
 layout_mode = 3
@@ -37,7 +37,7 @@ layout_mode = 2
 [node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme = ExtResource("2_l3dtp")
+theme = ExtResource("2_1enru")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -51,7 +51,7 @@ text = "Volume"
 [node name="Keybinds" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme = ExtResource("2_l3dtp")
+theme = ExtResource("2_1enru")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -65,7 +65,7 @@ text = "Keybinds"
 [node name="Graphics" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme = ExtResource("2_l3dtp")
+theme = ExtResource("2_1enru")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -79,7 +79,7 @@ text = "Graphics"
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme = ExtResource("2_l3dtp")
+theme = ExtResource("2_1enru")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
