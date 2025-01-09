@@ -29,13 +29,13 @@ func _ready() -> void:
 	rythm_map_music_melod.play()
 	AudioPlayer_Menu.stop_music()
 	# finish Signal
-	#midi_player.finished.connect(_on_finished)
+	midi_player.finished.connect(_on_finished)
 
 func _on_finished() -> void:
 	print("MIDI-Datei fertig abgespielt. Wechsle Szene...")
-	await(5)
+	await(2)
 	Global.letzte_szene = get_tree().get_current_scene().get_path()
-	get_tree().change_scene_to_file("res://Scenen/wald_cutscene.tscn")
+	get_tree().change_scene_to_file("res://Scenen/subwaystation.tscn")
 	
 	
 func _process(delta: float) -> void:
@@ -97,7 +97,3 @@ func _on_timer_3_timeout() -> void:
 
 func _on_timer_4_timeout() -> void:
 	four.visible = true
-
-
-func _on_midi_player_finished() -> void:
-	pass # Replace with function body.

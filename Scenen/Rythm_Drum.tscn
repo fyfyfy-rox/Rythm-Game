@@ -28,8 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="25_n58gw"]
 [ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="26_6wmjc"]
 [ext_resource type="AudioStream" uid="uid://dm86iw5i101h7" path="res://Resources/Music/SFX/Fail SFX.wav" id="27_05y3b"]
-[ext_resource type="AudioStream" uid="uid://du0y6e0cmf2rw" path="res://Resources/Music/Drum_game/DrumGame_Backingtrack_v2.wav" id="28_v1h8i"]
-[ext_resource type="AudioStream" uid="uid://crx54ipaqhcvs" path="res://Resources/Music/Drum_game/DrumGame_MainLine.wav" id="29_cimap"]
+[ext_resource type="AudioStream" uid="uid://xduc438if163" path="res://Resources/Music/Drum_game/DrumGame_124_BackingTrack_v3.wav" id="29_4ngpt"]
+[ext_resource type="AudioStream" uid="uid://d3s2m6j000dvx" path="res://Resources/Music/Drum_game/DrumGame_124_Mainline_v5.wav" id="30_8hfsb"]
 [ext_resource type="Script" path="res://Scenen/audio_stream_player_melod.gd" id="30_h846n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7kxwn"]
@@ -452,20 +452,20 @@ position = Vector2(239, 45)
 [node name="ADSR" parent="." instance=ExtResource("26_6wmjc")]
 
 [node name="MidiPlayer" parent="." instance=ExtResource("25_n58gw")]
-file = "res://Resources/Music/Drum_game/Drum_map_v8.mid"
+file = "res://Resources/Music/Drum_game/Drum_map_reaper_v12.mid"
 playing = true
-sequence_per_seconds = 124
+sequence_per_seconds = 10
 
 [node name="AudioStreamPlayer_failsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("27_05y3b")
 bus = &"SFX"
 
 [node name="AudioStreamPlayer_rythm_music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("28_v1h8i")
+stream = ExtResource("29_4ngpt")
 bus = &"Music"
 
 [node name="AudioStreamPlayer_melod" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("29_cimap")
+stream = ExtResource("30_8hfsb")
 bus = &"Music"
 script = ExtResource("30_h846n")
 
