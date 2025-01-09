@@ -25,6 +25,8 @@ var sensor_node_2 = 0;
 var sensor_node_3 = 0;
 var sensor_node_4 = 0;
 
+var letzte_szene: String = ""
+
 var tree_interacted = 0;
 
 var first_game: bool = false

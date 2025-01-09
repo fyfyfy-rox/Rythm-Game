@@ -1,0 +1,9 @@
+join Witch center
+[signal arg="timeline_started"]
+Durch das Spielen spüre ich eine starke Verbindung... und Mana, das mich durchströmt. Ich könnte es nutzen, um den Drummer zurückzubringen. Aber es wird mich viel Kraft kosten. Soll ich es tun?
+[signal arg="choice_start"]
+- Ja
+	[signal arg="teleport"]
+- Nein
+[signal arg="choice_end"]
+[signal arg="timeline_ended"]

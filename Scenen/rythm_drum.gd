@@ -34,6 +34,7 @@ func _ready() -> void:
 func _on_finished() -> void:
 	print("MIDI-Datei fertig abgespielt. Wechsle Szene...")
 	await(5)
+	Global.letzte_szene = get_tree().get_current_scene().get_path()
 	get_tree().change_scene_to_file("res://Scenen/wald_cutscene.tscn")
 	
 	

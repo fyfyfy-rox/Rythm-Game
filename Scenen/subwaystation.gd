@@ -6,6 +6,13 @@ var paused = false
 
 func _ready():
 	AudioPlayer_Menu.stop_music()
+	Dialogic.start("Subway")
+	
+	if Global.letzte_szene == "/root/Scenen/Rythm_Game":
+		Dialogic.start("Drummer_teleport")
+	else:
+		print(Global.letzte_szene)
+	
 	var scene_path = get_tree().current_scene.scene_file_path  # Pfad zur aktuellen Szene
 	if not Global.scene_states.has(scene_path):
 		Global.scene_states[scene_path] = false  # Standardwert: Szene wurde noch nicht betreten
@@ -19,12 +26,38 @@ func _ready():
 		$Witch.update_animation_parameter(Global.witch_direction)  # Richtung setzen
 		print("Spielerposition gesetzt:", Global.witch_position, "Blickrichtung:", Global.witch_direction)
 
+func _on_dialogic_signal(signal_name):
+	
+	if signal_name == "timeline_started":
+		_disable_inputs()
+	elif signal_name == "timeline_ended":
+		_enable_inputs()
+	elif signal_name == "choice_start":
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) 
+	elif signal_name == "choice_end":
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	elif signal_name == "start_rythm_game":
+		Global.in_rythm_game = true
+		get_tree().change_scene_to_file("res://rythm_game_city.tscn")
+	elif signal_name == "teleport":
+		teleport()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):  
 		toggle_pause()  # Toggle the pause state and menu visibility
 
+func _disable_inputs():
+	
+	Global.inputs_disabled = true
+	print("Inputs deaktiviert.")
 
+func _enable_inputs():
+	Global.inputs_disabled = false
+	print("Inputs aktiviert.")
+	
+func teleport():
+	Global.mana -= 50
+	
 func toggle_pause():
 	paused = !paused  # Invert the pause state (if the game is paused, resume it; otherwise, pause it)
 	

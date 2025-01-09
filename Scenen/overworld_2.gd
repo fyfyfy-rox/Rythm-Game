@@ -11,6 +11,12 @@ func _ready():
 	bg_music.play()
 	gramps_animation.play("default")
 	
+	if Global.letzte_szene == "/root/Rythm-Game":
+		Dialogic.start("Bassist_teleport")
+		Global.letzte_szene = ""
+		
+	
+	
 	var scene_path = get_tree().current_scene.scene_file_path  # Pfad zur aktuellen Szene
 	if not Global.scene_states.has(scene_path):
 		Global.scene_states[scene_path] = false  # Standardwert: Szene wurde noch nicht betreten
@@ -38,6 +44,7 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):  
 		toggle_pause()  # Toggle the pause state and menu visibility
+	
 
 func _on_dialogic_signal(signal_name):
 	
@@ -52,6 +59,8 @@ func _on_dialogic_signal(signal_name):
 	elif signal_name == "start_rythm_game":
 		Global.in_rythm_game = true
 		get_tree().change_scene_to_file("res://rythm_game_city.tscn")
+	elif signal_name == "teleport":
+		teleport()
 		
 func _disable_inputs():
 	
@@ -65,7 +74,8 @@ func _enable_inputs():
 func _exit_tree():
 	bg_music.stop()  # Musik stoppen
 
-	
+func teleport():
+	Global.mana -= 50
 
 func toggle_pause():
 	paused = !paused  # Invert the pause state (if the game is paused, resume it; otherwise, pause it)

@@ -1,0 +1,12 @@
+[signal arg="timeline_started"]
+join Witch center
+Witch: Durch das Spielen... ich spüre, wie Mana durch mich fließt. Viel Mana. Vielleicht... vielleicht könnte ich es nutzen, um den Bassisten zurückzubringen.
+Aber es würde mich die Hälfte meiner Manaleiste kosten. Sollte ich es wagen?“
+[signal arg="choice_start"]
+- Ja ein versuch ist es wert
+	Es funktioniert... aber es zieht so viel Mana. Ich muss vorsichtig sein. Wenn das hier nur der Anfang ist, brauche ich all meine Kraft für die anderen Instrumente.
+	[signal arg="teleport"]
+- Lieber noch nicht
+	Ich komme ein andermal wieder.
+[signal arg="choice_end"]
+[signal arg="timeline_ended"]

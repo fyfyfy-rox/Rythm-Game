@@ -30,7 +30,10 @@ directories/dch_directory={
 "test": "res://addons/dialogic/Example Assets/test.dch"
 }
 directories/dtl_directory={
+"Bassist_teleport": "res://addons/dialogic/Dialoge/Bassist_teleport.dtl",
+"Drummer_teleport": "res://addons/dialogic/Dialoge/Drummer_teleport.dtl",
 "Forrest_Speech_1": "res://addons/dialogic/Dialoge/Forrest_Speech_1.dtl",
+"Subway": "res://addons/dialogic/Dialoge/Subway.dtl",
 "city_gramps": "res://addons/dialogic/Dialoge/city_gramps.dtl",
 "forest_cutscene": "res://addons/dialogic/Dialoge/forest_cutscene.dtl",
 "overworld_arriving": "res://addons/dialogic/Dialoge/overworld_arriving.dtl"
