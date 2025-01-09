@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cv3t3sjo2epjm"]
+[gd_scene load_steps=15 format=3 uid="uid://cv3t3sjo2epjm"]
 
 [ext_resource type="Script" path="res://Scenen/subwaystation.gd" id="1_qkuxq"]
 [ext_resource type="PackedScene" uid="uid://cleust68utvpe" path="res://Scenen/subway_floor.tscn" id="1_smegi"]
 [ext_resource type="Texture2D" uid="uid://c4fkuubhkx2wv" path="res://Resources/Subway/Subway_background.png" id="2_x412s"]
 [ext_resource type="PackedScene" uid="uid://chnkhsfc1sy7v" path="res://Characters/default_player.tscn" id="3_1d3ua"]
 [ext_resource type="Texture2D" uid="uid://bn88wbn5lc18d" path="res://Resources/Subway/Drumset.png" id="4_agbgk"]
+[ext_resource type="Script" path="res://Scenen/drum_interact.gd" id="5_67me2"]
 [ext_resource type="PackedScene" uid="uid://dysrwqnlvywo4" path="res://Scenen/Interactbutton.tscn" id="5_xy0ye"]
 [ext_resource type="Script" path="res://Scenen/Canvas_manabar.gd" id="6_3gfmj"]
 [ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="7_fdqbb"]
@@ -57,6 +58,7 @@ zoom = Vector2(1.5, 1.5)
 position = Vector2(-700, 0)
 collision_layer = 4
 collision_mask = 2
+script = ExtResource("5_67me2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(1643, 644)
@@ -111,3 +113,6 @@ position = Vector2(-2376, 0)
 
 [node name="schienen3" parent="Schienen" instance=ExtResource("12_tkof0")]
 position = Vector2(-1188, 0)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

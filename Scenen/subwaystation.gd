@@ -6,21 +6,20 @@ var paused = false
 
 func _ready():
 	AudioPlayer_Menu.stop_music()
-	Dialogic.start("Subway")
 	
-	if Global.letzte_szene == "/root/Scenen/Rythm_Game":
+	if Global.letzte_szene == "/root/BassRythm":
 		Dialogic.start("Drummer_teleport")
-	else:
-		print(Global.letzte_szene)
 	
 	var scene_path = get_tree().current_scene.scene_file_path  # Pfad zur aktuellen Szene
 	if not Global.scene_states.has(scene_path):
 		Global.scene_states[scene_path] = false  # Standardwert: Szene wurde noch nicht betreten
 		print("Szenenstatus für", scene_path, "initialisiert.")
 	
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # Set mouse mode to "captured", so the mouse is hidden initially
 	if not Global.scene_states[scene_path]:
 		Global.scene_states[scene_path] = true  # Szene als besucht markieren
+		Dialogic.start("Subway")
 	else:
 		$Witch.global_position = Global.witch_position
 		$Witch.update_animation_parameter(Global.witch_direction)  # Richtung setzen
