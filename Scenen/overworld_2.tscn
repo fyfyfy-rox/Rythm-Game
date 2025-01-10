@@ -259,12 +259,11 @@ script = ExtResource("20_sudot")
 [node name="Barrier" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
-visible = false
-position = Vector2(2847, 785)
+position = Vector2(2788, 789)
 shape = SubResource("RectangleShape2D_4lj45")
 
 [node name="Sprite2D" type="Sprite2D" parent="Barrier"]
-position = Vector2(2843, 771)
+position = Vector2(2784, 775)
 scale = Vector2(2, 2)
 texture = ExtResource("20_23j7b")
 
