@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var pause_menu = $"CanvasLayer/Pause Menu"  # Reference to the Pause Menu in the CanvasLayer
+@onready var pause_menu = $"Pause/Pause Menu"  # Reference to the Pause Menu in the CanvasLayer
 @onready var bg_music = $AudioStreamPlayer2D
 @onready var gramps_animation = $Gramps/AnimatedSprite2D
 

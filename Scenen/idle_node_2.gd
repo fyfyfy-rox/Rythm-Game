@@ -29,3 +29,4 @@ func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, 
 func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	sensor = 0
 	Global.sensor_node_2 = 0
+	
