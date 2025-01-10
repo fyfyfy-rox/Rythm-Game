@@ -1,10 +1,10 @@
 extends Node2D
 
 const NODE = preload("res://Scenen/moving_Bass.tscn")
-@onready var BassDrum_animation = $BASEDDrum
-@onready var HighHat_animation = $"High Hut"
-@onready var SnareDrum_animation = $"auch ne Trommel"
-@onready var KleineDrum_animaiton = $"nicht so BasedDrum"
+@onready var BassDrum_animation = $Drums/Bassdrum
+@onready var HighHat_animation = $Drums/highhat
+@onready var SnareDrum_animation = $Drums/snaredrum
+@onready var KleineDrum_animaiton = $Drums/smoldrum
 
 @onready var Witch_animation = $Witch
 @onready var Mana = $Mana

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c4fkuubhkx2wv" path="res://Resources/Subway/Subway_background.png" id="6_rktbe"]
 [ext_resource type="Texture2D" uid="uid://buet2gs40tcse" path="res://Resources/1_extended.png" id="6_yxyy6"]
 [ext_resource type="PackedScene" uid="uid://cleust68utvpe" path="res://Scenen/subway_floor.tscn" id="7_s1gic"]
-[ext_resource type="PackedScene" path="res://Scenen/schienen.tscn" id="9_btfd5"]
+[ext_resource type="PackedScene" uid="uid://xlqhigjagvuk" path="res://Scenen/schienen.tscn" id="9_btfd5"]
 [ext_resource type="Texture2D" uid="uid://dhy4tqjd1lnwg" path="res://Resources/Witch/B_witch_charge.png" id="10_nxgky"]
 [ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="11_su6tt"]
 [ext_resource type="PackedScene" uid="uid://cwdom1ecvrap2" path="res://Scenen/idle_node_2.tscn" id="13_nu4yu"]
@@ -288,38 +288,53 @@ func _process(delta: float) -> void:
 [node name="BassRythm" type="Node2D"]
 script = ExtResource("1_1nwh4")
 
-[node name="BASEDDrum" type="AnimatedSprite2D" parent="."]
+[node name="Drums" type="Node2D" parent="."]
+
+[node name="Bassdrum" type="AnimatedSprite2D" parent="Drums"]
 z_index = 1
 position = Vector2(1116.17, 504.795)
 scale = Vector2(3.01948, 2.97777)
 sprite_frames = SubResource("SpriteFrames_nerm6")
 frame_progress = 0.743043
 
-[node name="High Hut" type="AnimatedSprite2D" parent="."]
+[node name="highhat" type="AnimatedSprite2D" parent="Drums"]
 position = Vector2(1116.17, 504.795)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_v6qxg")
 frame_progress = 0.549187
 
-[node name="nicht so BasedDrum" type="AnimatedSprite2D" parent="."]
+[node name="smoldrum" type="AnimatedSprite2D" parent="Drums"]
 position = Vector2(1116.17, 504.795)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_l3apv")
 frame = 3
 frame_progress = 0.582197
 
-[node name="auch ne Trommel" type="AnimatedSprite2D" parent="."]
+[node name="snaredrum" type="AnimatedSprite2D" parent="Drums"]
 position = Vector2(1116.17, 504.795)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_0urms")
 frame = 2
 frame_progress = 0.674369
 
-[node name="Hintergrunnd2" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(1398, 500)
-scale = Vector2(0.791761, -2.07219)
-texture = ExtResource("5_qsr7l")
+[node name="Hintergrund" type="Node2D" parent="."]
+position = Vector2(1759, 804)
+
+[node name="schienen" parent="Hintergrund" instance=ExtResource("9_btfd5")]
+z_index = 2
+position = Vector2(-1593.52, 346.87)
+scale = Vector2(1.99181, 1.28724)
+
+[node name="Subway_floor" parent="Hintergrund" instance=ExtResource("7_s1gic")]
+z_index = -2
+position = Vector2(-576.52, 239.87)
+scale = Vector2(1.23965, 1.40717)
+
+[node name="Background" type="Sprite2D" parent="Hintergrund"]
+z_index = -3
+position = Vector2(-666.52, -426.133)
+scale = Vector2(3.24867, 4.59608)
+texture = ExtResource("6_rktbe")
 
 [node name="hintergrund1" type="Sprite2D" parent="."]
 z_index = -1
@@ -327,21 +342,11 @@ position = Vector2(1889.17, 501.795)
 scale = Vector2(0.296697, -2.42809)
 texture = ExtResource("6_yxyy6")
 
-[node name="Subway_floor" parent="." instance=ExtResource("7_s1gic")]
-z_index = -2
-position = Vector2(1182.48, 1043.87)
-scale = Vector2(1.23965, 1.40717)
-
-[node name="Background" type="Sprite2D" parent="."]
-z_index = -3
-position = Vector2(1092.48, 377.867)
-scale = Vector2(3.24867, 4.59608)
-texture = ExtResource("6_rktbe")
-
-[node name="schienen4" parent="." instance=ExtResource("9_btfd5")]
-z_index = 2
-position = Vector2(165.483, 1150.87)
-scale = Vector2(1.99181, 1.28724)
+[node name="Hintergrunnd2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1398, 500)
+scale = Vector2(0.791761, -2.07219)
+texture = ExtResource("5_qsr7l")
 
 [node name="Witch" type="AnimatedSprite2D" parent="."]
 position = Vector2(289, 789)
