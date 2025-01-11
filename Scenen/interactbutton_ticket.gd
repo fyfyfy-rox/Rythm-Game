@@ -12,8 +12,8 @@ func _on_timer_timeout() -> void:
 func _process(_delta):
 	if (entered == 1):
 		if Input.is_action_just_pressed("interact"):
-			get_tree().change_scene_to_file("res://rythm_game_bass_subway.tscn")
-
+			Dialogic.start("res://addons/dialogic/Dialoge/Ticket_Automat.dtl")
+	
 func _on_body_entered(body: Node2D) -> void:
 	entered = 1
 

@@ -7,7 +7,7 @@ BZZz_ BZZzz Wählen Sie bitte Ihre Gewünschte Haltestelle BZZz_ BzzZ
 Witch: Halte-...  was?
 Wähle dein gewünschtes Level!
 [signal arg="choice_start"]
-- WaldFlöte | [if "{}" == ""]
+- WaldFlöte
 	BZZz. Transport zur WaldFlöte erfolgt BZzz.
 	[signal arg="timeline_ended"]
 	[signal arg="start_flute_game"]
