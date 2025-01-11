@@ -13,7 +13,7 @@ const NODE = preload("res://moving_node_guitar.tscn")
 @onready var timer4 = $"Tasten/Timer4"
 @onready var rythm_map_music = $AudioStreamPlayer_rhytm
 @onready var rythm_map_music_melod = $AudioStreamPlayer_melody
-@export var midi_player: MidiPlayer
+@onready var midi_player =  $MidiPlayer
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) 
@@ -29,7 +29,8 @@ func _on_finished() -> void:
 	print("MIDI-Datei fertig abgespielt. Wechsle Szene...")
 	await(3)
 	Global.letzte_szene = get_tree().get_current_scene().get_path()
-	get_tree().change_scene_to_file("res://Scenen/overworld_2.tscn")
+	Global.witch_position.x = 2000
+	get_tree().change_scene_to_file("res://Scenen/subwaystation.tscn")
 	
 func _process(delta: float) -> void:
 	Mana.value = Global.mana
@@ -91,3 +92,7 @@ func _on_timer_3_timeout() -> void:
 
 func _on_timer_4_timeout() -> void:
 	four.visible = false
+
+
+func _on_midi_player_finished() -> void:
+	pass # Replace with function body.

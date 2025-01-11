@@ -10,8 +10,9 @@ func _on_timer_timeout() -> void:
 		$E_off.visible = false
 
 func _process(_delta):
-	if Input.is_action_just_pressed("interact"):
-		get_tree().change_scene_to_file("res://Scenen/overworld_2.tscn")
+	if (entered == 1):
+		if Input.is_action_just_pressed("interact"):
+			get_tree().change_scene_to_file("res://rythm_game_bass_subway.tscn")
 
 func _on_body_entered(body: Node2D) -> void:
 	entered = 1

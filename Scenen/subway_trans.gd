@@ -5,6 +5,7 @@ var is_in_interact_area: bool = false
 func _process(_delta):
 	if is_in_interact_area:
 		if Input.is_action_just_pressed("interact"):
+			Global.witch_position.x = -221 
 			get_tree().change_scene_to_file("res://Scenen/subwaystation.tscn")
 
 

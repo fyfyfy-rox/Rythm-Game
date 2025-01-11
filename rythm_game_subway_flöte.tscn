@@ -1,0 +1,233 @@
+[gd_scene load_steps=33 format=3 uid="uid://c0qb5ctdd8tyn"]
+
+[ext_resource type="Script" path="res://rythm_game_flöte_subway.gd" id="1_y14ge"]
+[ext_resource type="Texture2D" uid="uid://djbqlhevrgdvd" path="res://Resources/Sprite-Signwithflute.png" id="2_3p0t7"]
+[ext_resource type="AudioStream" uid="uid://dm86iw5i101h7" path="res://Resources/Music/SFX/Fail SFX.wav" id="3_iqu27"]
+[ext_resource type="AudioStream" uid="uid://ccgkxt2gxdwje" path="res://Resources/Music/Tutorial_Forrest/Tutorial_Musik_68 Backingtrack.wav" id="4_0jvnp"]
+[ext_resource type="AudioStream" uid="uid://cktlbw5d8xd44" path="res://Resources/Music/Tutorial_Forrest/Tutorial_Musik_68 main melody.wav" id="5_ym13y"]
+[ext_resource type="Script" path="res://Scenen/audio_stream_player_melod.gd" id="6_5uerc"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="7_i2ndl"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="8_xycc5"]
+[ext_resource type="Texture2D" uid="uid://dhy4tqjd1lnwg" path="res://Resources/Witch/B_witch_charge.png" id="9_l5ess"]
+[ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="10_i0bcf"]
+[ext_resource type="PackedScene" uid="uid://cwdom1ecvrap2" path="res://Scenen/idle_node_2.tscn" id="11_t24ee"]
+[ext_resource type="PackedScene" uid="uid://dh1ihc81uofnc" path="res://Scenen/Idle_node_1.tscn" id="12_dokfd"]
+[ext_resource type="PackedScene" uid="uid://ch0000o4lyy60" path="res://Scenen/idle_node_3.tscn" id="13_87mgp"]
+[ext_resource type="PackedScene" uid="uid://u74e458gexs5" path="res://Scenen/idle_node_4.tscn" id="14_ph3j7"]
+[ext_resource type="Texture2D" uid="uid://cvcwxfujqqa8y" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_1.png" id="15_wguqf"]
+[ext_resource type="Texture2D" uid="uid://b064cmi8h1ruu" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_102.png" id="16_354rj"]
+[ext_resource type="Texture2D" uid="uid://dbleabg8nti3g" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_2.png" id="17_h8ikg"]
+[ext_resource type="Texture2D" uid="uid://dcergcjlav4bp" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_103.png" id="18_g0wqh"]
+[ext_resource type="Texture2D" uid="uid://w776sftt81kx" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_3.png" id="19_tawpf"]
+[ext_resource type="Texture2D" uid="uid://bfihb7d1a8shb" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_104.png" id="20_glkwv"]
+[ext_resource type="Texture2D" uid="uid://bp0lreuce80e4" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_4.png" id="21_g746m"]
+[ext_resource type="Texture2D" uid="uid://dteth4gtvrday" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_105.png" id="22_c7422"]
+[ext_resource type="PackedScene" uid="uid://xlqhigjagvuk" path="res://Scenen/schienen.tscn" id="23_23o30"]
+[ext_resource type="PackedScene" uid="uid://cleust68utvpe" path="res://Scenen/subway_floor.tscn" id="24_e3a58"]
+[ext_resource type="Texture2D" uid="uid://c4fkuubhkx2wv" path="res://Resources/Subway/Subway_background.png" id="25_vhman"]
+
+[sub_resource type="GDScript" id="GDScript_k7slo"]
+script/source = "extends TextureProgressBar
+
+@export var value_delta = 0;
+
+func _process(delta: float) -> void:
+	value += value_delta;
+	value_delta = 0;
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwyv5"]
+atlas = ExtResource("9_l5ess")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw0bo"]
+atlas = ExtResource("9_l5ess")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do1u5"]
+atlas = ExtResource("9_l5ess")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwjcp"]
+atlas = ExtResource("9_l5ess")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbfwm"]
+atlas = ExtResource("9_l5ess")
+region = Rect2(0, 192, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ysqcy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwyv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw0bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do1u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwjcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbfwm")
+}],
+"loop": true,
+"name": &"charge",
+"speed": 8.0
+}]
+
+[node name="Rythm-Game" type="Node2D"]
+position = Vector2(1500, 600)
+script = ExtResource("1_y14ge")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_3p0t7")
+
+[node name="AudioStreamPlayer_failsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_iqu27")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer_rythm_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0jvnp")
+bus = &"Music"
+
+[node name="AudioStreamPlayer_melod" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ym13y")
+bus = &"Music"
+script = ExtResource("6_5uerc")
+
+[node name="MidiPlayer" parent="." instance=ExtResource("7_i2ndl")]
+file = "res://Resources/Music/Tutorial_Forrest/Tutorial_beta_0.9.1.mid"
+playing = true
+
+[node name="ADSR" parent="." instance=ExtResource("8_xycc5")]
+
+[node name="Positions" type="Node2D" parent="."]
+position = Vector2(420, -40)
+
+[node name="Position1" type="Marker2D" parent="Positions"]
+
+[node name="Position2" type="Marker2D" parent="Positions"]
+position = Vector2(0, 60)
+
+[node name="Position3" type="Marker2D" parent="Positions"]
+position = Vector2(0, 120)
+
+[node name="Position4" type="Marker2D" parent="Positions"]
+position = Vector2(0, 190)
+
+[node name="Mana" parent="." instance=ExtResource("10_i0bcf")]
+z_index = 1
+offset_left = -593.0
+offset_top = 483.0
+offset_right = -423.0
+offset_bottom = 495.0
+scale = Vector2(6.73606, 6.95963)
+value = 24.0
+script = SubResource("GDScript_k7slo")
+value_delta = 0
+
+[node name="IdleNodes" type="Node2D" parent="."]
+position = Vector2(-380, -40)
+
+[node name="IdleNode1" parent="IdleNodes" instance=ExtResource("11_t24ee")]
+
+[node name="IdleNode2" parent="IdleNodes" instance=ExtResource("12_dokfd")]
+position = Vector2(0, 60)
+
+[node name="IdleNode3" parent="IdleNodes" instance=ExtResource("13_87mgp")]
+position = Vector2(0, 120)
+
+[node name="IdleNode4" parent="IdleNodes" instance=ExtResource("14_ph3j7")]
+position = Vector2(0, 190)
+
+[node name="Tasten" type="Node2D" parent="."]
+position = Vector2(-470, -40)
+
+[node name="1_on" type="Sprite2D" parent="Tasten"]
+z_index = 1
+texture = ExtResource("15_wguqf")
+
+[node name="1_off" type="Sprite2D" parent="Tasten"]
+texture = ExtResource("16_354rj")
+
+[node name="Timer1" type="Timer" parent="Tasten"]
+wait_time = 0.3
+one_shot = true
+
+[node name="2_on" type="Sprite2D" parent="Tasten"]
+z_index = 1
+position = Vector2(0, 60)
+texture = ExtResource("17_h8ikg")
+
+[node name="2_off" type="Sprite2D" parent="Tasten"]
+position = Vector2(0, 60)
+texture = ExtResource("18_g0wqh")
+
+[node name="Timer2" type="Timer" parent="Tasten"]
+wait_time = 0.3
+one_shot = true
+
+[node name="3_on" type="Sprite2D" parent="Tasten"]
+z_index = 1
+position = Vector2(0, 120)
+texture = ExtResource("19_tawpf")
+
+[node name="3_off" type="Sprite2D" parent="Tasten"]
+position = Vector2(0, 120)
+texture = ExtResource("20_glkwv")
+
+[node name="Timer3" type="Timer" parent="Tasten"]
+wait_time = 0.3
+one_shot = true
+
+[node name="4_on" type="Sprite2D" parent="Tasten"]
+z_index = 1
+position = Vector2(0, 180)
+texture = ExtResource("21_g746m")
+
+[node name="4_off" type="Sprite2D" parent="Tasten"]
+position = Vector2(0, 180)
+texture = ExtResource("22_c7422")
+
+[node name="Timer4" type="Timer" parent="Tasten"]
+wait_time = 0.3
+one_shot = true
+
+[node name="Hintergrund" type="Node2D" parent="."]
+z_index = -2
+position = Vector2(200, 220)
+
+[node name="schienen" parent="Hintergrund" instance=ExtResource("23_23o30")]
+z_index = 2
+position = Vector2(-1593.52, 346.87)
+scale = Vector2(1.99181, 1.28724)
+
+[node name="Subway_floor" parent="Hintergrund" instance=ExtResource("24_e3a58")]
+z_index = -2
+position = Vector2(-576.52, 239.87)
+scale = Vector2(1.23965, 1.40717)
+
+[node name="Background" type="Sprite2D" parent="Hintergrund"]
+z_index = -3
+position = Vector2(-666.52, -426.133)
+scale = Vector2(3.24867, 4.59608)
+texture = ExtResource("25_vhman")
+
+[node name="Witch" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(-990, 199)
+scale = Vector2(8.22917, 9.22917)
+sprite_frames = SubResource("SpriteFrames_ysqcy")
+animation = &"charge"
+
+[connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
+[connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
+[connection signal="timeout" from="Tasten/Timer1" to="." method="_on_timer_1_timeout"]
+[connection signal="timeout" from="Tasten/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Tasten/Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]

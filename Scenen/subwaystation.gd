@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var pause_menu = $"Pause/Pause Menu"
-
 var paused = false
 
 func _ready():
