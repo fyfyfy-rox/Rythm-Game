@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://blwton0kjuvtl"]
+[gd_scene load_steps=28 format=3 uid="uid://blwton0kjuvtl"]
 
 [ext_resource type="Script" path="res://rythm_game_bass_subway.gd" id="1_i0g0e"]
 [ext_resource type="AudioStream" uid="uid://dm86iw5i101h7" path="res://Resources/Music/SFX/Fail SFX.wav" id="2_mlpf1"]
@@ -64,6 +64,16 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_4uxxe"]
+script/source = "extends TextureProgressBar
+
+@export var value_delta = 0;
+
+func _process(delta: float) -> void:
+	value += value_delta;
+	value_delta = 0;
+"
+
 [node name="Rythm-Game" type="Node2D"]
 position = Vector2(1500, 600)
 script = ExtResource("1_i0g0e")
@@ -81,6 +91,7 @@ stream = ExtResource("4_yfgis")
 bus = &"Music"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(0, -49)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("5_mn7fk")
@@ -138,7 +149,7 @@ scale = Vector2(4.5, 4.5)
 
 [node name="1_on" type="Sprite2D" parent="Tasten"]
 visible = false
-z_index = 1
+z_index = -1
 texture = ExtResource("13_ewqld")
 
 [node name="Timer1" type="Timer" parent="Tasten"]
@@ -147,7 +158,7 @@ one_shot = true
 
 [node name="2_on" type="Sprite2D" parent="Tasten"]
 visible = false
-z_index = 1
+z_index = -1
 texture = ExtResource("14_moma1")
 
 [node name="Timer2" type="Timer" parent="Tasten"]
@@ -156,7 +167,7 @@ one_shot = true
 
 [node name="3_on" type="Sprite2D" parent="Tasten"]
 visible = false
-z_index = 1
+z_index = -1
 texture = ExtResource("15_sjo8h")
 
 [node name="Timer3" type="Timer" parent="Tasten"]
@@ -165,25 +176,15 @@ one_shot = true
 
 [node name="4_on" type="Sprite2D" parent="Tasten"]
 visible = false
-z_index = 1
+z_index = -1
 texture = ExtResource("16_yar86")
 
 [node name="Timer4" type="Timer" parent="Tasten"]
 wait_time = 0.3
 one_shot = true
 
-[node name="mana" parent="." instance=ExtResource("17_q1d7x")]
-z_index = 1
-offset_left = -217.0
-offset_top = 537.0
-offset_right = -47.0
-offset_bottom = 549.0
-scale = Vector2(4.9051, 5.83572)
-max_value = 1000.0
-value = 24.0
-
 [node name="Hintergrund" type="Node2D" parent="."]
-z_index = -2
+z_index = -4
 position = Vector2(200, 220)
 
 [node name="schienen" parent="Hintergrund" instance=ExtResource("19_7cfh1")]
@@ -209,11 +210,23 @@ scale = Vector2(8.22917, 9.22917)
 sprite_frames = SubResource("SpriteFrames_fd7l8")
 animation = &"charge"
 
+[node name="Mana" parent="." instance=ExtResource("17_q1d7x")]
+z_index = 2
+offset_left = -613.0
+offset_top = 509.0
+offset_right = -443.0
+offset_bottom = 521.0
+scale = Vector2(6.73606, 6.95963)
+max_value = 1000.0
+value = 24.0
+script = SubResource("GDScript_4uxxe")
+value_delta = 0
+
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Tasten/Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Tasten/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Tasten/Timer3" to="." method="_on_timer_3_timeout"]
-[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]
 [connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]

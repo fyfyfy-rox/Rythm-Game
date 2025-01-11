@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cpdda2hq76cj6"]
+[gd_scene load_steps=31 format=3 uid="uid://cpdda2hq76cj6"]
 
 [ext_resource type="Script" path="res://rythm_game_city.gd" id="1_dfe0d"]
 [ext_resource type="Texture2D" uid="uid://buet2gs40tcse" path="res://Resources/1_extended.png" id="2_00egr"]
@@ -67,20 +67,10 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="GDScript" id="GDScript_k7slo"]
+[sub_resource type="GDScript" id="GDScript_yycyc"]
 script/source = "extends TextureProgressBar
 
 @export var value_delta = 0;
-
-func _process(delta: float) -> void:
-	value += value_delta;
-	value_delta = 0;
-"
-
-[sub_resource type="GDScript" id="GDScript_32xmm"]
-script/source = "extends TextureProgressBar
-
-@export var value_delta = 5;
 
 func _process(delta: float) -> void:
 	value += value_delta;
@@ -205,17 +195,6 @@ mana_inc = 5
 position = Vector2(41.1111, 70)
 mana_inc = 5
 
-[node name="Mana" parent="IdleNodes" instance=ExtResource("10_snyfx")]
-offset_left = -258.889
-offset_top = 220.0
-offset_right = -88.8889
-offset_bottom = 232.0
-scale = Vector2(6.73606, 6.95963)
-max_value = 1000.0
-value = 24.0
-script = SubResource("GDScript_k7slo")
-value_delta = 0
-
 [node name="Tasten" type="Node2D" parent="."]
 position = Vector2(0, -49)
 scale = Vector2(4.5, 4.5)
@@ -272,20 +251,20 @@ position = Vector2(1332, 610)
 
 [node name="Mana" parent="." instance=ExtResource("10_snyfx")]
 z_index = 2
-offset_left = 758.0
-offset_top = 1037.0
-offset_right = 928.0
-offset_bottom = 1049.0
+offset_left = -545.0
+offset_top = 503.0
+offset_right = -375.0
+offset_bottom = 515.0
 scale = Vector2(6.73606, 6.95963)
 max_value = 1000.0
 value = 24.0
-script = SubResource("GDScript_32xmm")
-value_delta = 5
+script = SubResource("GDScript_yycyc")
+value_delta = 0
 
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Tasten/Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Tasten/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Tasten/Timer3" to="." method="_on_timer_3_timeout"]
-[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]
 [connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]

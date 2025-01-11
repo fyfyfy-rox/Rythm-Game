@@ -17,7 +17,7 @@ func _process(delta):
 	if sensor == 0:
 		if Input.is_action_just_pressed("1"):
 			if(Global.mana > 0):
-				Global.mana -= 1
+				Global.mana -= mana_inc
 			animp.play("miss")
 			miss_sound.play()
 			Global.update_node_miss(true)
