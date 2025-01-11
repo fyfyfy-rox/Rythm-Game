@@ -1,7 +1,10 @@
 extends Node2D
 
+@onready var drummerboy = $Drummerboy/AnimatedSprite2D
 @onready var pause_menu = $"Pause/Pause Menu"
 var paused = false
+
+
 
 func _ready():
 	AudioPlayer_Menu.stop_music()
@@ -60,6 +63,8 @@ func _enable_inputs():
 	
 func teleport():
 	Global.mana -= 50
+	drummerboy.visible = true
+
 
 func white_screen(path: String):
 	TransitionScreen.transition()
