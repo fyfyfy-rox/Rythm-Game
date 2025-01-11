@@ -461,7 +461,7 @@ position = Vector2(244, 45)
 [node name="ADSR" parent="." instance=ExtResource("26_6wmjc")]
 
 [node name="MidiPlayer" parent="." instance=ExtResource("25_n58gw")]
-file = "res://Resources/Music/Drum_game/Drum_map_reaper_v15.mid"
+file = "res://Resources/Music/Drum_game/Drum_map_reaper_v16.mid"
 playing = true
 sequence_per_seconds = 10
 
