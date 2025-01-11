@@ -39,7 +39,12 @@ func _on_dialogic_signal(signal_name):
 		get_tree().change_scene_to_file("res://rythm_game_city.tscn")
 	elif signal_name == "teleport":
 		teleport()
-
+	elif signal_name == "start_flute_game":
+		white_screen("res://rythm_game_subway_flöte.tscn")
+	elif signal_name == "start_bass_game":
+		white_screen("res://rythm_game_bass_subway.tscn")
+	elif signal_name == "start_drum_game":
+		white_screen("res://Scenen/Rythm_Drum.tscn")
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):  
 		toggle_pause()  # Toggle the pause state and menu visibility
@@ -55,7 +60,13 @@ func _enable_inputs():
 	
 func teleport():
 	Global.mana -= 50
-	
+
+func white_screen(path: String):
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	_enable_inputs()
+	get_tree().change_scene_to_file(path)
+
 func toggle_pause():
 	paused = !paused  # Invert the pause state (if the game is paused, resume it; otherwise, pause it)
 	

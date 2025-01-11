@@ -19,7 +19,7 @@
 [ext_resource type="Script" path="res://Scenen/interactbutton_ticket.gd" id="16_6i6yj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyf07"]
-size = Vector2(262, 268)
+size = Vector2(158, 166)
 
 [node name="Subwaystation" type="Node2D"]
 script = ExtResource("1_qkuxq")
@@ -95,7 +95,7 @@ scale = Vector2(1.46957, 1.35714)
 texture = ExtResource("4_agbgk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drums"]
-position = Vector2(1670, 652)
+position = Vector2(1657, 703)
 shape = SubResource("RectangleShape2D_xyf07")
 
 [node name="Interactbutton" parent="Drums" instance=ExtResource("5_xy0ye")]
