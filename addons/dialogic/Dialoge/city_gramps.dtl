@@ -1,19 +1,20 @@
 [signal arg="timeline_started"]
-join Witch center
+join Witch left
 Witch: Uhm... Entschuldigung!
-Oh, du bist nicht von hier oder? Willkommen. Kann ich dir helfen?
+join Grams right
+Grams: Oh, du bist nicht von hier oder? Willkommen. Kann ich dir helfen?
 Witch: Ich... ich bin wegen diesem Bass hier. Ich spüre eine seltsame Energie von ihm. Woher hast du ihn?
-Der Bass? Oh, der gehörte einem Musiker, einem Bassisten. Er hat ihn hier gelassen, bevor er... verschwunden ist. Niemand hat ihn seitdem gesehen. Komisch, nicht?
-Verschwunden? Und das Instrument... du spürst nichts Seltsames daran?
-Seltsam? Ich würde sagen, er sieht einfach alt aus. Aber wenn du so neugierig bist, warum probierst du nicht mal, darauf zu spielen? Vielleicht lüftet sich das Geheimnis ja.
+Grams: Der Bass? Oh, der gehörte einem Musiker, einem Bassisten. Er hat ihn hier gelassen, bevor er... verschwunden ist. Niemand hat ihn seitdem gesehen. Komisch, nicht?
+Grams: Verschwunden? Und das Instrument... du spürst nichts Seltsames daran?
+Grams: Seltsam? Ich würde sagen, er sieht einfach alt aus. Aber wenn du so neugierig bist, warum probierst du nicht mal, darauf zu spielen? Vielleicht lüftet sich das Geheimnis ja.
 Witch: Diese Energie... sie ist stark. Genau wie bei der Flöte. Vielleicht kann ich herausfinden, was hier vor sich geht.
-Und wie siehts aus möchtest du ?
+Grams: Und wie siehts aus möchtest du ?
 [signal arg="choice_start"]
 - Ja klar!
-	Klasse!
+	Grams: Klasse!
 	[signal arg="timeline_ended"]
 	[signal arg="start_rythm_game"]
 - Nein gerade nicht
-	Oh schade, kein Bass für dich!
+	Grams: Oh schade, kein Bass für dich!
 	[signal arg="timeline_ended"]
 [signal arg="choice_end"]
