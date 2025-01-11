@@ -2,6 +2,7 @@ extends Area2D
 
 var is_in_chatting_area = false
 
+
 func _process(_delta):
 	if is_in_chatting_area:
 		if Input.is_action_just_pressed("interact"):

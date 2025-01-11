@@ -9,7 +9,7 @@ func _process(delta):
 	position.y += speed * delta
 	
 	animp.play("play")
-	if position.x < -400:
+	if position.y < -400:
 		queue_free()
 	#Sensor or Pressed
 	if sensor == 1: 

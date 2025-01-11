@@ -32,6 +32,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Bassist_teleport": "res://addons/dialogic/Dialoge/Bassist_teleport.dtl",
+"Brunnen": "res://addons/dialogic/Dialoge/Brunnen.dtl",
 "Drummer_teleport": "res://addons/dialogic/Dialoge/Drummer_teleport.dtl",
 "Forrest_Speech_1": "res://addons/dialogic/Dialoge/Forrest_Speech_1.dtl",
 "Subway": "res://addons/dialogic/Dialoge/Subway.dtl",

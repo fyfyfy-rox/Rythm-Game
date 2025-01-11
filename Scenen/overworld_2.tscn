@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://xkeo5tvkaa5q"]
+[gd_scene load_steps=52 format=3 uid="uid://xkeo5tvkaa5q"]
 
 [ext_resource type="Script" path="res://Scenen/overworld_2.gd" id="1_8phev"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="1_hbu0g"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://jfg3sb41uvtk" path="res://Resources/Barrier.png" id="20_23j7b"]
 [ext_resource type="Script" path="res://Scenen/audio_stream_player_ow_bg.gd" id="20_sudot"]
 [ext_resource type="Texture2D" uid="uid://b6r6d85agml5p" path="res://Resources/Fountain_sprite_new-ezgif.com-gif-to-sprite-converter (1).png" id="21_jckyu"]
+[ext_resource type="Script" path="res://Scenen/interactbutton_brunnen.gd" id="22_73rbv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w6fs0"]
 atlas = ExtResource("12_w81yc")
@@ -397,8 +398,8 @@ sprite_frames = SubResource("SpriteFrames_bcuxb")
 frame_progress = 0.982428
 
 [node name="Interactbutton" parent="Node2D" instance=ExtResource("14_rdptu")]
-visible = false
 position = Vector2(-495, 830)
+script = ExtResource("22_73rbv")
 
 [node name="Road" parent="Node2D" instance=ExtResource("1_hbu0g")]
 visible = false
