@@ -80,7 +80,7 @@ func _process(delta: float) -> void:
 [sub_resource type="GDScript" id="GDScript_32xmm"]
 script/source = "extends TextureProgressBar
 
-@export var value_delta = 0;
+@export var value_delta = 5;
 
 func _process(delta: float) -> void:
 	value += value_delta;
@@ -146,6 +146,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("5_83f68")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(0, -49)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("6_xjf48")
@@ -221,7 +222,7 @@ scale = Vector2(4.5, 4.5)
 
 [node name="1_on" type="Sprite2D" parent="Tasten"]
 visible = false
-z_index = 1
+z_index = -1
 texture = ExtResource("15_xasub")
 
 [node name="Timer1" type="Timer" parent="Tasten"]
@@ -230,7 +231,7 @@ one_shot = true
 
 [node name="2_on" type="Sprite2D" parent="Tasten"]
 visible = false
-z_index = 1
+z_index = -1
 texture = ExtResource("16_0bopm")
 
 [node name="Timer2" type="Timer" parent="Tasten"]
@@ -239,7 +240,7 @@ one_shot = true
 
 [node name="3_on" type="Sprite2D" parent="Tasten"]
 visible = false
-z_index = 1
+z_index = -1
 texture = ExtResource("17_gftjn")
 
 [node name="Timer3" type="Timer" parent="Tasten"]
@@ -248,7 +249,7 @@ one_shot = true
 
 [node name="4_on" type="Sprite2D" parent="Tasten"]
 visible = false
-z_index = 1
+z_index = -1
 texture = ExtResource("18_elyyy")
 
 [node name="Timer4" type="Timer" parent="Tasten"]
@@ -276,14 +277,15 @@ offset_top = 1037.0
 offset_right = 928.0
 offset_bottom = 1049.0
 scale = Vector2(6.73606, 6.95963)
+max_value = 1000.0
 value = 24.0
 script = SubResource("GDScript_32xmm")
-value_delta = 0
+value_delta = 5
 
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Tasten/Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Tasten/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Tasten/Timer3" to="." method="_on_timer_3_timeout"]
-[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]
+[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_3_timeout"]

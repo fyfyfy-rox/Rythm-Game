@@ -149,9 +149,10 @@ offset_top = 483.0
 offset_right = -423.0
 offset_bottom = 495.0
 scale = Vector2(6.73606, 6.95963)
+max_value = 1000.0
 value = 24.0
 script = SubResource("GDScript_k7slo")
-value_delta = 0
+value_delta = 7
 
 [node name="IdleNodes" type="Node2D" parent="."]
 position = Vector2(-380, -40)

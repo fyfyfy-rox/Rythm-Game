@@ -179,6 +179,7 @@ offset_top = 537.0
 offset_right = -47.0
 offset_bottom = 549.0
 scale = Vector2(4.9051, 5.83572)
+max_value = 1000.0
 value = 24.0
 
 [node name="Hintergrund" type="Node2D" parent="."]
@@ -214,5 +215,5 @@ animation = &"charge"
 [connection signal="timeout" from="Tasten/Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Tasten/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Tasten/Timer3" to="." method="_on_timer_3_timeout"]
-[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]
+[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_3_timeout"]

@@ -2,7 +2,7 @@ extends Node2D
 
 const NODE = preload("res://moving_node_guitar.tscn")
 @onready var Witch_animation = $Witch
-@onready var Mana = $mana
+@onready var Mana = $Mana
 @onready var one = $"Tasten/1_on"
 @onready var two = $"Tasten/2_on"
 @onready var three = $"Tasten/3_on"
