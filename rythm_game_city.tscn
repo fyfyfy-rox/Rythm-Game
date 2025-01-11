@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cpdda2hq76cj6"]
+[gd_scene load_steps=33 format=3 uid="uid://cpdda2hq76cj6"]
 
 [ext_resource type="Script" path="res://rythm_game_city.gd" id="1_dfe0d"]
 [ext_resource type="Texture2D" uid="uid://buet2gs40tcse" path="res://Resources/1_extended.png" id="2_00egr"]
@@ -23,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://se2xuvl06lah" path="res://Resources/String 4.png" id="18_elyyy"]
 [ext_resource type="Texture2D" uid="uid://cte7s3jyqmstm" path="res://Resources/sidewalk.PNG" id="19_adu8g"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="20_88h2w"]
+[ext_resource type="PackedScene" uid="uid://6ilor162utkb" path="res://Scenen/pause_menu_rythm.tscn" id="24_d0nl1"]
+[ext_resource type="Script" path="res://Scenen/pause_menu_rythm_city.gd" id="25_dyfyj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwyv5"]
 atlas = ExtResource("9_dlxw6")
@@ -260,6 +262,14 @@ max_value = 1000.0
 value = 24.0
 script = SubResource("GDScript_yycyc")
 value_delta = 0
+
+[node name="Pause" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="PauseMenuRythm" parent="Pause" instance=ExtResource("24_d0nl1")]
+process_mode = 2
+visible = false
+script = ExtResource("25_dyfyj")
 
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

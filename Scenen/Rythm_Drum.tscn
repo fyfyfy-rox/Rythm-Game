@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://b6y1f688id4ry"]
+[gd_scene load_steps=69 format=3 uid="uid://b6y1f688id4ry"]
 
 [ext_resource type="Script" path="res://Scenen/rythm_drum.gd" id="1_1nwh4"]
 [ext_resource type="Texture2D" uid="uid://b5ti3pdflt8p7" path="res://Resources/Basedrum_sprite.png" id="1_7hnkk"]
@@ -31,6 +31,8 @@
 [ext_resource type="AudioStream" uid="uid://xduc438if163" path="res://Resources/Music/Drum_game/DrumGame_124_BackingTrack_v3.wav" id="29_4ngpt"]
 [ext_resource type="AudioStream" uid="uid://d3s2m6j000dvx" path="res://Resources/Music/Drum_game/DrumGame_124_Mainline_v5.wav" id="30_8hfsb"]
 [ext_resource type="Script" path="res://Scenen/audio_stream_player_melod.gd" id="30_h846n"]
+[ext_resource type="PackedScene" uid="uid://6ilor162utkb" path="res://Scenen/pause_menu_rythm.tscn" id="32_1ceiy"]
+[ext_resource type="Script" path="res://Scenen/pause_menu_rythm_drum.gd" id="33_s5yee"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7kxwn"]
 atlas = ExtResource("1_7hnkk")
@@ -480,6 +482,14 @@ bus = &"Music"
 stream = ExtResource("30_8hfsb")
 bus = &"Music"
 script = ExtResource("30_h846n")
+
+[node name="Pause" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="PauseMenuRythm" parent="Pause" instance=ExtResource("32_1ceiy")]
+process_mode = 2
+visible = false
+script = ExtResource("33_s5yee")
 
 [connection signal="timeout" from="Tasten/Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Tasten/Timer2" to="." method="_on_timer_2_timeout"]
