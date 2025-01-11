@@ -29,7 +29,6 @@ var letzte_szene: String = ""
 
 var tree_interacted = 0;
 
-var first_game: bool = false
 
 var mana = 0;
 var inputs_disabled: bool = false
@@ -39,7 +38,6 @@ var in_pause_overworld: bool = false
 var in_pause_subway: bool = false
 var in_pause_rythm_wald: bool = false
 
-var first_city_entered: bool = true
 var in_rythm_game: bool = false
 
 var manabar_visible = false
@@ -149,3 +147,18 @@ func load_settings():
 				print("Fehler beim Parsen der settings.json:", json_parser.get_error_message())
 	else:
 		print("Keine Einstellungen gefunden, Standardwerte werden verwendet.")
+		
+	
+func delete_save():
+	if FileAccess.file_exists("user://save_game.json"):
+		var dir = DirAccess.open("user://")
+		if dir:
+			var result = dir.remove("save_game.json")
+			if result == OK:
+				mana = 0
+				scene_states = {}
+				print("Speicherstand gelöscht!")
+			else:
+				print("Fehler beim Löschen der Datei!")
+	else:
+		print("Kein Speicherstand vorhanden, nichts zu löschen.")

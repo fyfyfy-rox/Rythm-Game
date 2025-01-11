@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bhccdsud1n5f"]
+[gd_scene load_steps=33 format=3 uid="uid://bhccdsud1n5f"]
 
 [ext_resource type="Script" path="res://Scenen/rythm_game.gd" id="1_buiov"]
 [ext_resource type="Texture2D" uid="uid://djbqlhevrgdvd" path="res://Resources/Sprite-Signwithflute.png" id="1_imhwk"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bp0lreuce80e4" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_4.png" id="16_qgjlr"]
 [ext_resource type="Texture2D" uid="uid://bfihb7d1a8shb" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_104.png" id="18_spo76"]
 [ext_resource type="Texture2D" uid="uid://dteth4gtvrday" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_105.png" id="20_1x1wm"]
+[ext_resource type="PackedScene" uid="uid://6ilor162utkb" path="res://Scenen/pause_menu_rythm.tscn" id="25_07t7f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwyv5"]
 atlas = ExtResource("7_wyr7e")
@@ -220,6 +221,12 @@ texture = ExtResource("20_1x1wm")
 [node name="Timer4" type="Timer" parent="Tasten"]
 wait_time = 0.3
 one_shot = true
+
+[node name="Pause" type="CanvasLayer" parent="."]
+
+[node name="PauseMenuRythm" parent="Pause" instance=ExtResource("25_07t7f")]
+process_mode = 2
+visible = false
 
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

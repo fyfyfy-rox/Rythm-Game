@@ -69,20 +69,6 @@ texture = ExtResource("2_iivee")
 [node name="Node2D" parent="Sprite2D" instance=ExtResource("3_ug428")]
 position = Vector2(-44, -260.175)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -210.0
-offset_top = -325.0
-offset_right = 35.0
-offset_bottom = 114.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Witch" type="AnimatedSprite2D" parent="."]
 position = Vector2(-476, 303.039)
 scale = Vector2(8.22917, 9.22917)
@@ -91,10 +77,10 @@ animation = &"charge"
 
 [node name="Play" type="Button" parent="."]
 layout_mode = 2
-offset_left = -157.0
-offset_top = -225.286
-offset_right = 143.0
-offset_bottom = -125.286
+offset_left = -160.0
+offset_top = -275.128
+offset_right = 140.0
+offset_bottom = -175.128
 theme = ExtResource("5_glxbr")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -105,12 +91,29 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 33
 text = "Play"
 
+[node name="New_Game" type="Button" parent="."]
+layout_mode = 0
+offset_left = -160.0
+offset_top = -152.517
+offset_right = 140.0
+offset_bottom = -52.517
+theme = ExtResource("5_glxbr")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+text = "New Game"
+
 [node name="Options" type="Button" parent="."]
 layout_mode = 2
-offset_left = -159.0
-offset_top = -97.6903
-offset_right = 141.0
-offset_bottom = 2.30969
+offset_left = -160.0
+offset_top = -30.9017
+offset_right = 140.0
+offset_bottom = 69.0983
 theme = ExtResource("5_glxbr")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -124,10 +127,10 @@ text = "Options"
 
 [node name="Credits" type="Button" parent="."]
 layout_mode = 2
-offset_left = -162.0
-offset_top = 32.8957
-offset_right = 138.0
-offset_bottom = 132.896
+offset_left = -160.0
+offset_top = 91.7092
+offset_right = 140.0
+offset_bottom = 191.709
 theme = ExtResource("5_glxbr")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -140,10 +143,10 @@ text = "Credits"
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 2
-offset_left = -161.0
-offset_top = 158.498
-offset_right = 139.0
-offset_bottom = 258.497
+offset_left = -160.0
+offset_top = 217.311
+offset_right = 140.0
+offset_bottom = 317.31
 theme = ExtResource("5_glxbr")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -155,6 +158,7 @@ theme_override_font_sizes/font_size = 33
 text = "Quit"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="New_Game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

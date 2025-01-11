@@ -313,6 +313,7 @@ scale = Vector2(4.9051, 5.83572)
 value = 24.0
 
 [node name="Gramps" type="Node2D" parent="."]
+process_mode = 3
 script = ExtResource("12_t40ck")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gramps"]
@@ -351,6 +352,7 @@ shape = SubResource("RectangleShape2D_jojyf")
 position = Vector2(-102, 184)
 
 [node name="Drummer" type="Node2D" parent="."]
+process_mode = 3
 visible = false
 position = Vector2(796, 805)
 
@@ -371,6 +373,7 @@ shape = SubResource("RectangleShape2D_w0p6k")
 position = Vector2(5, 92)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("19_juvxo")
 max_distance = 4000.0
 attenuation = 1e-05
@@ -390,6 +393,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("20_23j7b")
 
 [node name="Node2D" type="Node2D" parent="."]
+process_mode = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
 position = Vector2(-636, 720)

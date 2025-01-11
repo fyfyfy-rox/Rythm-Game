@@ -11,7 +11,7 @@ func _ready():
 	var scene_path = get_tree().current_scene.scene_file_path  # Pfad zur aktuellen Szene
 	if not Global.scene_states.has(scene_path):
 		Global.scene_states[scene_path] = false  # Standardwert: Szene wurde noch nicht betreten
-		print("Szenenstatus für", scene_path, "initialisiert.")
+		print("Szenenstatus für ", scene_path, "initialisiert.")
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # Set mouse mode to "captured", so the mouse is hidden initially
 	Dialogic.signal_event.connect(_on_dialogic_signal)  # Connect Dialogic signals

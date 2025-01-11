@@ -41,3 +41,8 @@ func _on_credits_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_new_game_pressed() -> void:
+	Global.delete_save()
+	get_tree().change_scene_to_file("res://Scenen/wald.tscn")
