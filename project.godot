@@ -26,6 +26,7 @@ AudioPlayer_Menu="*res://Scenen/audio_player_menü.tscn"
 
 directories/dch_directory={
 "Grams": "res://Grams.dch",
+"Ticket-chan": "res://Ticket-chan.dch",
 "Witch": "res://Characters/Witch.dch",
 "character_witch_test": "res://Characters/character_witch_test.dch",
 "test": "res://addons/dialogic/Example Assets/test.dch"
