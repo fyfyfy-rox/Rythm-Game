@@ -1,7 +1,6 @@
 extends Area2D
 var entered = 0; 
-var talking = false 
-
+var in_chat = false 
 func _on_timer_timeout() -> void:
 	if (entered == 1):
 		$E.visible = not $E.visible
@@ -12,14 +11,14 @@ func _on_timer_timeout() -> void:
 
 func _process(_delta):
 	if (entered == 1):
-		if Input.is_action_just_pressed("interact") and not talking:
-			talking = true
-			Dialogic.start("res://addons/dialogic/Dialoge/Ticket_Automat.dtl")
-	
+		if Input.is_action_just_pressed("interact") and not in_chat:
+			in_chat = true
+			Dialogic.start("res://addons/dialogic/Dialoge/Brunnen.dtl")
+
 func _on_body_entered(body: Node2D) -> void:
 	entered = 1
 
 
 func _on_body_exited(body: Node2D) -> void:
 	entered = 0
-	talking = false
+	in_chat = false

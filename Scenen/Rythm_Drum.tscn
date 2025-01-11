@@ -444,24 +444,24 @@ wait_time = 0.3
 one_shot = true
 
 [node name="Positions" type="Node2D" parent="."]
-position = Vector2(1765, 209)
+position = Vector2(1759, 180)
 
 [node name="Position1" type="Marker2D" parent="Positions"]
-position = Vector2(7, 45)
+position = Vector2(0, 45)
 
 [node name="Position2" type="Marker2D" parent="Positions"]
-position = Vector2(75, 45)
+position = Vector2(80, 45)
 
 [node name="Position3" type="Marker2D" parent="Positions"]
-position = Vector2(161, 45)
+position = Vector2(160, 45)
 
 [node name="Position4" type="Marker2D" parent="Positions"]
-position = Vector2(239, 45)
+position = Vector2(244, 45)
 
 [node name="ADSR" parent="." instance=ExtResource("26_6wmjc")]
 
 [node name="MidiPlayer" parent="." instance=ExtResource("25_n58gw")]
-file = "res://Resources/Music/Drum_game/Drum_map_reaper_v12.mid"
+file = "res://Resources/Music/Drum_game/Drum_map_reaper_v16.mid"
 playing = true
 sequence_per_seconds = 10
 
