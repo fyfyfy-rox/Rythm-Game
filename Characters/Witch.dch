@@ -20,8 +20,8 @@
 "image": "\"res://Resources/Witch/Witch_anime_default.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
+"offset": Vector2(0, 30),
+"scale": 0.75,
 "scene": ""
 },
 "happy": {
@@ -29,8 +29,8 @@
 "image": "\"res://Resources/Witch/Screenshot_from_2024-12-28_19-22-48-removebg-preview1.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
+"offset": Vector2(0, 30),
+"scale": 0.75,
 "scene": ""
 },
 "irritated": {
@@ -38,8 +38,8 @@
 "image": "\"res://Resources/Witch/Witch_anime_iriitiert.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
+"offset": Vector2(0, 30),
+"scale": 0.75,
 "scene": ""
 }
 },
