@@ -8,7 +8,7 @@ func _process(_delta):
 	if is_in_chatting_area:
 		if Input.is_action_just_pressed("interact") and not talkin:
 			talkin = true
-			Dialogic.start("Drummer.dtl")
+			Dialogic.start("Drummer")
 	
 
 

@@ -31,6 +31,8 @@ var letzte_szene: String = ""
 
 var tree_interacted = 0;
 
+var bassist: bool = false
+var drummer: bool = false
 
 var mana = 0;
 var inputs_disabled: bool = false
@@ -75,6 +77,8 @@ func save_game():
 		"mana": mana,  # Mana des Spielers
 		"current_scene": get_tree().current_scene.scene_file_path,  # Pfad zur aktuellen Szene
 		"scene_states": scene_states,  # Speichert, ob Szenen bereits betreten wurden
+		"bassist": bassist,
+		"drummer":drummer,
 	}
 
 	var file = FileAccess.open("user://save_game.json", FileAccess.WRITE)
@@ -103,6 +107,9 @@ func load_game():
 					witch_position = Vector2(save_data.get("player_position", [0, 0])[0], save_data.get("player_position", [0, 0])[1])
 					witch_direction = Vector2(save_data.get("player_direction", [1, 0])[0], save_data.get("player_direction", [1, 0])[1])
 					mana = save_data.get("mana", 0)
+					
+					bassist = save_data.get("bassist", false)
+					drummer = save_data.get("drummer", false)
 
 					# Szenenstatus wiederherstellen
 					scene_states = save_data.get("scene_states", {})

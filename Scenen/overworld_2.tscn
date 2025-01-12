@@ -501,7 +501,6 @@ frame_progress = 0.263851
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bassist/Area2D"]
 position = Vector2(-788.323, -9185.57)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_gxnkp")
 
 [node name="Interactbutton" parent="Bassist" instance=ExtResource("14_rdptu")]
@@ -561,6 +560,8 @@ frame_progress = 0.59591
 
 [node name="Area2D" type="Area2D" parent="Drummer"]
 position = Vector2(21, -2)
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drummer/Area2D"]
 position = Vector2(-203, -71)

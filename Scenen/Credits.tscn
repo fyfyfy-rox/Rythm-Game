@@ -52,6 +52,7 @@ theme_override_font_sizes/font_size = 40
 text = "Eder Munizz"
 
 [node name="Label2" type="Label" parent="Assets"]
+layout_mode = 0
 offset_left = -40.0
 offset_top = 130.0
 offset_right = 195.0
@@ -61,6 +62,7 @@ text = "9E0
 "
 
 [node name="Label3" type="Label" parent="Assets"]
+layout_mode = 0
 offset_left = -40.0
 offset_top = 183.0
 offset_right = 195.0
@@ -69,6 +71,7 @@ theme_override_font_sizes/font_size = 40
 text = "Caz"
 
 [node name="Label4" type="Label" parent="Assets"]
+layout_mode = 0
 offset_left = -40.0
 offset_top = 237.0
 offset_right = 195.0
@@ -94,6 +97,7 @@ theme_override_font_sizes/font_size = 40
 text = "Anton Schneider"
 
 [node name="Label2" type="Label" parent="Devs"]
+layout_mode = 0
 offset_left = -40.0
 offset_top = 130.0
 offset_right = 195.0
@@ -103,6 +107,7 @@ text = "Luis Melzer
 "
 
 [node name="Label3" type="Label" parent="Devs"]
+layout_mode = 0
 offset_left = -40.0
 offset_top = 183.0
 offset_right = 195.0
@@ -128,6 +133,7 @@ theme_override_font_sizes/font_size = 40
 text = "Liam Rudolph"
 
 [node name="Label2" type="Label" parent="Music"]
+layout_mode = 0
 offset_left = -40.0
 offset_top = 130.0
 offset_right = 218.0

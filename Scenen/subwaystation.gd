@@ -7,6 +7,8 @@ var paused = false
 
 
 func _ready():
+	if Global.drumnmer:
+		drummerboy.visible
 	AudioPlayer_Menu.stop_music()
 	drummerboy.play("default")
 	if Global.letzte_szene == "/root/BassRythm":
@@ -65,7 +67,8 @@ func _enable_inputs():
 	print("Inputs aktiviert.")
 	
 func teleport():
-	Global.mana -= 50
+	Global.drummer = true
+	Global.mana -= 500
 	drummerboy.visible = true
 
 

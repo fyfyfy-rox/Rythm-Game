@@ -9,6 +9,10 @@ extends Node2D
 var paused = false  # Variable to track if the game is paused or not
 # _ready function, executed when the node is initialized
 func _ready():
+	if Global.bassist:
+		$Bassist.visible = true
+		$Bassist/AnimatedSprite2D.play("default")
+		
 	AudioPlayer_Menu.stop_music()
 	bg_music.play()
 	gramps_animation.play("default")
@@ -82,6 +86,7 @@ func _exit_tree():
 	bg_music.stop()  # Musik stoppen
 
 func teleport():
+	Global.bassist = true
 	Global.mana -= 500
 	$Mana/max_mana.visible = false
 	$Bassist.visible = true		 
