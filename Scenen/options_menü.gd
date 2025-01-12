@@ -6,7 +6,7 @@ func _on_volume_pressed() -> void:
 	
 
 func _on_keybinds_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Scenen/keybinds.tscn")
 	
 
 func _on_graphics_pressed() -> void:

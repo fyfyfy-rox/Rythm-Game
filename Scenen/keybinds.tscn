@@ -1,0 +1,156 @@
+[gd_scene load_steps=10 format=3 uid="uid://baiyjors0fpqg"]
+
+[ext_resource type="Texture2D" uid="uid://3vbqmc1hx02j" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_15.png" id="1_au6af"]
+[ext_resource type="Script" path="res://Scenen/keybinds.gd" id="1_rhp0k"]
+[ext_resource type="Texture2D" uid="uid://cijykl3nk8e0p" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_61.png" id="2_818hi"]
+[ext_resource type="Texture2D" uid="uid://dllhd5hld1rcg" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_38.png" id="3_0w2ia"]
+[ext_resource type="Texture2D" uid="uid://cvcwxfujqqa8y" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_1.png" id="4_fr5bc"]
+[ext_resource type="Texture2D" uid="uid://dbleabg8nti3g" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_2.png" id="5_hbpnh"]
+[ext_resource type="Texture2D" uid="uid://w776sftt81kx" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_3.png" id="6_3sq0m"]
+[ext_resource type="Texture2D" uid="uid://bp0lreuce80e4" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_4.png" id="7_e38kr"]
+[ext_resource type="Theme" uid="uid://c4xa0yicu0rgb" path="res://Resources/Buttons/default_button.tres" id="8_vbnru"]
+
+[node name="Keybinds" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rhp0k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.103744, 0.103744, 0.103744, 1)
+
+[node name="Interact" type="Sprite2D" parent="."]
+position = Vector2(350, 370)
+scale = Vector2(5, 5)
+texture = ExtResource("1_au6af")
+
+[node name="Label" type="Label" parent="Interact"]
+offset_left = 22.0
+offset_top = -11.0
+offset_right = 83.0
+offset_bottom = 12.0
+scale = Vector2(0.18, 0.18)
+theme_override_font_sizes/font_size = 100
+text = "Interact"
+
+[node name="Pause" type="Sprite2D" parent="."]
+position = Vector2(350, 890)
+scale = Vector2(5, 5)
+texture = ExtResource("2_818hi")
+
+[node name="Label2" type="Label" parent="Pause"]
+offset_left = 22.0
+offset_top = -11.0
+offset_right = 83.0
+offset_bottom = 12.0
+scale = Vector2(0.18, 0.18)
+theme_override_font_sizes/font_size = 100
+text = "Pause"
+
+[node name="Manabar" type="Sprite2D" parent="."]
+position = Vector2(350, 630)
+scale = Vector2(5, 5)
+texture = ExtResource("3_0w2ia")
+
+[node name="Label" type="Label" parent="Manabar"]
+offset_left = 22.0
+offset_top = -11.0
+offset_right = 83.0
+offset_bottom = 12.0
+scale = Vector2(0.18, 0.18)
+theme_override_font_sizes/font_size = 100
+text = "Manabar"
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(1500, 240)
+scale = Vector2(5, 5)
+texture = ExtResource("4_fr5bc")
+
+[node name="Label2" type="Label" parent="1"]
+offset_left = 22.0
+offset_top = -11.0
+offset_right = 83.0
+offset_bottom = 12.0
+scale = Vector2(0.18, 0.18)
+theme_override_font_sizes/font_size = 100
+text = "Play Note 1"
+
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(1500, 500)
+scale = Vector2(5, 5)
+texture = ExtResource("5_hbpnh")
+
+[node name="Label2" type="Label" parent="2"]
+offset_left = 22.0
+offset_top = -11.0
+offset_right = 83.0
+offset_bottom = 12.0
+scale = Vector2(0.18, 0.18)
+theme_override_font_sizes/font_size = 100
+text = "Play Note 2"
+
+[node name="3" type="Sprite2D" parent="."]
+position = Vector2(1500, 760)
+scale = Vector2(5, 5)
+texture = ExtResource("6_3sq0m")
+
+[node name="Label2" type="Label" parent="3"]
+offset_left = 22.0
+offset_top = -11.0
+offset_right = 83.0
+offset_bottom = 12.0
+scale = Vector2(0.18, 0.18)
+theme_override_font_sizes/font_size = 100
+text = "Play Note 3
+"
+
+[node name="4" type="Sprite2D" parent="."]
+position = Vector2(1500, 1020)
+scale = Vector2(5, 5)
+texture = ExtResource("7_e38kr")
+
+[node name="Label2" type="Label" parent="4"]
+offset_left = 22.0
+offset_top = -11.0
+offset_right = 83.0
+offset_bottom = 12.0
+scale = Vector2(0.18, 0.18)
+theme_override_font_sizes/font_size = 100
+text = "Play Note 4"
+
+[node name="Back" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -161.0
+offset_right = 100.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("8_vbnru")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
