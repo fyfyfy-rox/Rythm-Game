@@ -20,3 +20,4 @@ Ticket-chan: Wähle dein gewünschtes Level!
 	[signal arg="timeline_ended"]
 	[signal arg="start_drum_game"]
 [signal arg="choice_end"]
+[end_timeline]

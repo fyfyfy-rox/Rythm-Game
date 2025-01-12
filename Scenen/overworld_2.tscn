@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://xkeo5tvkaa5q"]
+[gd_scene load_steps=67 format=3 uid="uid://xkeo5tvkaa5q"]
 
 [ext_resource type="Script" path="res://Scenen/overworld_2.gd" id="1_8phev"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="1_hbu0g"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dvnjembckcyjg" path="res://Resources/Subway/City_subway.png" id="17_kg6jf"]
 [ext_resource type="AudioStream" uid="uid://fhwoo62riunk" path="res://Resources/Music/BG_musik/BG_Musik_City_67.mp3" id="19_juvxo"]
 [ext_resource type="Texture2D" uid="uid://jfg3sb41uvtk" path="res://Resources/Barrier.png" id="20_23j7b"]
+[ext_resource type="Texture2D" uid="uid://chio1k5h7pspk" path="res://Resources/NPCs/Drummer_city_spritesheet.png" id="20_ivnx4"]
 [ext_resource type="Script" path="res://Scenen/audio_stream_player_ow_bg.gd" id="20_sudot"]
 [ext_resource type="Texture2D" uid="uid://b6r6d85agml5p" path="res://Resources/Fountain_sprite_new-ezgif.com-gif-to-sprite-converter (1).png" id="21_jckyu"]
 [ext_resource type="Script" path="res://Scenen/interactbutton_brunnen.gd" id="22_73rbv"]
@@ -99,7 +100,76 @@ size = Vector2(67, 186)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jojyf"]
 size = Vector2(151, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3sor"]
+atlas = ExtResource("20_ivnx4")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2xhu"]
+atlas = ExtResource("20_ivnx4")
+region = Rect2(32, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afbgl"]
+atlas = ExtResource("20_ivnx4")
+region = Rect2(32, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcs1n"]
+atlas = ExtResource("20_ivnx4")
+region = Rect2(32, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns2kp"]
+atlas = ExtResource("20_ivnx4")
+region = Rect2(32, 192, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrcva"]
+atlas = ExtResource("20_ivnx4")
+region = Rect2(32, 240, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qk84"]
+atlas = ExtResource("20_ivnx4")
+region = Rect2(0, 240, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kc5u"]
+atlas = ExtResource("20_ivnx4")
+region = Rect2(0, 192, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nd2r"]
+atlas = ExtResource("20_ivnx4")
+region = Rect2(0, 144, 32, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_qm710"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3sor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2xhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afbgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcs1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns2kp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrcva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qk84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kc5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nd2r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0p6k"]
 size = Vector2(109, 200)
@@ -300,7 +370,7 @@ texture = ExtResource("8_saxhx")
 
 [node name="Witch" parent="." instance=ExtResource("2_4gn77")]
 z_index = 1
-position = Vector2(-182, 760)
+position = Vector2(500, 760)
 scale = Vector2(4.7, 4.7)
 collision_mask = 5
 move_speed = 400.0
@@ -342,6 +412,7 @@ texture = ExtResource("14_7x5g3")
 
 [node name="Gramps" type="Node2D" parent="."]
 process_mode = 3
+position = Vector2(500, 0)
 script = ExtResource("12_t40ck")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gramps"]
@@ -359,10 +430,10 @@ position = Vector2(589.5, 760)
 shape = SubResource("RectangleShape2D_momma")
 
 [node name="Interactbutton" parent="Gramps" instance=ExtResource("14_rdptu")]
-position = Vector2(583, 905)
+position = Vector2(587, 925)
 
 [node name="Subway_trans" type="Area2D" parent="."]
-position = Vector2(1775, 741)
+position = Vector2(2247, 762)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("17_bm20q")
@@ -377,24 +448,23 @@ position = Vector2(-105.5, 61)
 shape = SubResource("RectangleShape2D_jojyf")
 
 [node name="Interactbutton" parent="Subway_trans" instance=ExtResource("14_rdptu")]
-position = Vector2(-102, 184)
+position = Vector2(-127, 148)
 
 [node name="Drummer" type="Node2D" parent="."]
 process_mode = 3
-visible = false
-position = Vector2(796, 805)
+position = Vector2(1316, 832)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Drummer"]
 position = Vector2(12, -74)
 scale = Vector2(4.80469, 4.46354)
 sprite_frames = SubResource("SpriteFrames_qm710")
-frame_progress = 0.539207
+frame_progress = 0.599575
 
 [node name="Area2D" type="Area2D" parent="Drummer"]
 position = Vector2(21, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drummer/Area2D"]
-position = Vector2(-11, -50)
+position = Vector2(-17, -73)
 shape = SubResource("RectangleShape2D_w0p6k")
 
 [node name="Interactbutton" parent="Drummer" instance=ExtResource("14_rdptu")]
@@ -410,6 +480,7 @@ bus = &"Music"
 script = ExtResource("20_sudot")
 
 [node name="Barrier" type="StaticBody2D" parent="."]
+position = Vector2(-2, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
 position = Vector2(2788, 789)
@@ -422,6 +493,7 @@ texture = ExtResource("20_23j7b")
 
 [node name="Node2D" type="Node2D" parent="."]
 process_mode = 3
+position = Vector2(-8, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
 position = Vector2(-636, 720)
