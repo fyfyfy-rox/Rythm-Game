@@ -1,6 +1,7 @@
 [signal arg="timeline_started"]
 join Witch left
 join Grams right
+Grams: Naa, möchtest du doch spielen?
 [signal arg="choice_start"]
 - Bass spielen
 	[signal arg="time_ended"]
@@ -9,6 +10,8 @@ join Grams right
 	do Global.update_mana()
 	if {mana} >= 500:
 		[signal arg="teleport"]
+- Abbrechen
+	Grams: Traust du dich nicht??
 [signal arg="choice_end"]
 [signal arg="timeline_ended"]
 [end_timeline]

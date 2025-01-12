@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bhqnkqxhbkuyy" path="res://Scenen/pause_menu.tscn" id="8_sc1f1"]
 [ext_resource type="Script" path="res://Scenen/pause_menu_subway.gd" id="9_d3ure"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="11_6gqgb"]
-[ext_resource type="PackedScene" path="res://Scenen/schienen.tscn" id="12_tkof0"]
+[ext_resource type="PackedScene" uid="uid://xlqhigjagvuk" path="res://Scenen/schienen.tscn" id="12_tkof0"]
 [ext_resource type="Texture2D" uid="uid://dp0j4v2u4j8pp" path="res://Resources/Subway/Treppe.png" id="14_61npt"]
 [ext_resource type="Script" path="res://Scenen/interactbutton_exit.gd" id="15_6cv3h"]
 [ext_resource type="Texture2D" uid="uid://dngc8ngyfkl4f" path="res://Resources/Subway/Ticketautomat.png" id="16_3fyy5"]
