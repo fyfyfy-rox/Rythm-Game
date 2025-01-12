@@ -29,6 +29,7 @@ directories/dch_directory={
 "Grams": "res://Characters/Grams.dch",
 "Ticket-chan": "res://Characters/Ticket-chan.dch",
 "Witch": "res://Characters/Witch.dch",
+"character": "res://Resources/NPCs/character.dch",
 "character_witch_test": "res://Characters/character_witch_test.dch",
 "test": "res://addons/dialogic/Example Assets/test.dch"
 }
