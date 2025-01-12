@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://xkeo5tvkaa5q"]
+[gd_scene load_steps=78 format=3 uid="uid://xkeo5tvkaa5q"]
 
 [ext_resource type="Script" path="res://Scenen/overworld_2.gd" id="1_8phev"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="1_hbu0g"]
@@ -15,8 +15,10 @@
 [ext_resource type="Shader" path="res://Scenen/max_mana.gdshader" id="13_0n5s0"]
 [ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="14_7x5g3"]
 [ext_resource type="PackedScene" uid="uid://dysrwqnlvywo4" path="res://Scenen/Interactbutton.tscn" id="14_rdptu"]
+[ext_resource type="Script" path="res://Scenen/bassist.gd" id="15_eogu8"]
 [ext_resource type="Script" path="res://Scenen/Canvas_manabar.gd" id="15_h10u6"]
 [ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="16_4ylux"]
+[ext_resource type="Texture2D" uid="uid://c1gfcs72yymvk" path="res://Resources/NPCs/Bassis_city.png" id="16_7hff4"]
 [ext_resource type="Script" path="res://Scenen/subway_trans.gd" id="17_bm20q"]
 [ext_resource type="Texture2D" uid="uid://dvnjembckcyjg" path="res://Resources/Subway/City_subway.png" id="17_kg6jf"]
 [ext_resource type="AudioStream" uid="uid://fhwoo62riunk" path="res://Resources/Music/BG_musik/BG_Musik_City_67.mp3" id="19_juvxo"]
@@ -43,6 +45,66 @@ shader_parameter/wave_frequency = 2.933
 shader_parameter/base_color = Color(0, 0.274848, 0.567296, 1)
 shader_parameter/blue_boost = 0.863
 shader_parameter/wave_noise = SubResource("NoiseTexture2D_5ax3b")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly8ur"]
+atlas = ExtResource("16_7hff4")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhviy"]
+atlas = ExtResource("16_7hff4")
+region = Rect2(32, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r1v1"]
+atlas = ExtResource("16_7hff4")
+region = Rect2(32, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3se7v"]
+atlas = ExtResource("16_7hff4")
+region = Rect2(32, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6saw"]
+atlas = ExtResource("16_7hff4")
+region = Rect2(32, 192, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vwre"]
+atlas = ExtResource("16_7hff4")
+region = Rect2(32, 240, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t2ed"]
+atlas = ExtResource("16_7hff4")
+region = Rect2(0, 240, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m6gdu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ly8ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhviy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r1v1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3se7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6saw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vwre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t2ed")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxnkp"]
+size = Vector2(174.375, 4092.16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w6fs0"]
 atlas = ExtResource("12_w81yc")
@@ -91,7 +153,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 4.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_momma"]
@@ -168,7 +230,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 4.0
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0p6k"]
@@ -422,6 +484,29 @@ position = Vector2(1699.5, 1172)
 scale = Vector2(0.430661, 0.0453973)
 texture = ExtResource("14_7x5g3")
 
+[node name="Bassist" type="Node2D" parent="."]
+visible = false
+position = Vector2(1699.5, 1172)
+scale = Vector2(0.430661, 0.0453973)
+script = ExtResource("15_eogu8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bassist"]
+position = Vector2(-792.967, -9251.65)
+scale = Vector2(12.2552, 100.512)
+sprite_frames = SubResource("SpriteFrames_m6gdu")
+frame_progress = 0.263851
+
+[node name="Area2D" type="Area2D" parent="Bassist"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bassist/Area2D"]
+position = Vector2(-788.323, -9185.57)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_gxnkp")
+
+[node name="Interactbutton" parent="Bassist" instance=ExtResource("14_rdptu")]
+position = Vector2(-781.357, -5639.1)
+scale = Vector2(2.25, 22)
+
 [node name="Gramps" type="Node2D" parent="."]
 process_mode = 3
 position = Vector2(500, 0)
@@ -431,7 +516,7 @@ script = ExtResource("12_t40ck")
 position = Vector2(461, 744)
 scale = Vector2(5.08594, 4.46875)
 sprite_frames = SubResource("SpriteFrames_88doj")
-frame_progress = 0.627943
+frame_progress = 0.902256
 
 [node name="Area2D" type="Area2D" parent="Gramps"]
 collision_layer = 4
@@ -470,7 +555,7 @@ position = Vector2(1316, 832)
 position = Vector2(-180, -70)
 scale = Vector2(4.80469, 4.46354)
 sprite_frames = SubResource("SpriteFrames_qm710")
-frame_progress = 0.0944332
+frame_progress = 0.59591
 
 [node name="Area2D" type="Area2D" parent="Drummer"]
 position = Vector2(21, -2)
@@ -523,6 +608,8 @@ position = Vector2(-901, 1001)
 rotation = 1.5708
 skew = -1.494
 
+[connection signal="body_entered" from="Bassist/Area2D" to="Bassist" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Bassist/Area2D" to="Bassist" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Gramps/Area2D" to="Gramps" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Gramps/Area2D" to="Gramps" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Subway_trans" to="Subway_trans" method="_on_body_entered"]

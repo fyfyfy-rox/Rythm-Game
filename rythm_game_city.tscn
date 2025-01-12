@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cte7s3jyqmstm" path="res://Resources/sidewalk.PNG" id="19_adu8g"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="20_88h2w"]
 [ext_resource type="Shader" path="res://Scenen/max_mana.gdshader" id="24_71bv1"]
-[ext_resource type="PackedScene" uid="uid://6ilor162utkb" path="res://Scenen/pause_menu_rythm.tscn" id="24_d0nl1"]
+[ext_resource type="PackedScene" path="res://Scenen/pause_menu_rythm.tscn" id="24_d0nl1"]
 [ext_resource type="Script" path="res://Scenen/pause_menu_rythm_city.gd" id="25_dyfyj"]
 [ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="25_xmtvs"]
 
@@ -164,25 +164,26 @@ scale = Vector2(4.5, 4.5)
 texture = ExtResource("6_xjf48")
 
 [node name="MidiPlayer" parent="." instance=ExtResource("7_2t80d")]
-file = "res://Resources/Music/Bass_game/Bass_map_v11.mid"
+file = "res://Resources/Music/Bass_game/Bass_map_v14.mid"
 playing = true
-sequence_per_seconds = 98
+sequence_per_seconds = 10
 
 [node name="ADSR" parent="." instance=ExtResource("8_8rxgp")]
 
 [node name="Positions" type="Node2D" parent="."]
-position = Vector2(155, -272)
+position = Vector2(153, -279)
 
 [node name="Position1" type="Marker2D" parent="Positions"]
+position = Vector2(6, -2)
 
 [node name="Position2" type="Marker2D" parent="Positions"]
-position = Vector2(22, 22)
+position = Vector2(30, 22)
 
 [node name="Position3" type="Marker2D" parent="Positions"]
-position = Vector2(45, 44)
+position = Vector2(54, 45)
 
 [node name="Position4" type="Marker2D" parent="Positions"]
-position = Vector2(70, 70)
+position = Vector2(78, 70)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 30.0
@@ -202,16 +203,16 @@ position = Vector2(-360, 285)
 scale = Vector2(0.9, 0.9)
 
 [node name="IdleNode1" parent="IdleNodes" instance=ExtResource("11_nwqlb")]
-position = Vector2(-40, -11.1111)
+position = Vector2(-40, -14.4444)
 
 [node name="IdleNode2" parent="IdleNodes" instance=ExtResource("12_xuqc2")]
-position = Vector2(-13.3334, 15.5555)
+position = Vector2(-13.3334, 16.6667)
 
 [node name="IdleNode3" parent="IdleNodes" instance=ExtResource("13_iwqf6")]
 position = Vector2(13.3333, 41.1111)
 
 [node name="IdleNode4" parent="IdleNodes" instance=ExtResource("14_06dnd")]
-position = Vector2(41.1111, 70)
+position = Vector2(41.1111, 72.2222)
 
 [node name="Tasten" type="Node2D" parent="."]
 position = Vector2(0, -49)

@@ -84,8 +84,8 @@ func _exit_tree():
 func teleport():
 	Global.mana -= 500
 	$Mana/max_mana.visible = false
-	
-	
+	$Bassist.visible = true		 
+	$Bassist/AnimatedSprite2D.play("default")
 
 func toggle_pause():
 	paused = !paused  # Invert the pause state (if the game is paused, resume it; otherwise, pause it)
