@@ -4,9 +4,11 @@ var is_in_interact_area: bool = false
 
 func _process(_delta):
 	if is_in_interact_area:
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_just_pressed("interact") and Global.bass_done:
 			Global.witch_position.x = -221 
 			get_tree().change_scene_to_file("res://Scenen/subwaystation.tscn")
+		elif Input.is_action_just_pressed("interact") and !Global.bass_done:
+			Dialogic.start("subway_entrance")
 
 
 func _on_body_entered(body: Node2D) -> void:

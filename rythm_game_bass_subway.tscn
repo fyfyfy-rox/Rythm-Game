@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://blwton0kjuvtl"]
+[gd_scene load_steps=35 format=3 uid="uid://blwton0kjuvtl"]
 
 [ext_resource type="Script" path="res://rythm_game_bass_subway.gd" id="1_i0g0e"]
 [ext_resource type="AudioStream" uid="uid://dm86iw5i101h7" path="res://Resources/Music/SFX/Fail SFX.wav" id="2_mlpf1"]
@@ -17,11 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://b8s32ugivki03" path="res://Resources/String 3.png" id="15_sjo8h"]
 [ext_resource type="Texture2D" uid="uid://se2xuvl06lah" path="res://Resources/String 4.png" id="16_yar86"]
 [ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="17_q1d7x"]
-[ext_resource type="PackedScene" uid="uid://xlqhigjagvuk" path="res://Scenen/schienen.tscn" id="19_7cfh1"]
+[ext_resource type="PackedScene" path="res://Scenen/schienen.tscn" id="19_7cfh1"]
 [ext_resource type="PackedScene" uid="uid://cleust68utvpe" path="res://Scenen/subway_floor.tscn" id="20_akc21"]
 [ext_resource type="Texture2D" uid="uid://c4fkuubhkx2wv" path="res://Resources/Subway/Subway_background.png" id="21_i3ery"]
 [ext_resource type="Shader" path="res://Scenen/max_mana.gdshader" id="21_jdc23"]
 [ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="22_wxrci"]
+[ext_resource type="PackedScene" uid="uid://6ilor162utkb" path="res://Scenen/pause_menu_rythm.tscn" id="23_rhyjk"]
+[ext_resource type="Script" path="res://Scenen/pause_menu_rythm_bass_subway.gd" id="24_pp3ce"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwyv5"]
 atlas = ExtResource("8_vecqj")
@@ -249,6 +251,14 @@ material = SubResource("ShaderMaterial_ji0ds")
 position = Vector2(-40.5001, 551)
 scale = Vector2(0.591007, 0.0529634)
 texture = ExtResource("22_wxrci")
+
+[node name="Pause" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="PauseMenuRythm" parent="Pause" instance=ExtResource("23_rhyjk")]
+process_mode = 2
+visible = false
+script = ExtResource("24_pp3ce")
 
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]

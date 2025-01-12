@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://c0qb5ctdd8tyn"]
+[gd_scene load_steps=40 format=3 uid="uid://c0qb5ctdd8tyn"]
 
 [ext_resource type="Script" path="res://rythm_game_flöte_subway.gd" id="1_y14ge"]
 [ext_resource type="Texture2D" uid="uid://djbqlhevrgdvd" path="res://Resources/Sprite-Signwithflute.png" id="2_3p0t7"]
@@ -22,11 +22,13 @@
 [ext_resource type="Texture2D" uid="uid://bfihb7d1a8shb" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_104.png" id="20_glkwv"]
 [ext_resource type="Texture2D" uid="uid://bp0lreuce80e4" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_4.png" id="21_g746m"]
 [ext_resource type="Texture2D" uid="uid://dteth4gtvrday" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_105.png" id="22_c7422"]
-[ext_resource type="PackedScene" uid="uid://xlqhigjagvuk" path="res://Scenen/schienen.tscn" id="23_23o30"]
+[ext_resource type="PackedScene" path="res://Scenen/schienen.tscn" id="23_23o30"]
 [ext_resource type="PackedScene" uid="uid://cleust68utvpe" path="res://Scenen/subway_floor.tscn" id="24_e3a58"]
 [ext_resource type="Texture2D" uid="uid://c4fkuubhkx2wv" path="res://Resources/Subway/Subway_background.png" id="25_vhman"]
 [ext_resource type="Shader" path="res://Scenen/max_mana.gdshader" id="26_yas42"]
 [ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="27_nnq0w"]
+[ext_resource type="PackedScene" uid="uid://6ilor162utkb" path="res://Scenen/pause_menu_rythm.tscn" id="28_7hrrt"]
+[ext_resource type="Script" path="res://Scenen/pause_menu_rythm_subway_flöte.gd" id="29_xya0k"]
 
 [sub_resource type="GDScript" id="GDScript_k7slo"]
 script/source = "extends TextureProgressBar
@@ -253,6 +255,14 @@ material = SubResource("ShaderMaterial_gpve4")
 position = Vector2(-20.25, 525)
 scale = Vector2(0.591278, 0.0529634)
 texture = ExtResource("27_nnq0w")
+
+[node name="Pause" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="PauseMenuRythm" parent="Pause" instance=ExtResource("28_7hrrt")]
+process_mode = 2
+visible = false
+script = ExtResource("29_xya0k")
 
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]

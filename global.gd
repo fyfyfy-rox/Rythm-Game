@@ -19,6 +19,8 @@ func update_node_miss(value: bool):
 		emit_signal("node_miss_changed", node_miss)  # Signal auslösen
 
 
+var bass_done: bool = false
+
 # sensor 
 var sensor_node_1 = 0;
 var sensor_node_2 = 0;
@@ -155,6 +157,7 @@ func delete_save():
 		if dir:
 			var result = dir.remove("save_game.json")
 			if result == OK:
+				bass_done = false
 				mana = 0
 				scene_states = {}
 				print("Speicherstand gelöscht!")

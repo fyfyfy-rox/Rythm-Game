@@ -40,7 +40,8 @@ directories/dtl_directory={
 "Ticket_Automat": "res://addons/dialogic/Dialoge/Ticket_Automat.dtl",
 "city_gramps": "res://addons/dialogic/Dialoge/city_gramps.dtl",
 "forest_cutscene": "res://addons/dialogic/Dialoge/forest_cutscene.dtl",
-"overworld_arriving": "res://addons/dialogic/Dialoge/overworld_arriving.dtl"
+"overworld_arriving": "res://addons/dialogic/Dialoge/overworld_arriving.dtl",
+"subway_entrance": "res://addons/dialogic/Dialoge/subway_entrance.dtl"
 }
 layout/style_list=["res://addons/dialogic/Example Assets/Visual_novel_style.tres"]
 layout/default_style=""
