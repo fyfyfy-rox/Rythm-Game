@@ -4,7 +4,7 @@ extends Node2D
 @onready var bg_music = $AudioStreamPlayer2D
 @onready var gramps_animation = $Gramps/AnimatedSprite2D
 @onready var brunnen = $Node2D/AnimatedSprite2D
-
+@onready var drummer = $Drummer/AnimatedSprite2D
 var paused = false  # Variable to track if the game is paused or not
 # _ready function, executed when the node is initialized
 func _ready():
@@ -12,7 +12,7 @@ func _ready():
 	bg_music.play()
 	gramps_animation.play("default")
 	brunnen.play("default")
-	
+	drummer.play("default")
 	
 	if Global.letzte_szene == "/root/Rythm-Game":
 		Dialogic.start("Bassist_teleport")

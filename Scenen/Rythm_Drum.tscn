@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://i3j87gwm7hdw" path="res://Resources/highhat.png" id="2_pm40k"]
 [ext_resource type="Texture2D" uid="uid://djhwkqbtviodu" path="res://Resources/kleineTrommel_sprite-Sheet.png" id="3_basvb"]
 [ext_resource type="Texture2D" uid="uid://bv75kxvryc3fu" path="res://Resources/Snare-sheet.png" id="4_osgux"]
-[ext_resource type="Texture2D" uid="uid://cte7s3jyqmstm" path="res://Resources/sidewalk.PNG" id="5_qsr7l"]
 [ext_resource type="Texture2D" uid="uid://c4fkuubhkx2wv" path="res://Resources/Subway/Subway_background.png" id="6_rktbe"]
 [ext_resource type="Texture2D" uid="uid://buet2gs40tcse" path="res://Resources/1_extended.png" id="6_yxyy6"]
 [ext_resource type="PackedScene" uid="uid://cleust68utvpe" path="res://Scenen/subway_floor.tscn" id="7_s1gic"]
 [ext_resource type="PackedScene" uid="uid://xlqhigjagvuk" path="res://Scenen/schienen.tscn" id="9_btfd5"]
+[ext_resource type="Texture2D" uid="uid://bmhj0pjku2gi" path="res://Resources/Subway/Drum_hintergrund.png" id="10_2o4qc"]
 [ext_resource type="Texture2D" uid="uid://dhy4tqjd1lnwg" path="res://Resources/Witch/B_witch_charge.png" id="10_nxgky"]
 [ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="11_su6tt"]
 [ext_resource type="Shader" path="res://Scenen/max_mana.gdshader" id="13_0oi8e"]
@@ -31,9 +31,9 @@
 [ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="26_6wmjc"]
 [ext_resource type="AudioStream" uid="uid://dm86iw5i101h7" path="res://Resources/Music/SFX/Fail SFX.wav" id="27_05y3b"]
 [ext_resource type="AudioStream" uid="uid://xduc438if163" path="res://Resources/Music/Drum_game/DrumGame_124_BackingTrack_v3.wav" id="29_4ngpt"]
-[ext_resource type="AudioStream" uid="uid://d3s2m6j000dvx" path="res://Resources/Music/Drum_game/DrumGame_124_Mainline_v5.wav" id="30_8hfsb"]
 [ext_resource type="Script" path="res://Scenen/audio_stream_player_melod.gd" id="30_h846n"]
-[ext_resource type="PackedScene" uid="uid://6ilor162utkb" path="res://Scenen/pause_menu_rythm.tscn" id="32_1ceiy"]
+[ext_resource type="PackedScene" path="res://Scenen/pause_menu_rythm.tscn" id="32_1ceiy"]
+[ext_resource type="AudioStream" uid="uid://c3krwq8v76pot" path="res://Resources/Music/Drum_game/DrumGame_124_BackingTrack_v6.wav" id="32_32dnb"]
 [ext_resource type="Script" path="res://Scenen/pause_menu_rythm_drum.gd" id="33_s5yee"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7kxwn"]
@@ -365,10 +365,11 @@ scale = Vector2(0.296697, -2.42809)
 texture = ExtResource("6_yxyy6")
 
 [node name="Hintergrunnd2" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(1398, 500)
-scale = Vector2(0.791761, -2.07219)
-texture = ExtResource("5_qsr7l")
+z_index = -2
+position = Vector2(1398, 531.293)
+scale = Vector2(3.82, -4.48471)
+texture = ExtResource("10_2o4qc")
+flip_v = true
 
 [node name="Witch" type="AnimatedSprite2D" parent="."]
 position = Vector2(289, 789)
@@ -507,7 +508,7 @@ stream = ExtResource("29_4ngpt")
 bus = &"Music"
 
 [node name="AudioStreamPlayer_melod" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("30_8hfsb")
+stream = ExtResource("32_32dnb")
 bus = &"Music"
 script = ExtResource("30_h846n")
 

@@ -1,5 +1,6 @@
 [signal arg="timeline_started"]
 join Witch center
-Witch: Was für ein interessantes Wasserspiel
-Witch: ...
+Witch (surprised): Was für ein interessantes Wasserspiel
+Witch (surprised): ...
 [signal arg="timeline_ended"]
+[end_timeline]
