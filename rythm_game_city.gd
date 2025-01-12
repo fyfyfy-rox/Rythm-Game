@@ -35,6 +35,8 @@ func _on_finished() -> void:
 	Global.letzte_szene = get_tree().get_current_scene().get_path()
 	if !Global.bass_done:
 		Global.bass_done = true
+	TransitionScreen.rythm_transition()
+	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_file("res://Scenen/overworld_2.tscn")
 	
 func _process(delta: float) -> void:

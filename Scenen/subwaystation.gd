@@ -44,6 +44,7 @@ func _on_dialogic_signal(signal_name):
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
 		teleport()
+		Dialogic.start("res://addons/dialogic/Dialoge/Drummerboy_rescued.dtl")
 	elif signal_name == "start_flute_game":
 		white_screen("res://rythm_game_subway_flöte.tscn")
 	elif signal_name == "start_bass_game":

@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://xkeo5tvkaa5q"]
+[gd_scene load_steps=79 format=3 uid="uid://xkeo5tvkaa5q"]
 
 [ext_resource type="Script" path="res://Scenen/overworld_2.gd" id="1_8phev"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="1_hbu0g"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" path="res://Scenen/audio_stream_player_ow_bg.gd" id="20_sudot"]
 [ext_resource type="Texture2D" uid="uid://b6r6d85agml5p" path="res://Resources/Fountain_sprite_new-ezgif.com-gif-to-sprite-converter (1).png" id="21_jckyu"]
 [ext_resource type="Script" path="res://Scenen/interactbutton_brunnen.gd" id="22_73rbv"]
+[ext_resource type="Script" path="res://Scenen/drummer.gd" id="22_h8gy7"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0hvox"]
 noise_type = 3
@@ -513,7 +514,7 @@ position = Vector2(500, 0)
 script = ExtResource("12_t40ck")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gramps"]
-position = Vector2(461, 744)
+position = Vector2(409, 745)
 scale = Vector2(5.08594, 4.46875)
 sprite_frames = SubResource("SpriteFrames_88doj")
 frame_progress = 0.902256
@@ -523,11 +524,11 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gramps/Area2D"]
-position = Vector2(467, 757)
+position = Vector2(417, 761)
 shape = SubResource("RectangleShape2D_momma")
 
 [node name="Interactbutton" parent="Gramps" instance=ExtResource("14_rdptu")]
-position = Vector2(466, 921)
+position = Vector2(415, 927)
 
 [node name="Subway_trans" type="Area2D" parent="."]
 position = Vector2(2247, 762)
@@ -550,6 +551,7 @@ position = Vector2(-197, 97)
 [node name="Drummer" type="Node2D" parent="."]
 process_mode = 3
 position = Vector2(1316, 832)
+script = ExtResource("22_h8gy7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Drummer"]
 position = Vector2(-180, -70)
@@ -614,4 +616,6 @@ skew = -1.494
 [connection signal="body_exited" from="Gramps/Area2D" to="Gramps" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Subway_trans" to="Subway_trans" method="_on_body_entered"]
 [connection signal="body_exited" from="Subway_trans" to="Subway_trans" method="_on_body_exited"]
+[connection signal="body_entered" from="Drummer/Area2D" to="Drummer" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Drummer/Area2D" to="Drummer" method="_on_area_2d_body_exited"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

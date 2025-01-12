@@ -1,0 +1,4 @@
+[signal arg="timeline_started"]
+Ich bin nur der Drummer
+red mit Gramps. der ist wichtig für den Plot
+[signal arg="timeline_ended"]

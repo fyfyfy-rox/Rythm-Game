@@ -33,6 +33,8 @@ func _ready() -> void:
 func _on_finished() -> void:
 	print("MIDI-Datei fertig abgespielt. Wechsle Szene...")
 	await(5)
+	TransitionScreen.rythm_transition()
+	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_file("res://Scenen/wald_cutscene.tscn")
 	
 	

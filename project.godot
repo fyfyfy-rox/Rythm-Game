@@ -25,18 +25,21 @@ AudioPlayer_Menu="*res://Scenen/audio_player_menü.tscn"
 [dialogic]
 
 directories/dch_directory={
+"Bassist": "res://Characters/Bassist.dch",
 "Drummerboy": "res://Characters/Drummerboy.dch",
 "Grams": "res://Characters/Grams.dch",
 "Ticket-chan": "res://Characters/Ticket-chan.dch",
 "Witch": "res://Characters/Witch.dch",
-"character": "res://Resources/NPCs/character.dch",
 "character_witch_test": "res://Characters/character_witch_test.dch",
 "test": "res://addons/dialogic/Example Assets/test.dch"
 }
 directories/dtl_directory={
+"Bassist_rescued": "res://addons/dialogic/Dialoge/Bassist_rescued.dtl",
 "Bassist_teleport": "res://addons/dialogic/Dialoge/Bassist_teleport.dtl",
 "Brunnen": "res://addons/dialogic/Dialoge/Brunnen.dtl",
+"Drummer": "res://addons/dialogic/Dialoge/Drummer.dtl",
 "Drummer_teleport": "res://addons/dialogic/Dialoge/Drummer_teleport.dtl",
+"Drummerboy_rescued": "res://addons/dialogic/Dialoge/Drummerboy_rescued.dtl",
 "Forrest_Speech_1": "res://addons/dialogic/Dialoge/Forrest_Speech_1.dtl",
 "Subway": "res://addons/dialogic/Dialoge/Subway.dtl",
 "Ticket_Automat": "res://addons/dialogic/Dialoge/Ticket_Automat.dtl",

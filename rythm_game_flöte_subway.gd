@@ -34,6 +34,8 @@ func _on_finished() -> void:
 	print("MIDI-Datei fertig abgespielt. Wechsle Szene...")
 	await(5)
 	Global.witch_position.x = 2000
+	TransitionScreen.rythm_transition()
+	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_file("res://Scenen/subwaystation.tscn")
 	
 func _process(delta: float) -> void:

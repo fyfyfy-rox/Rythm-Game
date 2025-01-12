@@ -1,0 +1,18 @@
+[signal arg="timeline_started"]
+join Bassist right
+Bassist: Danke das du mich gerettet hast.
+join Witch center
+Witch: Das ist nicht der Rede wert.
+Bassist: Falls du lust hast zu spielen kannst du immer den alten Gramps ansprechen
+Witch: Ich komm gerne darauf zurück.
+Witch: Aber du solltest den Bass echt nicht mehr benutzen.
+Bassist: Was!?
+[wait time="1.0"]
+Bassist: ...
+Bassist: Den hat mir mein Opa Hinterlassen.
+Bassist: Eines tages war er plötzlich weg und nur der Bass war noch da...
+[wait time="1.0"]
+Witch (irritated): ...
+[wait time="1.0"]
+Witch (default): Ich glaube dieses Problem kann ich nicht mit Magie lösen...
+[signal arg="timeline_ended"]
