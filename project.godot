@@ -25,6 +25,7 @@ AudioPlayer_Menu="*res://Scenen/audio_player_menü.tscn"
 [dialogic]
 
 directories/dch_directory={
+"Drummerboy": "res://Characters/Drummerboy.dch",
 "Grams": "res://Grams.dch",
 "Ticket-chan": "res://Ticket-chan.dch",
 "Witch": "res://Characters/Witch.dch",
