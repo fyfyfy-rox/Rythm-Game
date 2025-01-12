@@ -1,20 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://fctl8q7qhnxe"]
+[gd_scene load_steps=5 format=3 uid="uid://fctl8q7qhnxe"]
 
 [ext_resource type="Script" path="res://Scenen/options_menü.gd" id="1_4ifgo"]
 [ext_resource type="Theme" uid="uid://c4xa0yicu0rgb" path="res://Resources/Buttons/default_button.tres" id="2_1enru"]
+[ext_resource type="Texture2D" uid="uid://ddfkgri45q2id" path="res://Resources/Free Pixel Art Forest/Preview/Background.png" id="2_754xs"]
+[ext_resource type="PackedScene" uid="uid://bvbgowi0wd6bu" path="res://Scenen/Rain.tscn" id="3_2kq7d"]
 
 [node name="Menü" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -3.0
-offset_right = 2.0
-offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4ifgo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1120, 473)
+scale = Vector2(2.43319, 2)
+texture = ExtResource("2_754xs")
+
+[node name="Node2D" parent="Sprite2D" instance=ExtResource("3_2kq7d")]
+position = Vector2(-44, -260.175)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(300, 100)
@@ -63,6 +69,7 @@ theme_override_font_sizes/font_size = 33
 text = "Keybinds"
 
 [node name="Graphics" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme = ExtResource("2_1enru")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cuj35lvaw2f5n"]
+[gd_scene load_steps=13 format=3 uid="uid://cuj35lvaw2f5n"]
 
 [ext_resource type="Script" path="res://Scenen/menü.gd" id="1_sgwsr"]
 [ext_resource type="Texture2D" uid="uid://ddfkgri45q2id" path="res://Resources/Free Pixel Art Forest/Preview/Background.png" id="2_iivee"]
 [ext_resource type="PackedScene" uid="uid://bvbgowi0wd6bu" path="res://Scenen/Rain.tscn" id="3_ug428"]
 [ext_resource type="Texture2D" uid="uid://dhy4tqjd1lnwg" path="res://Resources/Witch/B_witch_charge.png" id="4_t0rn4"]
+[ext_resource type="Texture2D" uid="uid://pufrg5pfjaq4" path="res://Resources/PNG/Title_Melodyssey.png" id="5_4pk6i"]
 [ext_resource type="Theme" uid="uid://c4xa0yicu0rgb" path="res://Resources/Buttons/default_button.tres" id="5_glxbr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwyv5"]
@@ -58,7 +59,6 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1, 1.00317)
 script = ExtResource("1_sgwsr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -74,6 +74,11 @@ position = Vector2(-476, 303.039)
 scale = Vector2(8.22917, 9.22917)
 sprite_frames = SubResource("SpriteFrames_njo1j")
 animation = &"charge"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-10, -420.667)
+scale = Vector2(5, 5)
+texture = ExtResource("5_4pk6i")
 
 [node name="Play" type="Button" parent="."]
 layout_mode = 2
