@@ -48,19 +48,19 @@ func _process(_delta: float) -> void:
 	else:
 		max_mana.visible = false
 	Mana.value = Global.mana
-	if Input.is_action_just_pressed("1"):
+	if Input.is_action_just_pressed("4"):
 		one.visible = false
 		KleineDrum_animaiton.play("default")
 		timer1.start()
-	if Input.is_action_just_pressed("2"):
+	if Input.is_action_just_pressed("3"):
 		two.visible = false
 		BassDrum_animation.play("default")
 		timer2.start()
-	if Input.is_action_just_pressed("3"):
+	if Input.is_action_just_pressed("1"):
 		three.visible = false
 		SnareDrum_animation.play("default")
 		timer3.start()
-	if Input.is_action_just_pressed("4"):
+	if Input.is_action_just_pressed("2"):
 		four.visible = false
 		HighHat_animation.play("default")
 		timer4.start()
