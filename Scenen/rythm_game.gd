@@ -13,6 +13,7 @@ const NODE = preload("res://Scenen/moving_Node.tscn")
 @onready var timer4 = $"Tasten/Timer4"
 @onready var rythm_map_music = $AudioStreamPlayer_rythm_music
 @onready var rythm_map_music_melod = $AudioStreamPlayer_melod
+@onready var max_mana = $max_mana
 @export var midi_player: MidiPlayer
 
 var paused = false  
@@ -36,6 +37,10 @@ func _on_finished() -> void:
 	
 	
 func _process(delta: float) -> void:
+	if(Global.mana == 1000):
+		max_mana.visible = true
+	else:
+		max_mana.visible = false
 	Mana.value = Global.mana
 	if Input.is_action_just_pressed("1"):
 		one.visible = false

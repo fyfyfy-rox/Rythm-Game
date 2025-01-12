@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://b6y1f688id4ry"]
+[gd_scene load_steps=74 format=3 uid="uid://b6y1f688id4ry"]
 
 [ext_resource type="Script" path="res://Scenen/rythm_drum.gd" id="1_1nwh4"]
 [ext_resource type="Texture2D" uid="uid://b5ti3pdflt8p7" path="res://Resources/Basedrum_sprite.png" id="1_7hnkk"]
@@ -9,11 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://c4fkuubhkx2wv" path="res://Resources/Subway/Subway_background.png" id="6_rktbe"]
 [ext_resource type="Texture2D" uid="uid://buet2gs40tcse" path="res://Resources/1_extended.png" id="6_yxyy6"]
 [ext_resource type="PackedScene" uid="uid://cleust68utvpe" path="res://Scenen/subway_floor.tscn" id="7_s1gic"]
-[ext_resource type="PackedScene" path="res://Scenen/schienen.tscn" id="9_btfd5"]
+[ext_resource type="PackedScene" uid="uid://xlqhigjagvuk" path="res://Scenen/schienen.tscn" id="9_btfd5"]
 [ext_resource type="Texture2D" uid="uid://dhy4tqjd1lnwg" path="res://Resources/Witch/B_witch_charge.png" id="10_nxgky"]
 [ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="11_su6tt"]
+[ext_resource type="Shader" path="res://Scenen/max_mana.gdshader" id="13_0oi8e"]
 [ext_resource type="PackedScene" uid="uid://cwdom1ecvrap2" path="res://Scenen/idle_node_2.tscn" id="13_nu4yu"]
 [ext_resource type="PackedScene" uid="uid://dh1ihc81uofnc" path="res://Scenen/Idle_node_1.tscn" id="14_g6bhc"]
+[ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="14_jkjbv"]
 [ext_resource type="PackedScene" uid="uid://ch0000o4lyy60" path="res://Scenen/idle_node_3.tscn" id="15_5w30e"]
 [ext_resource type="PackedScene" uid="uid://u74e458gexs5" path="res://Scenen/idle_node_4.tscn" id="16_ljmpd"]
 [ext_resource type="Texture2D" uid="uid://dhbtwgvau82cl" path="res://Resources/Subway/Idle_nodes.png" id="17_qsc1p"]
@@ -287,6 +289,24 @@ func _process(delta: float) -> void:
 	value_delta = 0;
 "
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xtuev"]
+noise_type = 3
+frequency = 0.0493
+fractal_octaves = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_di7kg"]
+noise = SubResource("FastNoiseLite_xtuev")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h718d"]
+shader = ExtResource("13_0oi8e")
+shader_parameter/time_speed = 1.0
+shader_parameter/wave_amplitude = 0.02
+shader_parameter/glow_intensity = 0.8
+shader_parameter/wave_frequency = 2.933
+shader_parameter/base_color = Color(0, 0.274848, 0.567296, 1)
+shader_parameter/blue_boost = 0.863
+shader_parameter/wave_noise = SubResource("NoiseTexture2D_di7kg")
+
 [node name="BassRythm" type="Node2D"]
 script = ExtResource("1_1nwh4")
 
@@ -367,6 +387,14 @@ max_value = 1000.0
 value = 24.0
 script = SubResource("GDScript_lopwv")
 value_delta = 5
+
+[node name="max_mana" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+material = SubResource("ShaderMaterial_h718d")
+position = Vector2(1330.25, 1079)
+scale = Vector2(0.591278, 0.0529634)
+texture = ExtResource("14_jkjbv")
 
 [node name="IdleNodes" type="Node2D" parent="."]
 position = Vector2(1759, 804)

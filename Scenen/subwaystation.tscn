@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cv3t3sjo2epjm"]
+[gd_scene load_steps=33 format=3 uid="uid://cv3t3sjo2epjm"]
 
 [ext_resource type="Script" path="res://Scenen/subwaystation.gd" id="1_qkuxq"]
 [ext_resource type="PackedScene" uid="uid://cleust68utvpe" path="res://Scenen/subway_floor.tscn" id="1_smegi"]
@@ -12,12 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://bhqnkqxhbkuyy" path="res://Scenen/pause_menu.tscn" id="8_sc1f1"]
 [ext_resource type="Script" path="res://Scenen/pause_menu_subway.gd" id="9_d3ure"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="11_6gqgb"]
-[ext_resource type="PackedScene" path="res://Scenen/schienen.tscn" id="12_tkof0"]
+[ext_resource type="PackedScene" uid="uid://xlqhigjagvuk" path="res://Scenen/schienen.tscn" id="12_tkof0"]
 [ext_resource type="Texture2D" uid="uid://dp0j4v2u4j8pp" path="res://Resources/Subway/Treppe.png" id="14_61npt"]
 [ext_resource type="Script" path="res://Scenen/interactbutton_exit.gd" id="15_6cv3h"]
 [ext_resource type="Texture2D" uid="uid://dngc8ngyfkl4f" path="res://Resources/Subway/Ticketautomat.png" id="16_3fyy5"]
 [ext_resource type="Script" path="res://Scenen/interactbutton_ticket.gd" id="16_6i6yj"]
 [ext_resource type="Texture2D" uid="uid://c55thyssyu4po" path="res://Resources/NPCs/Drummer_subway_ spritesheet.png" id="18_elb2r"]
+[ext_resource type="Shader" path="res://Scenen/max_mana.gdshader" id="19_86cyh"]
+[ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="20_4cbxc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyf07"]
 size = Vector2(158, 166)
@@ -78,6 +80,24 @@ animations = [{
 "name": &"default",
 "speed": 6.0
 }]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ixmyd"]
+noise_type = 3
+frequency = 0.0493
+fractal_octaves = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lewyg"]
+noise = SubResource("FastNoiseLite_ixmyd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nas31"]
+shader = ExtResource("19_86cyh")
+shader_parameter/time_speed = 1.0
+shader_parameter/wave_amplitude = 0.02
+shader_parameter/glow_intensity = 0.8
+shader_parameter/wave_frequency = 2.933
+shader_parameter/base_color = Color(0, 0.274848, 0.567296, 1)
+shader_parameter/blue_boost = 0.863
+shader_parameter/wave_noise = SubResource("NoiseTexture2D_lewyg")
 
 [node name="Subwaystation" type="Node2D"]
 script = ExtResource("1_qkuxq")
@@ -168,17 +188,6 @@ process_mode = 2
 visible = false
 script = ExtResource("9_d3ure")
 
-[node name="Mana" type="CanvasLayer" parent="."]
-script = ExtResource("6_3gfmj")
-
-[node name="mana" parent="Mana" instance=ExtResource("7_fdqbb")]
-offset_left = 1283.0
-offset_top = 1137.0
-offset_right = 1453.0
-offset_bottom = 1149.0
-scale = Vector2(4.9051, 5.83572)
-value = 24.0
-
 [node name="treppe" type="Sprite2D" parent="."]
 position = Vector2(-523, 552)
 scale = Vector2(3, 3)
@@ -219,6 +228,25 @@ position = Vector2(963, 558)
 scale = Vector2(6.2, 6.2)
 sprite_frames = SubResource("SpriteFrames_3gklp")
 frame_progress = 0.772027
+
+[node name="Mana" type="CanvasLayer" parent="."]
+script = ExtResource("6_3gfmj")
+
+[node name="mana" parent="Mana" instance=ExtResource("7_fdqbb")]
+offset_left = 1283.0
+offset_top = 1137.0
+offset_right = 1453.0
+offset_bottom = 1149.0
+scale = Vector2(4.9051, 5.83572)
+max_value = 1000.0
+value = 24.0
+
+[node name="max_mana" type="Sprite2D" parent="Mana"]
+visible = false
+material = SubResource("ShaderMaterial_nas31")
+position = Vector2(1699.5, 1172)
+scale = Vector2(0.430661, 0.0453973)
+texture = ExtResource("20_4cbxc")
 
 [connection signal="body_entered" from="Drums" to="Drums" method="_on_body_entered"]
 [connection signal="body_exited" from="Drums" to="Drums" method="_on_body_exited"]

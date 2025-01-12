@@ -40,7 +40,7 @@ var in_pause_rythm_wald: bool = false
 
 var in_rythm_game: bool = false
 
-var manabar_visible = false
+var manabar_visible = true
 
 var witch_position: Vector2 = Vector2.ZERO  # Globale Position der Hexe
 var witch_direction: Vector2 = Vector2(1, 0)  # Blickrichtung der Hexe

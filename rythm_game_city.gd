@@ -14,7 +14,7 @@ const NODE = preload("res://moving_node_guitar.tscn")
 @onready var rythm_map_music = $AudioStreamPlayer_rhytm
 @onready var rythm_map_music_melod = $AudioStreamPlayer_melody
 @export var midi_player: MidiPlayer
-
+@onready var max_mana = $max_mana
 var paused = false  
 @onready var pause_menu = $Pause/PauseMenuRythm
 
@@ -36,6 +36,10 @@ func _on_finished() -> void:
 	get_tree().change_scene_to_file("res://Scenen/overworld_2.tscn")
 	
 func _process(delta: float) -> void:
+	if(Global.mana == 1000):
+		max_mana.visible = true
+	else:
+		max_mana.visible = false
 	Mana.value = Global.mana
 	if Input.is_action_just_pressed("1"):
 		one.visible = true

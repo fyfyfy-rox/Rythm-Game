@@ -1,8 +1,14 @@
 extends CanvasLayer
 
+@onready var max_mana = $max_mana
+
 func _ready():
 	# Sichtbarkeit der ManaBar initialisieren
 	$mana.visible = Global.manabar_visible
+	if(Global.mana == 1000):
+		max_mana.visible = true
+	else:
+		max_mana.visible = false
 
 func _input(event):
 	# Überprüfen, ob die Taste "manabar_anzeigen" gedrückt wurde

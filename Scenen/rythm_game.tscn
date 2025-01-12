@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bhccdsud1n5f"]
+[gd_scene load_steps=38 format=3 uid="uid://bhccdsud1n5f"]
 
 [ext_resource type="Script" path="res://Scenen/rythm_game.gd" id="1_buiov"]
 [ext_resource type="Texture2D" uid="uid://djbqlhevrgdvd" path="res://Resources/Sprite-Signwithflute.png" id="1_imhwk"]
@@ -16,9 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://cwdom1ecvrap2" path="res://Scenen/idle_node_2.tscn" id="9_fyxj4"]
 [ext_resource type="PackedScene" uid="uid://ch0000o4lyy60" path="res://Scenen/idle_node_3.tscn" id="11_2jf63"]
 [ext_resource type="PackedScene" uid="uid://u74e458gexs5" path="res://Scenen/idle_node_4.tscn" id="12_y7toh"]
+[ext_resource type="Shader" path="res://Scenen/max_mana.gdshader" id="13_mfo18"]
 [ext_resource type="Texture2D" uid="uid://cvcwxfujqqa8y" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_1.png" id="13_mi1tp"]
 [ext_resource type="Texture2D" uid="uid://b064cmi8h1ruu" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_102.png" id="14_1iafh"]
 [ext_resource type="Texture2D" uid="uid://dbleabg8nti3g" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_2.png" id="14_2mdsb"]
+[ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="14_wqqyh"]
 [ext_resource type="Texture2D" uid="uid://w776sftt81kx" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_3.png" id="15_c54fq"]
 [ext_resource type="Texture2D" uid="uid://dcergcjlav4bp" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_103.png" id="16_0mv0q"]
 [ext_resource type="Texture2D" uid="uid://bp0lreuce80e4" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_4.png" id="16_qgjlr"]
@@ -78,6 +80,24 @@ func _process(delta: float) -> void:
 	value += value_delta;
 	value_delta = 0;
 "
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3xuap"]
+noise_type = 3
+frequency = 0.0493
+fractal_octaves = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_84mcd"]
+noise = SubResource("FastNoiseLite_3xuap")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4tg4f"]
+shader = ExtResource("13_mfo18")
+shader_parameter/time_speed = 1.0
+shader_parameter/wave_amplitude = 0.02
+shader_parameter/glow_intensity = 0.8
+shader_parameter/wave_frequency = 2.933
+shader_parameter/base_color = Color(0, 0.274848, 0.567296, 1)
+shader_parameter/blue_boost = 0.863
+shader_parameter/wave_noise = SubResource("NoiseTexture2D_84mcd")
 
 [node name="Rythm-Game" type="Node2D" node_paths=PackedStringArray("midi_player")]
 position = Vector2(1500, 600)
@@ -154,6 +174,14 @@ max_value = 1000.0
 value = 24.0
 script = SubResource("GDScript_k7slo")
 value_delta = 7
+
+[node name="max_mana" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+material = SubResource("ShaderMaterial_4tg4f")
+position = Vector2(-20.5, 525)
+scale = Vector2(0.591008, 0.0529634)
+texture = ExtResource("14_wqqyh")
 
 [node name="IdleNodes" type="Node2D" parent="."]
 position = Vector2(-380, -40)

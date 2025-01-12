@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://xkeo5tvkaa5q"]
+[gd_scene load_steps=57 format=3 uid="uid://xkeo5tvkaa5q"]
 
 [ext_resource type="Script" path="res://Scenen/overworld_2.gd" id="1_8phev"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="1_hbu0g"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://q2hidcmst3mm" path="res://Resources/4_extended.png" id="8_saxhx"]
 [ext_resource type="Script" path="res://Scenen/character_body_2d.gd" id="12_t40ck"]
 [ext_resource type="Texture2D" uid="uid://r7oqfa5t6owl" path="res://Resources/NPCs/gramps nps-Sheet.png" id="12_w81yc"]
+[ext_resource type="Shader" path="res://Scenen/max_mana.gdshader" id="13_0n5s0"]
+[ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="14_7x5g3"]
 [ext_resource type="PackedScene" uid="uid://dysrwqnlvywo4" path="res://Scenen/Interactbutton.tscn" id="14_rdptu"]
 [ext_resource type="Script" path="res://Scenen/Canvas_manabar.gd" id="15_h10u6"]
 [ext_resource type="PackedScene" uid="uid://bia16gx3rct0r" path="res://Scenen/mana_bar.tscn" id="16_4ylux"]
@@ -22,6 +24,24 @@
 [ext_resource type="Script" path="res://Scenen/audio_stream_player_ow_bg.gd" id="20_sudot"]
 [ext_resource type="Texture2D" uid="uid://b6r6d85agml5p" path="res://Resources/Fountain_sprite_new-ezgif.com-gif-to-sprite-converter (1).png" id="21_jckyu"]
 [ext_resource type="Script" path="res://Scenen/interactbutton_brunnen.gd" id="22_73rbv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0hvox"]
+noise_type = 3
+frequency = 0.0493
+fractal_octaves = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5ax3b"]
+noise = SubResource("FastNoiseLite_0hvox")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vyja7"]
+shader = ExtResource("13_0n5s0")
+shader_parameter/time_speed = 1.0
+shader_parameter/wave_amplitude = 0.02
+shader_parameter/glow_intensity = 0.8
+shader_parameter/wave_frequency = 2.933
+shader_parameter/base_color = Color(0, 0.274848, 0.567296, 1)
+shader_parameter/blue_boost = 0.863
+shader_parameter/wave_noise = SubResource("NoiseTexture2D_5ax3b")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w6fs0"]
 atlas = ExtResource("12_w81yc")
@@ -310,7 +330,15 @@ offset_top = 1137.0
 offset_right = 1453.0
 offset_bottom = 1149.0
 scale = Vector2(4.9051, 5.83572)
-value = 24.0
+max_value = 1000.0
+value = 1000.0
+
+[node name="max_mana" type="Sprite2D" parent="Mana"]
+visible = false
+material = SubResource("ShaderMaterial_vyja7")
+position = Vector2(1699.5, 1172)
+scale = Vector2(0.430661, 0.0453973)
+texture = ExtResource("14_7x5g3")
 
 [node name="Gramps" type="Node2D" parent="."]
 process_mode = 3

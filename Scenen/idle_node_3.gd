@@ -9,14 +9,13 @@ func _process(delta):
 	
 	if sensor == 1:
 		if Input.is_action_just_pressed("3"):
-			Global.mana += mana_inc
+			Global.mana = clamp(Global.mana + mana_inc, 0, 1000)
 			animp.play("hit")
 			Global.update_node_miss(false)
 			
 	if sensor == 0:
 		if Input.is_action_just_pressed("3"):
-			if(Global.mana > 0):
-				Global.mana -= mana_inc
+			Global.mana = clamp(Global.mana - mana_inc, 0, 1000)
 			animp.play("miss")
 			miss_sound.play()
 			Global.update_node_miss(true)

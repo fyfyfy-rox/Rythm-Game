@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c0qb5ctdd8tyn"]
+[gd_scene load_steps=38 format=3 uid="uid://c0qb5ctdd8tyn"]
 
 [ext_resource type="Script" path="res://rythm_game_flöte_subway.gd" id="1_y14ge"]
 [ext_resource type="Texture2D" uid="uid://djbqlhevrgdvd" path="res://Resources/Sprite-Signwithflute.png" id="2_3p0t7"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://xlqhigjagvuk" path="res://Scenen/schienen.tscn" id="23_23o30"]
 [ext_resource type="PackedScene" uid="uid://cleust68utvpe" path="res://Scenen/subway_floor.tscn" id="24_e3a58"]
 [ext_resource type="Texture2D" uid="uid://c4fkuubhkx2wv" path="res://Resources/Subway/Subway_background.png" id="25_vhman"]
+[ext_resource type="Shader" path="res://Scenen/max_mana.gdshader" id="26_yas42"]
+[ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="27_nnq0w"]
 
 [sub_resource type="GDScript" id="GDScript_k7slo"]
 script/source = "extends TextureProgressBar
@@ -78,6 +80,24 @@ animations = [{
 "name": &"charge",
 "speed": 8.0
 }]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_f02mr"]
+noise_type = 3
+frequency = 0.0493
+fractal_octaves = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_finbq"]
+noise = SubResource("FastNoiseLite_f02mr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpve4"]
+shader = ExtResource("26_yas42")
+shader_parameter/time_speed = 1.0
+shader_parameter/wave_amplitude = 0.02
+shader_parameter/glow_intensity = 0.8
+shader_parameter/wave_frequency = 2.933
+shader_parameter/base_color = Color(0, 0.274848, 0.567296, 1)
+shader_parameter/blue_boost = 0.863
+shader_parameter/wave_noise = SubResource("NoiseTexture2D_finbq")
 
 [node name="Rythm-Game" type="Node2D"]
 position = Vector2(1500, 600)
@@ -225,6 +245,14 @@ position = Vector2(-990, 199)
 scale = Vector2(8.22917, 9.22917)
 sprite_frames = SubResource("SpriteFrames_ysqcy")
 animation = &"charge"
+
+[node name="max_mana" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+material = SubResource("ShaderMaterial_gpve4")
+position = Vector2(-20.25, 525)
+scale = Vector2(0.591278, 0.0529634)
+texture = ExtResource("27_nnq0w")
 
 [connection signal="finished" from="MidiPlayer" to="." method="_on_midi_player_finished"]
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]

@@ -14,7 +14,7 @@ const NODE = preload("res://Scenen/moving_Node.tscn")
 @onready var rythm_map_music = $AudioStreamPlayer_rythm_music
 @onready var rythm_map_music_melod = $AudioStreamPlayer_melod
 @onready var midi_player =  $MidiPlayer
-
+@onready var max_mana = $max_mana
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) 
@@ -34,6 +34,10 @@ func _on_finished() -> void:
 	get_tree().change_scene_to_file("res://Scenen/subwaystation.tscn")
 	
 func _process(delta: float) -> void:
+	if(Global.mana == 1000):
+		max_mana.visible = true
+	else:
+		max_mana.visible = false
 	Mana.value = Global.mana
 	if Input.is_action_just_pressed("1"):
 		one.visible = false

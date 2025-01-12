@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cpdda2hq76cj6"]
+[gd_scene load_steps=38 format=3 uid="uid://cpdda2hq76cj6"]
 
 [ext_resource type="Script" path="res://rythm_game_city.gd" id="1_dfe0d"]
 [ext_resource type="Texture2D" uid="uid://buet2gs40tcse" path="res://Resources/1_extended.png" id="2_00egr"]
@@ -23,8 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://se2xuvl06lah" path="res://Resources/String 4.png" id="18_elyyy"]
 [ext_resource type="Texture2D" uid="uid://cte7s3jyqmstm" path="res://Resources/sidewalk.PNG" id="19_adu8g"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="20_88h2w"]
+[ext_resource type="Shader" path="res://Scenen/max_mana.gdshader" id="24_71bv1"]
 [ext_resource type="PackedScene" uid="uid://6ilor162utkb" path="res://Scenen/pause_menu_rythm.tscn" id="24_d0nl1"]
 [ext_resource type="Script" path="res://Scenen/pause_menu_rythm_city.gd" id="25_dyfyj"]
+[ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="25_xmtvs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwyv5"]
 atlas = ExtResource("9_dlxw6")
@@ -78,6 +80,24 @@ func _process(delta: float) -> void:
 	value += value_delta;
 	value_delta = 0;
 "
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s8l54"]
+noise_type = 3
+frequency = 0.0493
+fractal_octaves = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5rrs0"]
+noise = SubResource("FastNoiseLite_s8l54")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5x381"]
+shader = ExtResource("24_71bv1")
+shader_parameter/time_speed = 1.0
+shader_parameter/wave_amplitude = 0.02
+shader_parameter/glow_intensity = 0.8
+shader_parameter/wave_frequency = 2.933
+shader_parameter/base_color = Color(0, 0.274848, 0.567296, 1)
+shader_parameter/blue_boost = 0.863
+shader_parameter/wave_noise = SubResource("NoiseTexture2D_5rrs0")
 
 [node name="Rythm-Game" type="Node2D" node_paths=PackedStringArray("midi_player")]
 position = Vector2(1500, 600)
@@ -263,6 +283,14 @@ value = 24.0
 script = SubResource("GDScript_yycyc")
 value_delta = 0
 
+[node name="max_mana" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+material = SubResource("ShaderMaterial_5x381")
+position = Vector2(28, 544)
+scale = Vector2(0.590466, 0.0529634)
+texture = ExtResource("25_xmtvs")
+
 [node name="Pause" type="CanvasLayer" parent="."]
 process_mode = 2
 
@@ -276,5 +304,5 @@ script = ExtResource("25_dyfyj")
 [connection signal="timeout" from="Tasten/Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Tasten/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Tasten/Timer3" to="." method="_on_timer_3_timeout"]
-[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]
 [connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]

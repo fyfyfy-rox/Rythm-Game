@@ -5,6 +5,7 @@ const NODE = preload("res://Scenen/moving_Bass.tscn")
 @onready var HighHat_animation = $Drums/highhat
 @onready var SnareDrum_animation = $Drums/snaredrum
 @onready var KleineDrum_animaiton = $Drums/smoldrum
+@onready var max_mana = $max_mana
 
 @onready var Witch_animation = $Witch
 @onready var Mana = $Mana
@@ -42,6 +43,10 @@ func _on_finished() -> void:
 	
 	
 func _process(_delta: float) -> void:
+	if(Global.mana == 1000):
+		max_mana.visible = true
+	else:
+		max_mana.visible = false
 	Mana.value = Global.mana
 	if Input.is_action_just_pressed("1"):
 		one.visible = false
