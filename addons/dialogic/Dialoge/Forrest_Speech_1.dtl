@@ -1,7 +1,7 @@
 [signal arg="timeline_started"]
 join Witch (default) left [wait="true"]
 Witch (default): ...Seltsam
-Witch (happy): Es hat schon lange nicht mehr so stark geregnet.
+Witch (surprised): Es hat schon lange nicht mehr so stark geregnet.
 Witch (irritated): Ich spüre ein monströses Mana aus den Tiefen des Waldes
 [wait time="1.0" skippable="true"]
 Witch: ...
