@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://xkeo5tvkaa5q"]
+[gd_scene load_steps=80 format=3 uid="uid://xkeo5tvkaa5q"]
 
 [ext_resource type="Script" path="res://Scenen/overworld_2.gd" id="1_8phev"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="1_hbu0g"]
@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://fhwoo62riunk" path="res://Resources/Music/BG_musik/BG_Musik_City_67.mp3" id="19_juvxo"]
 [ext_resource type="Texture2D" uid="uid://jfg3sb41uvtk" path="res://Resources/Barrier.png" id="20_23j7b"]
 [ext_resource type="Texture2D" uid="uid://chio1k5h7pspk" path="res://Resources/NPCs/Drummer_city_spritesheet.png" id="20_ivnx4"]
+[ext_resource type="Texture2D" uid="uid://dfl6vnhlxaaib" path="res://Resources/NPCs/Piano.png" id="20_qjg6o"]
 [ext_resource type="Script" path="res://Scenen/audio_stream_player_ow_bg.gd" id="20_sudot"]
 [ext_resource type="Texture2D" uid="uid://b6r6d85agml5p" path="res://Resources/Fountain_sprite_new-ezgif.com-gif-to-sprite-converter (1).png" id="21_jckyu"]
 [ext_resource type="Script" path="res://Scenen/interactbutton_brunnen.gd" id="22_73rbv"]
@@ -530,6 +531,11 @@ shape = SubResource("RectangleShape2D_momma")
 
 [node name="Interactbutton" parent="Gramps" instance=ExtResource("14_rdptu")]
 position = Vector2(415, 927)
+
+[node name="Sprite2D" type="Sprite2D" parent="Gramps"]
+z_index = -1
+position = Vector2(388, 743)
+texture = ExtResource("20_qjg6o")
 
 [node name="Subway_trans" type="Area2D" parent="."]
 position = Vector2(2247, 762)
