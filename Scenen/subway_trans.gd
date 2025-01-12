@@ -4,10 +4,10 @@ var is_in_interact_area: bool = false
 
 func _process(_delta):
 	if is_in_interact_area:
-		if Input.is_action_just_pressed("interact") and Global.bass_done:
+		if Input.is_action_just_pressed("interact") and Global.bassist:
 			Global.witch_position.x = -221 
 			get_tree().change_scene_to_file("res://Scenen/subwaystation.tscn")
-		elif Input.is_action_just_pressed("interact") and !Global.bass_done:
+		elif Input.is_action_just_pressed("interact") and !Global.bassist:
 			Dialogic.start("subway_entrance")
 
 
