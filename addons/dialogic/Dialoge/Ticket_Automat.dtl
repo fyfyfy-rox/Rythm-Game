@@ -1,11 +1,11 @@
 [signal arg="timeline_started"]
 join Witch (default) left
-Witch (default): Was ist das?...
-Witch: ...Da leuchtet irgendwas komisches auf...
+Witch (surprised): Was ist das?...
+Witch (surprised): ...Da leuchtet irgendwas komisches auf...
 join Ticket-chan right
 Ticket-chan: BZZz_ BZZzz Wählen Sie bitte Ihre Gewünschte Haltestelle BZZz_ BzzZ
-Witch: Halte-...  was?
-Ticket-chan: Wähle dein gewünschtes Level!
+Witch (surprised): Halte-...  was?
+Ticket-chan: Wähle dein gewünschtes Level! ... BZZZ
 [signal arg="choice_start"]
 - WaldFlöte
 	Ticket-chan: BZZz. Transport zur WaldFlöte erfolgt BZzz.
@@ -19,5 +19,9 @@ Ticket-chan: Wähle dein gewünschtes Level!
 	Ticket-chan: Transport zum StadtBass erfolgt BZzz BZZzzZZzz.
 	[signal arg="timeline_ended"]
 	[signal arg="start_drum_game"]
+- Abbrechen
+	Ticket-chan: BZzz ... Hm. 
+	Ticket-chan: ... Wie du meinst  BZzz
+	[signal arg="timeline_ended"]
 [signal arg="choice_end"]
 [end_timeline]

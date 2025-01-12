@@ -1,6 +1,20 @@
 [signal arg="timeline_started"]
-join Witch center
-Witch (irritated): Was... was ist passiert? Das ist nicht der Wald. Das ist... eine Stadt? Wie bin ich hier gelandet? War das... die Flöte? Sie hat mich hierher gebracht.
-Witch (irritated): „Mana... Es ist überall. Aber es ist anders. Wild. Chaotisch. Und doch... vertraut. Es fühlt sich an wie... die Flöte. Könnten hier noch andere solcher Instrumente sein?
+join Witch (surprised) center
+Witch (surprised): Was... was ist passiert? 
+Witch (surprised): Das ist nicht der Wald!
+Witch (surprised): Das ist... eine Stadt?
+Witch (surprised): Wie bin ich hier gelandet?
+Witch (surprised): War das... die Flöte?
+Witch: Sie hat mich hierher gebracht.
+[wait time="1.0"]
+Witch (irritated): Mana... 
+Witch (irritated): Es ist überall.
+Witch (irritated): Aber es ist anders.
+Witch (irritated): Chaotisch.
+Witch (irritated): Und doch... vertraut.
+[wait time="1.0"]
+Witch (default): Es fühlt sich an wie... die Flöte.
+Witch: Könnten hier noch andere solcher Instrumente sein?
+[wait time="1.0"]
 Witch (default): Ich sollte mich hier mal etwas umschauen...
 [signal arg="timeline_ended"]

@@ -439,16 +439,16 @@ collision_mask = 2
 script = ExtResource("17_bm20q")
 
 [node name="Sprite2D" type="Sprite2D" parent="Subway_trans"]
-position = Vector2(-75, -4)
+position = Vector2(194, -9)
 scale = Vector2(1.13571, 1.19707)
 texture = ExtResource("17_kg6jf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Subway_trans"]
-position = Vector2(-105.5, 61)
+position = Vector2(157, 65)
 shape = SubResource("RectangleShape2D_jojyf")
 
 [node name="Interactbutton" parent="Subway_trans" instance=ExtResource("14_rdptu")]
-position = Vector2(-127, 148)
+position = Vector2(143, 148)
 
 [node name="Drummer" type="Node2D" parent="."]
 process_mode = 3
@@ -458,7 +458,7 @@ position = Vector2(1316, 832)
 position = Vector2(12, -74)
 scale = Vector2(4.80469, 4.46354)
 sprite_frames = SubResource("SpriteFrames_qm710")
-frame_progress = 0.599575
+frame_progress = 0.0944332
 
 [node name="Area2D" type="Area2D" parent="Drummer"]
 position = Vector2(21, -2)
@@ -483,11 +483,11 @@ script = ExtResource("20_sudot")
 position = Vector2(-2, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(2788, 789)
+position = Vector2(3157, 787)
 shape = SubResource("RectangleShape2D_4lj45")
 
 [node name="Sprite2D" type="Sprite2D" parent="Barrier"]
-position = Vector2(2784, 775)
+position = Vector2(3155, 782)
 scale = Vector2(2, 2)
 texture = ExtResource("20_23j7b")
 
