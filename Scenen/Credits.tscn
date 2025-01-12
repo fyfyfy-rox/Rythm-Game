@@ -49,7 +49,7 @@ offset_top = 76.0
 offset_right = 195.0
 offset_bottom = 131.0
 theme_override_font_sizes/font_size = 40
-text = "Eder Munizz"
+text = "Eder Munizz (Itch.io)"
 
 [node name="Label2" type="Label" parent="Assets"]
 layout_mode = 0
@@ -58,7 +58,7 @@ offset_top = 130.0
 offset_right = 195.0
 offset_bottom = 185.0
 theme_override_font_sizes/font_size = 40
-text = "9E0
+text = "9E0 (Itch.io)
 "
 
 [node name="Label3" type="Label" parent="Assets"]
@@ -68,7 +68,7 @@ offset_top = 183.0
 offset_right = 195.0
 offset_bottom = 238.0
 theme_override_font_sizes/font_size = 40
-text = "Caz"
+text = "Caz (Itch.io)"
 
 [node name="Label4" type="Label" parent="Assets"]
 layout_mode = 0
@@ -77,7 +77,15 @@ offset_top = 237.0
 offset_right = 195.0
 offset_bottom = 292.0
 theme_override_font_sizes/font_size = 40
-text = "Craftpix"
+text = "Craftpix (Itch.io)"
+
+[node name="Label5" type="Label" parent="Assets"]
+offset_left = -40.0
+offset_top = 293.0
+offset_right = 195.0
+offset_bottom = 348.0
+theme_override_font_sizes/font_size = 40
+text = "ColorMan (Kirita-artist)"
 
 [node name="Devs" type="Label" parent="."]
 offset_left = 1000.0
@@ -140,5 +148,22 @@ offset_right = 218.0
 offset_bottom = 185.0
 theme_override_font_sizes/font_size = 40
 text = "Noah Krüger"
+
+[node name="Music2" type="Label" parent="."]
+offset_left = 400.0
+offset_top = 717.0
+offset_right = 700.0
+offset_bottom = 786.0
+theme_override_font_sizes/font_size = 50
+text = "Dialoge Char's"
+
+[node name="Label" type="Label" parent="Music2"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 76.0
+offset_right = 195.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 40
+text = "KI-Generiert"
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
