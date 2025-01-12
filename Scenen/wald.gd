@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var pause_menu = $"CanvasLayer/Pause Menu"  # Reference to the Pause Menu in the CanvasLayer
-
+@onready var drummerboy = $Drummerboy/AnimatedSprite2D
 @onready var bg_wald = $AudioStreamPlayer2D
 
 var paused = false  # Variable to track if the game is paused or not
@@ -34,6 +34,8 @@ func _process(_delta):
 		$Wasser/CollisionShape2D.disabled = true
 		$Wasser.visible = false
 		Global.tree_interacted = 0
+		TransitionScreen.rythm_transition()
+		await TransitionScreen.on_transition_finished
 		get_tree().change_scene_to_file("res://Scenen/rythm_game.tscn")
 
 func _on_dialogic_signal(signal_name):

@@ -8,7 +8,7 @@ var paused = false
 
 func _ready():
 	AudioPlayer_Menu.stop_music()
-	
+	drummerboy.play("default")
 	if Global.letzte_szene == "/root/BassRythm":
 		Dialogic.start("Drummer_teleport")
 	
@@ -41,6 +41,8 @@ func _on_dialogic_signal(signal_name):
 		Global.in_rythm_game = true
 		get_tree().change_scene_to_file("res://rythm_game_city.tscn")
 	elif signal_name == "teleport":
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
 		teleport()
 	elif signal_name == "start_flute_game":
 		white_screen("res://rythm_game_subway_flöte.tscn")

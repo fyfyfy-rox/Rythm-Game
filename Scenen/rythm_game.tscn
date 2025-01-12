@@ -122,7 +122,7 @@ bus = &"Music"
 script = ExtResource("5_bq34a")
 
 [node name="MidiPlayer" parent="." instance=ExtResource("5_jd3uc")]
-file = "res://Resources/Music/Tutorial_Forrest/Tutorial_beta_0.9.1.mid"
+file = "res://Resources/Music/Tutorial_Forrest/Tutorial_v1.1.mid"
 playing = true
 
 [node name="ADSR" parent="." instance=ExtResource("6_e1a46")]

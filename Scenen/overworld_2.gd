@@ -60,8 +60,12 @@ func _on_dialogic_signal(signal_name):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif signal_name == "start_rythm_game":
 		Global.in_rythm_game = true
+		TransitionScreen.rythm_transition()
+		await TransitionScreen.on_transition_finished
 		get_tree().change_scene_to_file("res://rythm_game_city.tscn")
 	elif signal_name == "teleport":
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
 		teleport()
 		
 func _disable_inputs():
@@ -78,6 +82,7 @@ func _exit_tree():
 
 func teleport():
 	Global.mana -= 500
+	
 
 func toggle_pause():
 	paused = !paused  # Invert the pause state (if the game is paused, resume it; otherwise, pause it)
