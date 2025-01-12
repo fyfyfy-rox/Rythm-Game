@@ -8,7 +8,7 @@ func _process(_delta):
 	if is_in_chatting_area:
 		if Input.is_action_just_pressed("interact") and not talking:
 			talking = true
-			Dialogic.start("res://addons/dialogic/Dialoge/Bassist_rescued.dtl")
+			Dialogic.start("Bassist_rescued")
 	
 
 

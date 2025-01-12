@@ -13,4 +13,5 @@ Witch: Du solltest jetzt zumindest in Sicherheit sein.
 Witch: Halte dich bitte fern von diesem Schlagzeug. Es strahlt eine Unheilvolle Menge Mana aus.
 Drummerboy: Das ding? Ich wollte damit auf der Straße nur ein wenig Geld verdienen
 Drummerboy: So als Straßenkünstler.
-Drummerboy: ... Naja dann halt nicht. 
+Drummerboy: ... Naja dann halt nicht.
+[signal arg="timeline_ended"]

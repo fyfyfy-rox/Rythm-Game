@@ -1,0 +1,6 @@
+[signal arg="timeline_started"]
+join Grams center
+Grams: Was eine Tolle Jamsession! Das hat viel Spaß gemacht
+Grams: Ich hab gehört, dass heute wieder jemand in der U-Bahn-Station spielt. 
+Grams: Hm... vielleicht schaue ich dort vorbei
+[signal arg="timeline_ended"]

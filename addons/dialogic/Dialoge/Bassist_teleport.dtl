@@ -16,7 +16,8 @@ Witch (default): Es würde mich die Hälfte meiner Manakapazität kosten. Soll i
 		Witch: Wenn das hier nur der Anfang ist,
 		Witch: brauche ich all meine Kraft für die anderen Instrumente.
 		[signal arg="teleport"]
-	Witch: Hmm.. scheinbar habe ich nicht genug Mana...
+	else:
+		Witch: Hmm.. scheinbar habe ich nicht genug Mana...
 - Lieber noch nicht
 	Witch (default): Ich sollte mich besser darauf vorbereiten
 [signal arg="choice_end"]

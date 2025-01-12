@@ -3,9 +3,12 @@ join Witch center
 Witch: Durch das Spielen spüre ich eine starke Verbindung... und Mana, das mich durchströmt. Ich könnte es nutzen, um den Drummer zurückzubringen. Aber es wird mich viel Kraft kosten. Soll ich es tun?
 [signal arg="choice_start"]
 - Ja
+	do Global.update_mana()
 	if {mana} >= 500:
 		[signal arg="teleport"]
-	Hmm.. scheinbar habe ich nicht genug Mana...
+	else:
+		Witch: Hmm.. scheinbar habe ich nicht genug Mana...
+		[signal arg="timeline_ended"]
 - Nein
 	Witch: Dieses Instrument ist gefährlicher als die anderen...
 	Witch: Ich sollte mich gut vorbereiten um

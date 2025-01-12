@@ -1,7 +1,7 @@
 [signal arg="timeline_started"]
 join Bassist right
 Bassist: Danke das du mich gerettet hast.
-join Witch center
+join Witch left
 Witch: Das ist nicht der Rede wert.
 Bassist: Falls du lust hast zu spielen kannst du immer den alten Gramps ansprechen
 Witch: Ich komm gerne darauf zurück.

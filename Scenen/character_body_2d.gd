@@ -8,8 +8,10 @@ func _process(_delta):
 	if is_in_chatting_area:
 		if Input.is_action_just_pressed("interact") and not talking:
 			talking = true
-			Dialogic.start("city_gramps")
-	
+			if !Global.bassist:
+				Dialogic.start("city_gramps")
+			else:
+				Dialogic.start("gramps_alt")
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

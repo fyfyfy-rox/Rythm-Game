@@ -7,7 +7,7 @@ var paused = false
 
 
 func _ready():
-	if Global.drumnmer:
+	if Global.drummer:
 		drummerboy.visible
 	AudioPlayer_Menu.stop_music()
 	drummerboy.play("default")

@@ -12,7 +12,7 @@ func _on_timer_timeout() -> void:
 func _process(_delta):
 	if (entered == 1):
 		if Input.is_action_just_pressed("interact"):
-			Global.witch_position.x = 1550
+			Global.witch_position.x = 1950
 			Global.witch_position.y = 760
 			get_tree().change_scene_to_file("res://Scenen/overworld_2.tscn")
 
