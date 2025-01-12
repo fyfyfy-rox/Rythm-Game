@@ -9,7 +9,7 @@ Witch (default): Es würde mich die Hälfte meiner Manakapazität kosten. Soll i
 [signal arg="choice_start"]
 - Ja ein versuch ist es wert
 	do Global.update_mana()
-	if {mana} == 500:
+	if {mana} >= 500:
 		Witch (default): Es funktioniert...
 		Witch: aber es zieht so viel Mana.
 		Witch: Ich muss vorsichtig sein.
