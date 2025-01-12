@@ -171,7 +171,7 @@ sequence_per_seconds = 10
 [node name="ADSR" parent="." instance=ExtResource("8_8rxgp")]
 
 [node name="Positions" type="Node2D" parent="."]
-position = Vector2(153, -279)
+position = Vector2(160, -285)
 
 [node name="Position1" type="Marker2D" parent="Positions"]
 position = Vector2(6, -2)
@@ -199,7 +199,7 @@ frame_progress = 0.234403
 
 [node name="IdleNodes" type="Node2D" parent="."]
 z_index = 2
-position = Vector2(-360, 285)
+position = Vector2(-358, 285)
 scale = Vector2(0.9, 0.9)
 
 [node name="IdleNode1" parent="IdleNodes" instance=ExtResource("11_nwqlb")]

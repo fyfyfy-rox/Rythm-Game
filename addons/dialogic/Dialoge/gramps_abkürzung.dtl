@@ -6,7 +6,7 @@ Grams: Naa, möchtest du doch spielen?
 - Bass spielen
 	[signal arg="time_ended"]
 	[signal arg="start_rythm_game"]
-- Bassisten widerholen
+- Bassisten retten
 	do Global.update_mana()
 	if {mana} >= 500:
 		[signal arg="teleport"]

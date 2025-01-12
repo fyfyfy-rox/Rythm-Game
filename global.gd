@@ -27,14 +27,14 @@ var sensor_node_2 = 0;
 var sensor_node_3 = 0;
 var sensor_node_4 = 0;
 
-var letzte_szene: String = ""
+var letzte_szene: String = ""#
 
-var tree_interacted = 0;
+var tree_interacted = 0;#
 
-var bassist: bool = false
-var drummer: bool = false
+var bassist: bool = false#
+var drummer: bool = false#
 
-var mana = 0;
+var mana = 0;#
 var inputs_disabled: bool = false
 
 var in_pause_wald: bool = false
@@ -42,7 +42,7 @@ var in_pause_overworld: bool = false
 var in_pause_subway: bool = false
 var in_pause_rythm_wald: bool = false
 
-var in_rythm_game: bool = false
+var in_rythm_game: bool = false#
 
 var manabar_visible = true
 
@@ -171,6 +171,11 @@ func delete_save():
 			var result = dir.remove("save_game.json")
 			if result == OK:
 				bass_done = false
+				bassist = false
+				drummer = false
+				in_rythm_game = false
+				tree_interacted = 0
+				letzte_szene = ""
 				mana = 0
 				scene_states = {}
 				print("Speicherstand gelöscht!")
