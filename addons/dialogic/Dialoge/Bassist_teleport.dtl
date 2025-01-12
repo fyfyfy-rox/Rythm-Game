@@ -1,19 +1,22 @@
 [signal arg="timeline_started"]
 join Witch center
-Witch (surprised): Durch das Spielen... 
-Witch: Ich spüre, wie Mana durch mich fließt. Viel Mana. 
-Witch: Viel Mana. 
+Witch (surprised): Durch das Spielen...
+Witch: Ich spüre, wie Mana durch mich fließt. Viel Mana.
+Witch: Viel Mana.
 Witch: Vielleicht... vielleicht könnte ich es nutzen, um...
 Witch: ...den Bassisten zurückzubringen.
-Witch (default): Es würde mich die Hälfte meiner Manaleiste kosten. Soll ich es probieren?
+Witch (default): Es würde mich die Hälfte meiner Manakapazität kosten. Soll ich es probieren?
 [signal arg="choice_start"]
 - Ja ein versuch ist es wert
-	Witch (default): Es funktioniert... 
-	Witch: aber es zieht so viel Mana.
-	Witch: Ich muss vorsichtig sein.
-	Witch: Wenn das hier nur der Anfang ist,
-	Witch: brauche ich all meine Kraft für die anderen Instrumente.
-	[signal arg="teleport"]
+	do Global.update_mana()
+	if {mana} == 500:
+		Witch (default): Es funktioniert...
+		Witch: aber es zieht so viel Mana.
+		Witch: Ich muss vorsichtig sein.
+		Witch: Wenn das hier nur der Anfang ist,
+		Witch: brauche ich all meine Kraft für die anderen Instrumente.
+		[signal arg="teleport"]
+	Witch: Hmm.. scheinbar habe ich nicht genug Mana...
 - Lieber noch nicht
 	Witch (default): Ich sollte mich besser darauf vorbereiten
 [signal arg="choice_end"]

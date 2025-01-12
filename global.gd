@@ -62,6 +62,10 @@ func save_settings():
 		file.close()
 		print("Einstellungen gespeichert!")
 
+func update_mana():
+	Dialogic.VAR.mana = mana
+
+
 
 # Speichern des Spiels
 func save_game():
