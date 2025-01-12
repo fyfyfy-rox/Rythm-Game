@@ -1,0 +1,14 @@
+[signal arg="timeline_started"]
+join Witch left
+join Grams right
+[signal arg="choice_start"]
+- Bass spielen
+	[signal arg="time_ended"]
+	[signal arg="start_rythm_game"]
+- Bassisten wiederholen
+	do Global.update_mana()
+	if {mana} >= 500:
+		[signal arg="teleport"]
+[signal arg="choice_end"]
+[signal arg="timeline_ended"]
+[end_timeline]

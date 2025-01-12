@@ -78,7 +78,8 @@ func save_game():
 		"current_scene": get_tree().current_scene.scene_file_path,  # Pfad zur aktuellen Szene
 		"scene_states": scene_states,  # Speichert, ob Szenen bereits betreten wurden
 		"bassist": bassist,
-		"drummer":drummer,
+		"drummer": drummer,
+		"bass_done": bass_done,
 	}
 
 	var file = FileAccess.open("user://save_game.json", FileAccess.WRITE)
@@ -110,6 +111,7 @@ func load_game():
 					
 					bassist = save_data.get("bassist", false)
 					drummer = save_data.get("drummer", false)
+					bass_done = save_data.get("bass_done", false)
 
 					# Szenenstatus wiederherstellen
 					scene_states = save_data.get("scene_states", {})

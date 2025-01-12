@@ -8,7 +8,8 @@ var paused = false
 
 func _ready():
 	if Global.drummer:
-		drummerboy.visible
+		drummerboy.visible = true
+		drummerboy.play("default")
 	AudioPlayer_Menu.stop_music()
 	drummerboy.play("default")
 	if Global.letzte_szene == "/root/BassRythm":

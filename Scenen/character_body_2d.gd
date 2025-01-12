@@ -8,8 +8,10 @@ func _process(_delta):
 	if is_in_chatting_area:
 		if Input.is_action_just_pressed("interact") and not talking:
 			talking = true
-			if !Global.bassist:
+			if !Global.bassist and !Global.bass_done:
 				Dialogic.start("city_gramps")
+			elif Global.bass_done:
+				Dialogic.start("gramps_abkürzung")
 			else:
 				Dialogic.start("gramps_alt")
 

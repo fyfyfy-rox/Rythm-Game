@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cte7s3jyqmstm" path="res://Resources/sidewalk.PNG" id="19_adu8g"]
 [ext_resource type="PackedScene" uid="uid://b1ge5ctwbbmeo" path="res://Scenen/road.tscn" id="20_88h2w"]
 [ext_resource type="Shader" path="res://Scenen/max_mana.gdshader" id="24_71bv1"]
-[ext_resource type="PackedScene" path="res://Scenen/pause_menu_rythm.tscn" id="24_d0nl1"]
+[ext_resource type="PackedScene" uid="uid://6ilor162utkb" path="res://Scenen/pause_menu_rythm.tscn" id="24_d0nl1"]
 [ext_resource type="Script" path="res://Scenen/pause_menu_rythm_city.gd" id="25_dyfyj"]
 [ext_resource type="Texture2D" uid="uid://c4aucsjb6r2di" path="res://Resources/Forrest/1.png" id="25_xmtvs"]
 
@@ -301,5 +301,5 @@ script = ExtResource("25_dyfyj")
 [connection signal="timeout" from="Tasten/Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Tasten/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Tasten/Timer3" to="." method="_on_timer_3_timeout"]
-[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_4_timeout"]
+[connection signal="timeout" from="Tasten/Timer4" to="." method="_on_timer_3_timeout"]
