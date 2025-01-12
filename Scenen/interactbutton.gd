@@ -11,7 +11,8 @@ func _on_timer_timeout() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	entered = 1
+	if !Global.drummer:
+		entered = 1
 
 
 func _on_body_exited(body: Node2D) -> void:
