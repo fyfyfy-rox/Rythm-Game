@@ -199,7 +199,7 @@ frame_progress = 0.234403
 
 [node name="IdleNodes" type="Node2D" parent="."]
 z_index = 2
-position = Vector2(-358, 285)
+position = Vector2(-349, 280)
 scale = Vector2(0.9, 0.9)
 
 [node name="IdleNode1" parent="IdleNodes" instance=ExtResource("11_nwqlb")]
