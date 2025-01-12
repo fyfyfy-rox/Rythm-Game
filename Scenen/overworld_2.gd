@@ -77,7 +77,7 @@ func _exit_tree():
 	bg_music.stop()  # Musik stoppen
 
 func teleport():
-	Global.mana -= 50
+	Global.mana -= 500
 
 func toggle_pause():
 	paused = !paused  # Invert the pause state (if the game is paused, resume it; otherwise, pause it)

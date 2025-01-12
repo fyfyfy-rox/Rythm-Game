@@ -301,6 +301,7 @@ animations = [{
 script = ExtResource("1_8phev")
 
 [node name="Background" type="Node2D" parent="."]
+z_index = -2
 position = Vector2(-960, 815)
 scale = Vector2(1, 0.358852)
 
@@ -392,9 +393,11 @@ size_flags_vertical = 4
 script = ExtResource("5_4uljd")
 
 [node name="Mana" type="CanvasLayer" parent="."]
+layer = 0
 script = ExtResource("15_h10u6")
 
 [node name="mana" parent="Mana" instance=ExtResource("16_4ylux")]
+z_index = -1
 offset_left = 1283.0
 offset_top = 1137.0
 offset_right = 1453.0

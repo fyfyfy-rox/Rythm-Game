@@ -103,6 +103,7 @@ shader_parameter/wave_noise = SubResource("NoiseTexture2D_lewyg")
 script = ExtResource("1_qkuxq")
 
 [node name="Hintergrund" type="Node2D" parent="."]
+z_index = -2
 
 [node name="Subway_floor" parent="Hintergrund" instance=ExtResource("1_smegi")]
 z_index = -1
@@ -230,6 +231,7 @@ sprite_frames = SubResource("SpriteFrames_3gklp")
 frame_progress = 0.772027
 
 [node name="Mana" type="CanvasLayer" parent="."]
+layer = 0
 script = ExtResource("6_3gfmj")
 
 [node name="mana" parent="Mana" instance=ExtResource("7_fdqbb")]

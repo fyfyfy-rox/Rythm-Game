@@ -187,15 +187,19 @@ texture = ExtResource("14_wqqyh")
 position = Vector2(-380, -40)
 
 [node name="IdleNode1" parent="IdleNodes" instance=ExtResource("9_fyxj4")]
+mana_inc = 8
 
 [node name="IdleNode2" parent="IdleNodes" instance=ExtResource("2_gjpf1")]
 position = Vector2(0, 60)
+mana_inc = 8
 
 [node name="IdleNode3" parent="IdleNodes" instance=ExtResource("11_2jf63")]
 position = Vector2(0, 120)
+mana_inc = 8
 
 [node name="IdleNode4" parent="IdleNodes" instance=ExtResource("12_y7toh")]
 position = Vector2(0, 190)
+mana_inc = 10
 
 [node name="Tasten" type="Node2D" parent="."]
 position = Vector2(-470, -40)

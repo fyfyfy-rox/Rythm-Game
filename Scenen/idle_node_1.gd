@@ -11,7 +11,6 @@ func _process(delta):
 	if sensor == 1:
 		if Input.is_action_just_pressed("1"):
 			Global.mana = clamp(Global.mana + mana_inc, 0, 1000)
-			Global.mana += mana_inc
 			animp.play("hit")
 			Global.update_node_miss(false)
 			

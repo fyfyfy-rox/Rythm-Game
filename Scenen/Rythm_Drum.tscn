@@ -32,7 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://dm86iw5i101h7" path="res://Resources/Music/SFX/Fail SFX.wav" id="27_05y3b"]
 [ext_resource type="AudioStream" uid="uid://xduc438if163" path="res://Resources/Music/Drum_game/DrumGame_124_BackingTrack_v3.wav" id="29_4ngpt"]
 [ext_resource type="Script" path="res://Scenen/audio_stream_player_melod.gd" id="30_h846n"]
-[ext_resource type="PackedScene" path="res://Scenen/pause_menu_rythm.tscn" id="32_1ceiy"]
+[ext_resource type="PackedScene" uid="uid://6ilor162utkb" path="res://Scenen/pause_menu_rythm.tscn" id="32_1ceiy"]
 [ext_resource type="AudioStream" uid="uid://c3krwq8v76pot" path="res://Resources/Music/Drum_game/DrumGame_124_BackingTrack_v6.wav" id="32_32dnb"]
 [ext_resource type="Script" path="res://Scenen/pause_menu_rythm_drum.gd" id="33_s5yee"]
 
@@ -311,6 +311,7 @@ shader_parameter/wave_noise = SubResource("NoiseTexture2D_di7kg")
 script = ExtResource("1_1nwh4")
 
 [node name="Drums" type="Node2D" parent="."]
+position = Vector2(-55, 94)
 
 [node name="Bassdrum" type="AnimatedSprite2D" parent="Drums"]
 z_index = 1

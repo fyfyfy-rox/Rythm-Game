@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bfihb7d1a8shb" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_104.png" id="20_glkwv"]
 [ext_resource type="Texture2D" uid="uid://bp0lreuce80e4" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_4.png" id="21_g746m"]
 [ext_resource type="Texture2D" uid="uid://dteth4gtvrday" path="res://Resources/MV Icons Keyboard/Individual Icons/keyboard_105.png" id="22_c7422"]
-[ext_resource type="PackedScene" path="res://Scenen/schienen.tscn" id="23_23o30"]
+[ext_resource type="PackedScene" uid="uid://xlqhigjagvuk" path="res://Scenen/schienen.tscn" id="23_23o30"]
 [ext_resource type="PackedScene" uid="uid://cleust68utvpe" path="res://Scenen/subway_floor.tscn" id="24_e3a58"]
 [ext_resource type="Texture2D" uid="uid://c4fkuubhkx2wv" path="res://Resources/Subway/Subway_background.png" id="25_vhman"]
 [ext_resource type="Shader" path="res://Scenen/max_mana.gdshader" id="26_yas42"]

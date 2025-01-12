@@ -1,16 +1,16 @@
 [signal arg="timeline_started"]
-join Witch (happy) center
-Witch (surprised): Was... war das? 
+join Witch (surprised) center
+Witch (surprised): Was... war das?
 Witch (surprised): Diese Flöte... diese Energie. So verlockend, so kraftvoll. Ich habe sowas noch nie gespürt
 Witch (surprised): Ich habe sowas noch nie gespürt
-Witch (surprised): Warum fühle ich mich plötzlich so... seltsam? 
+Witch (surprised): Warum fühle ich mich plötzlich so... seltsam?
 Witch (surprised): Es ist, als würde mein Mana von etwas Größerem angezogen werden...
 [wait time="1.0"]
-Witch (default): Was passiert hier? 
+Witch (default): Was passiert hier?
 Witch (surprised): Vielleicht sollte ich einfach—
-Witch (default): Nein, das war ein Fehler. 
+Witch (default): Nein, das war ein Fehler.
 [wait time="1.0"]
-Witch: Aber... was, wenn ich... 
+Witch: Aber... was, wenn ich...
 [wait time="1.0"]
 Witch: wenn ich nur noch einmal...
 Witch: Nur ein kleiner Ton.

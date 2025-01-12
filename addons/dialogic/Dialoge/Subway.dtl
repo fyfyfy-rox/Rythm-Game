@@ -1,10 +1,10 @@
-join Witch center
+join Witch (surprised) center
 [signal arg="timeline_started"]
 Witch (surprised): Hier ist es wieder. Diese Macht... so ähnlich wie bei der Flöte und dem Bass. Aber diesmal... es ist noch wilder. Es kommt von dort.
-Witch (surprised): Das Schlagzeug. Es ist wie die anderen. Aber warum ist es hier? Und warum... 
+Witch (surprised): Das Schlagzeug. Es ist wie die anderen. Aber warum ist es hier? Und warum...
 Witch (surprised): spüre ich die Präsenz von jemandem?
 Witch (surprised): Der Drummer?
-Witch (surprised):  Er muss irgendwo in dieser Welt verloren sein.
+Witch (surprised): Er muss irgendwo in dieser Welt verloren sein.
 Witch (default): Wenn ich es spiele...
 Witch (default): kann ich ihn vielleicht zurückholen.
 [signal arg="timeline_ended"]

@@ -1,5 +1,5 @@
 [signal arg="timeline_started"]
-join Witch (default) center
+join Witch (surprised) center
 [wait time="1.0"]
 Witch (surprised): Was für ein interessantes Wasserspiel
 Witch (surprised): ...
