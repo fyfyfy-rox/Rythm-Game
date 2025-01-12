@@ -12,7 +12,7 @@ func _ready():
 		drummerboy.play("default")
 	AudioPlayer_Menu.stop_music()
 	drummerboy.play("default")
-	if Global.letzte_szene == "/root/BassRythm":
+	if Global.letzte_szene == "/root/BassRythm" and !Global.drummer:
 		Dialogic.start("Drummer_teleport")
 	
 	var scene_path = get_tree().current_scene.scene_file_path  # Pfad zur aktuellen Szene

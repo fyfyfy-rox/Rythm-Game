@@ -10,7 +10,7 @@ func _process(_delta):
 			talking = true
 			if !Global.bassist and !Global.bass_done:
 				Dialogic.start("city_gramps")
-			elif Global.bass_done:
+			elif Global.bass_done and !Global.bassist:
 				Dialogic.start("gramps_abkürzung")
 			else:
 				Dialogic.start("gramps_alt")

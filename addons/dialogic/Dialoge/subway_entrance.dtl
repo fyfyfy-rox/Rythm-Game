@@ -1,2 +1,4 @@
+[signal arg="timeline_started"]
 join Witch center
 Witch (default): Hmm... sieht so aus als hätte ich hier noch zu tun
+[signal arg="timeline_ended"]
