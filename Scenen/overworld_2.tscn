@@ -320,6 +320,11 @@ z_index = 1
 position = Vector2(0, 473.733)
 scale = Vector2(1, 2.78666)
 
+[node name="Road4" parent="Background" instance=ExtResource("1_hbu0g")]
+z_index = 1
+position = Vector2(-1906, 473.733)
+scale = Vector2(1, 2.78666)
+
 [node name="Sidewalk" type="Sprite2D" parent="Background"]
 texture = ExtResource("2_aib01")
 
@@ -329,6 +334,10 @@ texture = ExtResource("2_aib01")
 
 [node name="Sidewalk3" type="Sprite2D" parent="Background"]
 position = Vector2(3840, 0)
+texture = ExtResource("2_aib01")
+
+[node name="Sidewalk4" type="Sprite2D" parent="Background"]
+position = Vector2(-1911, 1.19209e-06)
 texture = ExtResource("2_aib01")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
@@ -371,7 +380,7 @@ texture = ExtResource("8_saxhx")
 
 [node name="Witch" parent="." instance=ExtResource("2_4gn77")]
 z_index = 1
-position = Vector2(500, 760)
+position = Vector2(230, 746)
 scale = Vector2(4.7, 4.7)
 collision_mask = 5
 move_speed = 400.0
@@ -419,7 +428,7 @@ position = Vector2(500, 0)
 script = ExtResource("12_t40ck")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gramps"]
-position = Vector2(570, 739)
+position = Vector2(461, 744)
 scale = Vector2(5.08594, 4.46875)
 sprite_frames = SubResource("SpriteFrames_88doj")
 frame_progress = 0.627943
@@ -429,11 +438,11 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gramps/Area2D"]
-position = Vector2(589.5, 760)
+position = Vector2(467, 757)
 shape = SubResource("RectangleShape2D_momma")
 
 [node name="Interactbutton" parent="Gramps" instance=ExtResource("14_rdptu")]
-position = Vector2(587, 925)
+position = Vector2(466, 921)
 
 [node name="Subway_trans" type="Area2D" parent="."]
 position = Vector2(2247, 762)
@@ -442,23 +451,23 @@ collision_mask = 2
 script = ExtResource("17_bm20q")
 
 [node name="Sprite2D" type="Sprite2D" parent="Subway_trans"]
-position = Vector2(194, -9)
+position = Vector2(-146, -15)
 scale = Vector2(1.13571, 1.19707)
 texture = ExtResource("17_kg6jf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Subway_trans"]
-position = Vector2(157, 65)
+position = Vector2(-200, 54)
 shape = SubResource("RectangleShape2D_jojyf")
 
 [node name="Interactbutton" parent="Subway_trans" instance=ExtResource("14_rdptu")]
-position = Vector2(143, 148)
+position = Vector2(-197, 97)
 
 [node name="Drummer" type="Node2D" parent="."]
 process_mode = 3
 position = Vector2(1316, 832)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Drummer"]
-position = Vector2(12, -74)
+position = Vector2(-180, -70)
 scale = Vector2(4.80469, 4.46354)
 sprite_frames = SubResource("SpriteFrames_qm710")
 frame_progress = 0.0944332
@@ -467,11 +476,11 @@ frame_progress = 0.0944332
 position = Vector2(21, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drummer/Area2D"]
-position = Vector2(-17, -73)
+position = Vector2(-203, -71)
 shape = SubResource("RectangleShape2D_w0p6k")
 
 [node name="Interactbutton" parent="Drummer" instance=ExtResource("14_rdptu")]
-position = Vector2(5, 92)
+position = Vector2(-183, 86)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
@@ -486,11 +495,11 @@ script = ExtResource("20_sudot")
 position = Vector2(-2, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(3157, 787)
+position = Vector2(2645, 767)
 shape = SubResource("RectangleShape2D_4lj45")
 
 [node name="Sprite2D" type="Sprite2D" parent="Barrier"]
-position = Vector2(3155, 782)
+position = Vector2(2644, 767)
 scale = Vector2(2, 2)
 texture = ExtResource("20_23j7b")
 
@@ -499,18 +508,18 @@ process_mode = 3
 position = Vector2(-8, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
-position = Vector2(-636, 720)
+position = Vector2(-1034, 708)
 scale = Vector2(0.468359, 0.433203)
 sprite_frames = SubResource("SpriteFrames_bcuxb")
 frame_progress = 0.982428
 
 [node name="Interactbutton" parent="Node2D" instance=ExtResource("14_rdptu")]
-position = Vector2(-495, 830)
+position = Vector2(-886, 857)
 script = ExtResource("22_73rbv")
 
 [node name="Road" parent="Node2D" instance=ExtResource("1_hbu0g")]
 visible = false
-position = Vector2(-496, 1036)
+position = Vector2(-901, 1001)
 rotation = 1.5708
 skew = -1.494
 

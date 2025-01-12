@@ -5,6 +5,7 @@ extends Node2D
 @onready var gramps_animation = $Gramps/AnimatedSprite2D
 @onready var brunnen = $Node2D/AnimatedSprite2D
 @onready var drummer = $Drummer/AnimatedSprite2D
+
 var paused = false  # Variable to track if the game is paused or not
 # _ready function, executed when the node is initialized
 func _ready():
@@ -82,6 +83,8 @@ func _exit_tree():
 
 func teleport():
 	Global.mana -= 500
+	$Mana/max_mana.visible = false
+	
 	
 
 func toggle_pause():

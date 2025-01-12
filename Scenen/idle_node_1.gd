@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var animp = $AnimationPlayer
 @onready var miss_sound = $"../../AudioStreamPlayer_failsound"
-@export var mana_inc = 1
+@export var mana_inc = 5
 
 var sensor = 0
 

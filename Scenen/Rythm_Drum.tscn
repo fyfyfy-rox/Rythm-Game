@@ -404,22 +404,18 @@ position = Vector2(1759, 804)
 
 [node name="IdleNode1" parent="IdleNodes" instance=ExtResource("13_nu4yu")]
 z_index = 3
-mana_inc = 5
 
 [node name="IdleNode2" parent="IdleNodes" instance=ExtResource("14_g6bhc")]
 z_index = 3
 position = Vector2(80, 0)
-mana_inc = 5
 
 [node name="IdleNode3" parent="IdleNodes" instance=ExtResource("15_5w30e")]
 z_index = 3
 position = Vector2(160, 0)
-mana_inc = 5
 
 [node name="IdleNode4" parent="IdleNodes" instance=ExtResource("16_ljmpd")]
 z_index = 3
 position = Vector2(244, 1)
-mana_inc = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="IdleNodes"]
 position = Vector2(-368, -295)
